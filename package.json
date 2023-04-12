@@ -1,0 +1,24 @@
+{
+  "name": "hellwet_school_server",
+  "version": "1.0.0",
+  "description": "server side for hellwet school management system",
+  "main": "index.js",
+  "author": "HellWet",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "start-dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.1"
+  }
+}
