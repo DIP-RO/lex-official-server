@@ -5,6 +5,7 @@ import express from "express";
 import morgan from "morgan";
 import path, { join } from "path";
 import connectDB from "./configs/databaseConfigs.js";
+import userRoutes from "./routes/userRoutes.js";
 
 // Application
 const app = express();
@@ -25,6 +26,9 @@ connectDB();
 app.get("/", (req, res) => {
   res.send("HellWet Server Running...");
 });
+
+// users routes
+app.use("/api/v1/auth/", userRoutes);
 
 // listen to port
 const PORT = process.env.PORT || 5000;

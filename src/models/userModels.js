@@ -20,10 +20,7 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: null,
   },
-  refreshToken: {
-    type: String,
-    required: false,
-  },
+
   role: {
     type: String,
     default: "STUDENT",

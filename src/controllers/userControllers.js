@@ -1,9 +1,11 @@
-import UserModel from "../model/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import UserModel from "../models/userModels.js";
 
 const hashPassword = async (password) => {
-  return await bcrypt.hash(password, 10);
+  console.log(password);
+  const salt = await bcrypt.genSalt(10);
+  return await bcrypt.hash(password, salt);
 };
 
 const register = async (req, res) => {
@@ -15,6 +17,7 @@ const register = async (req, res) => {
         message: "Please fill all the required fields",
       });
     }
+
     if (password === !confirmPassword) {
       return res.status(400).json({
         message: "Passwords do not match",
@@ -35,31 +38,41 @@ const register = async (req, res) => {
       password: hashedPassword,
       role: role || "STUDENT",
     });
-    await user.save();
     const accessToken = jwt.sign(
       { userID: user._id },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "1d",
+        expiresIn: "1h",
       }
     );
+
     const refreshToken = jwt.sign(
       { userID: user._id },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "3d",
+        expiresIn: "30d",
       }
     );
-    user.accessToken = accessToken;
-    user.refreshToken = refreshToken;
 
-    res.status(200).json({
-      user,
+    await user.validate();
+    await user.save();
+
+    const userDetails = {
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      role: user.role,
+    };
+
+    return res.status(200).json({
+      userDetails,
       accessToken,
       refreshToken,
     });
   } catch (error) {
     console.log(error);
+    return res.status(400).send(error);
   }
 };
 
@@ -67,48 +80,58 @@ const validatePassword = async (password, hashPassword) => {
   return await bcrypt.compare(password, hashPassword);
 };
 
-const login = async (req, res, next) => {
+const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    if (!email && !password) {
+    if (!email || !password) {
       return res.status(400).json({
-        message: "Please fill all the required fields",
+        message: "Invalid Response!",
       });
     }
     const user = await UserModel.findOne({ email });
     if (!user) {
       return res.status(400).json({
-        message: "Email does not exist",
+        message: "Invalid User!",
       });
     }
     const validPassword = await validatePassword(password, user.password);
     if (!validPassword) {
       return res.status(400).json({
-        message: "Password is not correct",
+        message: "Invalid Password!",
       });
     }
     const accessToken = jwt.sign(
       { userID: user._id },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "1d",
+        expiresIn: "1h",
       }
     );
     const refreshToken = jwt.sign(
       { userID: user._id },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "3d",
+        expiresIn: "30d",
       }
     );
 
     await UserModel.findByIdAndUpdate(user._id);
-    res.status(200).json({
-      user,
+    const userDetails = {
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      role: user.role,
+    };
+
+    return res.status(200).json({
+      userDetails,
       accessToken,
       refreshToken,
     });
   } catch (error) {
-    next(error);
+    return res.status(400).send(error);
   }
 };
+
+export { login, register };
