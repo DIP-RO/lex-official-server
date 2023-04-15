@@ -4,9 +4,11 @@ const createPostalReceive = async (req, res) => {
   try {
     const result = new PostalReceiveModel({
       school: req.body.school,
-      toTitle: req.body.toTitle,
-      referenceNo: req.body.referenceNo,
       formTitle: req.body.formTitle,
+      referenceNo: req.body.referenceNo,
+      address: req.body.address,
+      note: req.body.note,
+      toTitle: req.body.toTitle,
       date: req.body.date,
     });
     await result.validate();

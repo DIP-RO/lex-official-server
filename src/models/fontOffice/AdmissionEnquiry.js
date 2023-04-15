@@ -13,6 +13,38 @@ const AdmissionEnquirySchema = new mongoose.Schema({
     type: String,
     required: [true, "phone required!"],
   },
+  email: {
+    type: String,
+    required: false,
+  },
+  address: {
+    type: String,
+    required: false,
+  },
+  class: {
+    type: String,
+    required: false,
+  },
+  numberOfChild: {
+    type: String,
+    required: false,
+  },
+  assigned: {
+    type: String,
+    required: false,
+  },
+  reference: {
+    type: String,
+    required: false,
+  },
+  description: {
+    type: String,
+    required: false,
+  },
+  note: {
+    type: String,
+    required: false,
+  },
   source: {
     type: String,
     required: [true, "source required!"],
@@ -28,6 +60,10 @@ const AdmissionEnquirySchema = new mongoose.Schema({
   nextFollowUpData: {
     type: Date,
     required: false,
+  },
+  date: {
+    type: Date,
+    required: true,
   },
   status: {
     type: String,

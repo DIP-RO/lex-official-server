@@ -5,9 +5,9 @@ const PostalReceiveSchema = new mongoose.Schema({
     type: String,
     required: [true, "school id required!"],
   },
-  toTitle: {
+  formTitle: {
     type: String,
-    required: [true, "toTitle required!"],
+    required: [true, "formTitle required!"],
   },
   referenceNo: {
     type: String,
@@ -15,25 +15,18 @@ const PostalReceiveSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    required: false,
+    required: [true, "address required!"],
   },
-  Note: {
+  note: {
     type: String,
-    required: false,
+    required: [true, "note required!"],
   },
-  formTitle: {
+  toTitle: {
     type: String,
-    required: [true, "formTitle required!"],
+    required: [true, "toTitle required!"],
   },
+
   date: {
-    type: Date,
-    required: true,
-  },
-  inTime: {
-    type: Date,
-    required: false,
-  },
-  outTime: {
     type: Date,
     required: false,
   },

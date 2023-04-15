@@ -33,6 +33,13 @@ import {
   getAllPostalReceive,
   getPostalReceive,
 } from "../controllers/fontOffice/PostalReceiveContgrollers.js";
+import {
+  UpdateComplain,
+  createComplain,
+  deleteComplain,
+  getAllComplain,
+  getComplain,
+} from "../controllers/fontOffice/ComplainControllers.js";
 
 const router = Router();
 
@@ -74,6 +81,13 @@ router.delete("/postal-receive/:id", deletePostalReceive);
 router.patch("/postal-receive/:id", UpdatePostalReceive);
 router.get("/postal-receive/:id", getPostalReceive);
 router.get("/postal-receive", getAllPostalReceive);
+/* End */
+/* complain */
+router.post("/complain", createComplain);
+router.delete("/complain/:id", deleteComplain);
+router.patch("/complain/:id", UpdateComplain);
+router.get("/complain/:id", getComplain);
+router.get("/complain", getAllComplain);
 /* End */
 
 export default router;

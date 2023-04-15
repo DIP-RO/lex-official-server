@@ -7,6 +7,10 @@ const createPostalDispatch = async (req, res) => {
       referenceNo: req.body.referenceNo,
       formTitle: req.body.formTitle,
       date: req.body.date,
+      address: req.body.address,
+      Note: req.body.Note,
+      inTime: req.body.inTime,
+      outTime: req.body.outTime,
     });
     await result.validate();
     await result.save();

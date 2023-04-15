@@ -31,7 +31,7 @@ const PostalDispatchSchema = new mongoose.Schema({
   },
   inTime: {
     type: Date,
-    required: false,
+    required: true,
   },
   outTime: {
     type: Date,

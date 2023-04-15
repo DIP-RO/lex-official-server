@@ -11,6 +11,8 @@ const createVisitorBook = async (req, res) => {
       idCard: req.body.idCard,
       numberOfPerson: req.body.numberOfPerson,
       date: req.body.date,
+      inTime: req.body.inTime,
+      outTime: req.body.outTime,
     });
     await result.validate();
     await result.save();

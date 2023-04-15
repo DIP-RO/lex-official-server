@@ -7,8 +7,8 @@ const createPhoneCallLog = async (req, res) => {
       name: req.body.name,
       phone: req.body.phone,
       date: req.body.date,
-      enquiryData: req.body.enquiryData,
       callTypes: req.body.callTypes,
+      nextFollowUpData: req.body.nextFollowUpData,
     });
     await result.validate();
     await result.save();

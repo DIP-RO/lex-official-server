@@ -1,12 +1,19 @@
-import PostalReceiveModel from "../../models/fontOffice/PostalReceive.js";
+import complainModel from "../../models/fontOffice/Complain.js";
 
-const createPostalReceive = async (req, res) => {
+const createComplain = async (req, res) => {
   try {
-    const result = new PostalReceiveModel({
+    const result = new complainModel({
       school: req.body.school,
-      toTitle: req.body.toTitle,
-      referenceNo: req.body.referenceNo,
-      formTitle: req.body.formTitle,
+      complainType: req.body.complainType,
+      name: req.body.name,
+      phone: req.body.phone,
+      description: req.body.description,
+      complainBy: req.body.complainBy,
+      source: req.body.source,
+      actionTaken: req.body.actionTaken,
+      assigned: req.body.assigned,
+      note: req.body.note,
+      attachDocument: req.body.attachDocument,
       date: req.body.date,
     });
     await result.validate();
@@ -17,14 +24,14 @@ const createPostalReceive = async (req, res) => {
   }
 };
 
-const deletePostalReceive = async (req, res) => {
+const deleteComplain = async (req, res) => {
   try {
-    if (!(await PostalReceiveModel.findById(req.params.id))) {
+    if (!(await complainModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await PostalReceiveModel.findByIdAndDelete(req.params.id);
+    await complainModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -34,33 +41,33 @@ const deletePostalReceive = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdatePostalReceive = async (req, res) => {
+const UpdateComplain = async (req, res) => {
   try {
-    const PostalReceive = await PostalReceiveModel.findByIdAndUpdate(
+    const complain = await complainModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
     );
-    if (!PostalReceive) {
+    if (!complain) {
       return res.status(404).send({ error: "Visitor book not found" });
     }
-    return res.send(PostalReceive);
+    return res.send(complain);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-const getAllPostalReceive = async (req, res) => {
+const getAllComplain = async (req, res) => {
   try {
-    const admissionEnquiries = await PostalReceiveModel.find();
+    const admissionEnquiries = await complainModel.find();
     return res.send(admissionEnquiries);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
-const getPostalReceive = async (req, res) => {
+const getComplain = async (req, res) => {
   try {
-    const phoneCallLog = await PostalReceiveModel.findById(req.params.id);
+    const phoneCallLog = await complainModel.findById(req.params.id);
     if (!phoneCallLog) {
       return res.status(404).send({ error: "Invalid Visitor Book" });
     }
@@ -70,9 +77,9 @@ const getPostalReceive = async (req, res) => {
   }
 };
 export {
-  createPostalReceive,
-  deletePostalReceive,
-  UpdatePostalReceive,
-  getAllPostalReceive,
-  getPostalReceive,
+  createComplain,
+  deleteComplain,
+  UpdateComplain,
+  getAllComplain,
+  getComplain,
 };
