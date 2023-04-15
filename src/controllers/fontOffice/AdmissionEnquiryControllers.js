@@ -39,23 +39,15 @@ const deleteAdmissionEnquiry = async (req, res) => {
 };
 const UpdateAdmissionEnquiry = async (req, res) => {
   try {
-    const admissionEnquiry = await AdmissionEnquiryModel.findById(
-      req.params.id
+    const visitorBook = await AdmissionEnquiryModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
     );
-    if (!admissionEnquiry) {
-      return res.status(404).send({ error: "Admission enquiry not found" });
+    if (!visitorBook) {
+      return res.status(404).send({ error: "Visitor book not found" });
     }
-    admissionEnquiry.school = req.body.school;
-    admissionEnquiry.name = req.body.name;
-    admissionEnquiry.phone = req.body.phone;
-    admissionEnquiry.source = req.body.source;
-    admissionEnquiry.enquiryData = req.body.enquiryData;
-    admissionEnquiry.lastFollowUpData = req.body.lastFollowUpData;
-    admissionEnquiry.nextFollowUpData = req.body.nextFollowUpData;
-    admissionEnquiry.status = req.body.status;
-    await admissionEnquiry.validate();
-    await admissionEnquiry.save();
-    return res.send(admissionEnquiry);
+    return res.send(visitorBook);
   } catch (error) {
     return res.status(400).send(error);
   }
