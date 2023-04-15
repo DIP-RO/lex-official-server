@@ -25,12 +25,16 @@ connectDB();
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("HellWet Server Running...");
+  return res.send("HellWet Server Running...");
 });
 
 // users routes
 app.use("/api/v1/auth/", userRoutes);
+
 app.use("/api/v1/font-office/", fontOfficeRoutes);
+app.use("*", (req, res) => {
+  return res.send("Invalid Route!");
+});
 
 // listen to port
 const PORT = process.env.PORT || 5000;
