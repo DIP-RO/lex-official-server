@@ -1,41 +1,53 @@
 import mongoose from "mongoose";
 
-const PostalReceiveSchema = new mongoose.Schema({
+const complainSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
   },
-  toTitle: {
+  complainType: {
     type: String,
-    required: [true, "toTitle required!"],
+    required: [true, "complain type required!"],
   },
-  referenceNo: {
+  name: {
     type: String,
-    required: [true, "referenceNo required!"],
+    required: [true, "name required!"],
   },
-  address: {
+  phone: {
+    type: String,
+    required: [true, "phone required!"],
+  },
+  description: {
+    type: String,
+    required: [true, "description required!"],
+  },
+  complainBy: {
+    type: String,
+    required: [true, "complain by required!"],
+  },
+  source: {
+    type: String,
+    required: [true, "source required!"],
+  },
+  actionTaken: {
     type: String,
     required: false,
   },
-  Note: {
+  assigned: {
     type: String,
     required: false,
   },
-  formTitle: {
+  note: {
     type: String,
-    required: [true, "formTitle required!"],
+    required: false,
+  },
+  attachDocument: {
+    type: String,
+    required: false,
   },
   date: {
     type: Date,
     required: true,
-  },
-  inTime: {
-    type: Date,
-    required: false,
-  },
-  outTime: {
-    type: Date,
-    required: false,
   },
   created_at: {
     type: Date,
@@ -49,6 +61,6 @@ const PostalReceiveSchema = new mongoose.Schema({
   },
 });
 
-const PostalReceiveModel = mongoose.model("PostalReceive", PostalReceiveSchema);
+const complainModel = mongoose.model("complain", complainSchema);
 
-export default PostalReceiveModel;
+export default complainModel;
