@@ -20,7 +20,7 @@ const createAdmissionEnquiry = async (req, res) => {
   }
 };
 
-const deleAdmissionEnquiry = async (req, res) => {
+const deleteAdmissionEnquiry = async (req, res) => {
   try {
     if (!(await AdmissionEnquiryModel.findById(req.params.id))) {
       return res.status(400).send({
@@ -37,5 +37,42 @@ const deleAdmissionEnquiry = async (req, res) => {
     return res.status(400).send(error);
   }
 };
+const UpdateAdmissionEnquiry = async (req, res) => {
+  try {
+    const admissionEnquiry = await AdmissionEnquiryModel.findById(
+      req.params.id
+    );
+    if (!admissionEnquiry) {
+      return res.status(404).send({ error: "Admission enquiry not found" });
+    }
+    admissionEnquiry.school = req.body.school;
+    admissionEnquiry.name = req.body.name;
+    admissionEnquiry.phone = req.body.phone;
+    admissionEnquiry.source = req.body.source;
+    admissionEnquiry.enquiryData = req.body.enquiryData;
+    admissionEnquiry.lastFollowUpData = req.body.lastFollowUpData;
+    admissionEnquiry.nextFollowUpData = req.body.nextFollowUpData;
+    admissionEnquiry.status = req.body.status;
+    await admissionEnquiry.validate();
+    await admissionEnquiry.save();
+    return res.send(admissionEnquiry);
+  } catch (error) {
+    return res.status(400).send(error);
+  }
+};
 
-export { createAdmissionEnquiry, deleAdmissionEnquiry };
+const getAllAdmissionEnquiries = async (req, res) => {
+  try {
+    const admissionEnquiries = await AdmissionEnquiryModel.find();
+    return res.send(admissionEnquiries);
+  } catch (error) {
+    return res.status(400).send(error);
+  }
+};
+
+export {
+  createAdmissionEnquiry,
+  deleteAdmissionEnquiry,
+  UpdateAdmissionEnquiry,
+  getAllAdmissionEnquiries,
+};
