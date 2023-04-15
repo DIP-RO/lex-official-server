@@ -41,6 +41,30 @@ import {
   getVisitorBook,
 } from "../controllers/fontOffice/visitorBookControllers.js";
 import { uploadComplainFiles } from "../middleware/complainFileUploadMiddleware.js";
+import {
+  UpdateSource,
+  createSource,
+  deleteSource,
+  getAllSource,
+} from "../controllers/fontOffice/SetupFrontOffice/SourceControllers.js";
+import {
+  UpdateReference,
+  createReference,
+  deleteReference,
+  getAllReference,
+} from "../controllers/fontOffice/SetupFrontOffice/ReferenceControllers.js";
+import {
+  UpdatePurpose,
+  createPurpose,
+  deletePurpose,
+  getAllPurpose,
+} from "../controllers/fontOffice/SetupFrontOffice/PurposeControllers.js";
+import {
+  UpdateComplainType,
+  createComplainType,
+  deleteComplainType,
+  getAllComplainType,
+} from "../controllers/fontOffice/SetupFrontOffice/ComplainTypeControllers.js";
 
 const router = Router();
 
@@ -96,4 +120,31 @@ router.get("/complain/:id", getComplain);
 router.get("/complain", getAllComplain);
 /* End */
 
+/* source */
+// router.post("/source", createSource);
+// router.delete("/source/:id", deleteSource);
+// router.patch("/source/:id", UpdateSource);
+// router.get("/source", getAllSource);
+/* End */
+
+/* reference */
+// router.post("/reference", createReference);
+// router.delete("/reference/:id", deleteReference);
+// router.patch("/reference/:id", UpdateReference);
+// router.get("/reference", getAllReference);
+/* End */
+
+/* purpose */
+// router.post("/purpose", createPurpose);
+// router.delete("/purpose/:id", deletePurpose);
+// router.patch("/purpose/:id", UpdatePurpose);
+// router.get("/purpose", getAllPurpose);
+/* End */
+
+/* complain-type */
+// router.post("/complain-type", createComplainType);
+// router.delete("/complain-type/:id", deleteComplainType);
+// router.patch("/complain-type/:id", UpdateComplainType);
+// router.get("/complain-type", getAllComplainType);
+/* End */
 export default router;
