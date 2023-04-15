@@ -6,6 +6,7 @@ import morgan from "morgan";
 import path, { join } from "path";
 import connectDB from "./configs/databaseConfigs.js";
 import userRoutes from "./routes/userRoutes.js";
+import fontOfficeRoutes from "./routes/fontOfficeRoutes.js";
 
 // Application
 const app = express();
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 
 // users routes
 app.use("/api/v1/auth/", userRoutes);
+app.use("/api/v1/font-office/", fontOfficeRoutes);
 
 // listen to port
 const PORT = process.env.PORT || 5000;
