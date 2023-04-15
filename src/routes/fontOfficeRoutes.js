@@ -6,12 +6,12 @@ import {
   getAllAdmissionEnquiries,
 } from "../controllers/fontOffice/AdmissionEnquiryControllers.js";
 import {
-  UpdateVisitorBook,
-  createVisitorBook,
-  deleteVisitorBook,
-  getAllVisitorBooks,
-  getVisitorBook,
-} from "../controllers/fontOffice/visitorBookControllers.js";
+  UpdateComplain,
+  createComplain,
+  deleteComplain,
+  getAllComplain,
+  getComplain,
+} from "../controllers/fontOffice/ComplainControllers.js";
 import {
   UpdatePhoneCallLog,
   createPhoneCallLog,
@@ -34,12 +34,13 @@ import {
   getPostalReceive,
 } from "../controllers/fontOffice/PostalReceiveContgrollers.js";
 import {
-  UpdateComplain,
-  createComplain,
-  deleteComplain,
-  getAllComplain,
-  getComplain,
-} from "../controllers/fontOffice/ComplainControllers.js";
+  UpdateVisitorBook,
+  createVisitorBook,
+  deleteVisitorBook,
+  getAllVisitorBooks,
+  getVisitorBook,
+} from "../controllers/fontOffice/visitorBookControllers.js";
+import { uploadComplainFiles } from "../middleware/complainFileUploadMiddleware.js";
 
 const router = Router();
 
@@ -82,8 +83,13 @@ router.patch("/postal-receive/:id", UpdatePostalReceive);
 router.get("/postal-receive/:id", getPostalReceive);
 router.get("/postal-receive", getAllPostalReceive);
 /* End */
+
 /* complain */
-router.post("/complain", createComplain);
+router.post(
+  "/complain",
+  uploadComplainFiles.single("attachDocument"),
+  createComplain
+);
 router.delete("/complain/:id", deleteComplain);
 router.patch("/complain/:id", UpdateComplain);
 router.get("/complain/:id", getComplain);

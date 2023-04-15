@@ -5,8 +5,8 @@ import express from "express";
 import morgan from "morgan";
 import path, { join } from "path";
 import connectDB from "./configs/databaseConfigs.js";
-import userRoutes from "./routes/userRoutes.js";
 import fontOfficeRoutes from "./routes/fontOfficeRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 // Application
 const app = express();
@@ -32,6 +32,8 @@ app.get("/", (req, res) => {
 app.use("/api/v1/auth/", userRoutes);
 
 app.use("/api/v1/font-office/", fontOfficeRoutes);
+
+// Handle Not valid routes
 app.use("*", (req, res) => {
   return res.send("Invalid Route!");
 });

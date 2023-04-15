@@ -13,7 +13,7 @@ const createComplain = async (req, res) => {
       actionTaken: req.body.actionTaken,
       assigned: req.body.assigned,
       note: req.body.note,
-      attachDocument: req.body.attachDocument,
+      attachDocument: `${req.file.filename}`,
       date: req.body.date,
     });
     await result.validate();
