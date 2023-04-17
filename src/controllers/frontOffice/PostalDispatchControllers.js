@@ -1,4 +1,4 @@
-import PostalDispatchModel from "../../models/fontOffice/PostalDispatch.js";
+import PostalDispatchModel from "../../models/frontOffice/PostalDispatch.js";
 const createPostalDispatch = async (req, res) => {
   try {
     const result = new PostalDispatchModel({

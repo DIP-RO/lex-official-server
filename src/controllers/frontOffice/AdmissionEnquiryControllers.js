@@ -1,4 +1,4 @@
-import AdmissionEnquiryModel from "../../models/fontOffice/AdmissionEnquiry.js";
+import AdmissionEnquiryModel from "../../models/frontOffice/AdmissionEnquiry.js";
 
 const createAdmissionEnquiry = async (req, res) => {
   try {

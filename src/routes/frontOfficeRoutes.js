@@ -4,67 +4,67 @@ import {
   createAdmissionEnquiry,
   deleteAdmissionEnquiry,
   getAllAdmissionEnquiries,
-} from "../controllers/fontOffice/AdmissionEnquiryControllers.js";
+} from "../controllers/frontOffice/AdmissionEnquiryControllers.js";
 import {
   UpdateComplain,
   createComplain,
   deleteComplain,
   getAllComplain,
   getComplain,
-} from "../controllers/fontOffice/ComplainControllers.js";
+} from "../controllers/frontOffice/ComplainControllers.js";
 import {
   UpdatePhoneCallLog,
   createPhoneCallLog,
   deletePhoneCallLog,
   getAllPhoneCallLogs,
   getPhoneCallLog,
-} from "../controllers/fontOffice/PhoneCallLogControllers.js";
+} from "../controllers/frontOffice/PhoneCallLogControllers.js";
 import {
   UpdatePostalDispatch,
   createPostalDispatch,
   deletePostalDispatch,
   getAllPostalDispatch,
   getPostalDispatch,
-} from "../controllers/fontOffice/PostalDispatchControllers.js";
+} from "../controllers/frontOffice/PostalDispatchControllers.js";
 import {
   UpdatePostalReceive,
   createPostalReceive,
   deletePostalReceive,
   getAllPostalReceive,
   getPostalReceive,
-} from "../controllers/fontOffice/PostalReceiveContgrollers.js";
+} from "../controllers/frontOffice/PostalReceiveContgrollers.js";
 import {
   UpdateVisitorBook,
   createVisitorBook,
   deleteVisitorBook,
   getAllVisitorBooks,
   getVisitorBook,
-} from "../controllers/fontOffice/visitorBookControllers.js";
+} from "../controllers/frontOffice/visitorBookControllers.js";
 import { uploadComplainFiles } from "../middleware/complainFileUploadMiddleware.js";
 import {
   UpdateSource,
   createSource,
   deleteSource,
   getAllSource,
-} from "../controllers/fontOffice/SetupFrontOffice/SourceControllers.js";
+} from "../controllers/frontOffice/SetupFrontOffice/SourceControllers.js";
 import {
   UpdateReference,
   createReference,
   deleteReference,
   getAllReference,
-} from "../controllers/fontOffice/SetupFrontOffice/ReferenceControllers.js";
+} from "../controllers/frontOffice/SetupFrontOffice/ReferenceControllers.js";
 import {
   UpdatePurpose,
   createPurpose,
   deletePurpose,
   getAllPurpose,
-} from "../controllers/fontOffice/SetupFrontOffice/PurposeControllers.js";
+} from "../controllers/frontOffice/SetupFrontOffice/PurposeControllers.js";
 import {
   UpdateComplainType,
   createComplainType,
   deleteComplainType,
   getAllComplainType,
-} from "../controllers/fontOffice/SetupFrontOffice/ComplainTypeControllers.js";
+} from "../controllers/frontOffice/SetupFrontOffice/ComplainTypeControllers.js";
 
 const router = Router();
 
@@ -121,30 +121,30 @@ router.get("/complain", getAllComplain);
 /* End */
 
 /* source */
-// router.post("/source", createSource);
-// router.delete("/source/:id", deleteSource);
-// router.patch("/source/:id", UpdateSource);
-// router.get("/source", getAllSource);
+router.post("/source", createSource);
+router.delete("/source/:id", deleteSource);
+router.patch("/source/:id", UpdateSource);
+router.get("/source", getAllSource);
 /* End */
 
 /* reference */
-// router.post("/reference", createReference);
-// router.delete("/reference/:id", deleteReference);
-// router.patch("/reference/:id", UpdateReference);
-// router.get("/reference", getAllReference);
+router.post("/reference", createReference);
+router.delete("/reference/:id", deleteReference);
+router.patch("/reference/:id", UpdateReference);
+router.get("/reference", getAllReference);
 /* End */
 
 /* purpose */
-// router.post("/purpose", createPurpose);
-// router.delete("/purpose/:id", deletePurpose);
-// router.patch("/purpose/:id", UpdatePurpose);
-// router.get("/purpose", getAllPurpose);
+router.post("/purpose", createPurpose);
+router.delete("/purpose/:id", deletePurpose);
+router.patch("/purpose/:id", UpdatePurpose);
+router.get("/purpose", getAllPurpose);
 /* End */
 
 /* complain-type */
-// router.post("/complain-type", createComplainType);
-// router.delete("/complain-type/:id", deleteComplainType);
-// router.patch("/complain-type/:id", UpdateComplainType);
-// router.get("/complain-type", getAllComplainType);
+router.post("/complain-type", createComplainType);
+router.delete("/complain-type/:id", deleteComplainType);
+router.patch("/complain-type/:id", UpdateComplainType);
+router.get("/complain-type", getAllComplainType);
 /* End */
 export default router;

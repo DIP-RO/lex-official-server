@@ -1,10 +1,10 @@
-import PurposeModel from "../../../models/fontOffice/SetupFrontOffice/Purpose.js";
+import StudentHouseModel from "../../models/StudentInformation/StudentHouse.js";
 
-const createPurpose = async (req, res) => {
+const createStudentHouse = async (req, res) => {
   try {
-    const result = new PurposeModel({
+    const result = new StudentHouseModel({
       school: req.body.school,
-      purpose: req.body.purpose,
+      name: req.body.name,
       description: req.body.description,
     });
     await result.validate();
@@ -15,14 +15,14 @@ const createPurpose = async (req, res) => {
   }
 };
 
-const deletePurpose = async (req, res) => {
+const deleteStudentHouse = async (req, res) => {
   try {
-    if (!(await PurposeModel.findById(req.params.id))) {
+    if (!(await StudentHouseModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await PurposeModel.findByIdAndDelete(req.params.id);
+    await StudentHouseModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -32,9 +32,9 @@ const deletePurpose = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdatePurpose = async (req, res) => {
+const UpdateStudentHouse = async (req, res) => {
   try {
-    const visitorBook = await PurposeModel.findByIdAndUpdate(
+    const visitorBook = await StudentHouseModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -48,13 +48,18 @@ const UpdatePurpose = async (req, res) => {
   }
 };
 
-const getAllPurpose = async (req, res) => {
+const getAllStudentHouse = async (req, res) => {
   try {
-    const admissionEnquiries = await PurposeModel.find();
+    const admissionEnquiries = await StudentHouseModel.find();
     return res.send(admissionEnquiries);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-export { createPurpose, deletePurpose, UpdatePurpose, getAllPurpose };
+export {
+  createStudentHouse,
+  deleteStudentHouse,
+  UpdateStudentHouse,
+  getAllStudentHouse,
+};

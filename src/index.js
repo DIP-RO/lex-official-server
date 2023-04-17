@@ -5,7 +5,7 @@ import express from "express";
 import morgan from "morgan";
 import path, { join } from "path";
 import connectDB from "./configs/databaseConfigs.js";
-import fontOfficeRoutes from "./routes/fontOfficeRoutes.js";
+import fontOfficeRoutes from "./routes/frontOfficeRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
 // Application

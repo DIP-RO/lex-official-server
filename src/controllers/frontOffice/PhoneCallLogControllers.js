@@ -1,4 +1,4 @@
-import PhoneCallLogModel from "../../models/fontOffice/PhoneCallLog.js";
+import PhoneCallLogModel from "../../models/frontOffice/PhoneCallLog.js";
 
 const createPhoneCallLog = async (req, res) => {
   try {

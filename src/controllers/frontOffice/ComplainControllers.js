@@ -1,4 +1,4 @@
-import complainModel from "../../models/fontOffice/Complain.js";
+import complainModel from "../../models/frontOffice/Complain.js";
 
 const createComplain = async (req, res) => {
   try {

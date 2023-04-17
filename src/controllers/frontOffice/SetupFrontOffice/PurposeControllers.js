@@ -1,10 +1,10 @@
-import SourceModel from "../../../models/fontOffice/SetupFrontOffice/Source.js";
+import PurposeModel from "../../../models/frontOffice/SetupFrontOffice/Purpose.js";
 
-const createSource = async (req, res) => {
+const createPurpose = async (req, res) => {
   try {
-    const result = new SourceModel({
+    const result = new PurposeModel({
       school: req.body.school,
-      source: req.body.Source,
+      purpose: req.body.purpose,
       description: req.body.description,
     });
     await result.validate();
@@ -15,14 +15,14 @@ const createSource = async (req, res) => {
   }
 };
 
-const deleteSource = async (req, res) => {
+const deletePurpose = async (req, res) => {
   try {
-    if (!(await SourceModel.findById(req.params.id))) {
+    if (!(await PurposeModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await SourceModel.findByIdAndDelete(req.params.id);
+    await PurposeModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -32,9 +32,9 @@ const deleteSource = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateSource = async (req, res) => {
+const UpdatePurpose = async (req, res) => {
   try {
-    const visitorBook = await SourceModel.findByIdAndUpdate(
+    const visitorBook = await PurposeModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -48,13 +48,13 @@ const UpdateSource = async (req, res) => {
   }
 };
 
-const getAllSource = async (req, res) => {
+const getAllPurpose = async (req, res) => {
   try {
-    const admissionEnquiries = await SourceModel.find();
+    const admissionEnquiries = await PurposeModel.find();
     return res.send(admissionEnquiries);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-export { createSource, deleteSource, UpdateSource, getAllSource };
+export { createPurpose, deletePurpose, UpdatePurpose, getAllPurpose };

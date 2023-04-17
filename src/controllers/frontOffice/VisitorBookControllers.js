@@ -1,4 +1,4 @@
-import VisitorBookModel from "../../models/fontOffice/VisitorBook.js";
+import VisitorBookModel from "../../models/frontOffice/VisitorBook.js";
 
 const createVisitorBook = async (req, res) => {
   try {

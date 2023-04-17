@@ -1,4 +1,4 @@
-import PostalReceiveModel from "../../models/fontOffice/PostalReceive.js";
+import PostalReceiveModel from "../../models/frontOffice/PostalReceive.js";
 
 const createPostalReceive = async (req, res) => {
   try {

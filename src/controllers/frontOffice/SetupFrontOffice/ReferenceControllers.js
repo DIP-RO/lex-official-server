@@ -1,4 +1,4 @@
-import ReferenceModel from "../../../models/fontOffice/SetupFrontOffice/Reference.js";
+import ReferenceModel from "../../../models/frontOffice/SetupFrontOffice/Reference.js";
 
 const createReference = async (req, res) => {
   try {

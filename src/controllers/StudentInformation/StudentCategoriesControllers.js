@@ -1,11 +1,10 @@
-import ComplaintTypeModel from "../../../models/fontOffice/SetupFrontOffice/ComplaintType.js";
+import StudentCategoriesModel from "../../models/StudentInformation/StudentCategories.js";
 
-const createComplainType = async (req, res) => {
+const createStudentCategories = async (req, res) => {
   try {
-    const result = new ComplaintTypeModel({
+    const result = new StudentCategoriesModel({
       school: req.body.school,
-      complainType: req.body.ComplainType,
-      description: req.body.description,
+      category: req.body.category,
     });
     await result.validate();
     await result.save();
@@ -15,14 +14,14 @@ const createComplainType = async (req, res) => {
   }
 };
 
-const deleteComplainType = async (req, res) => {
+const deleteStudentCategories = async (req, res) => {
   try {
-    if (!(await ComplaintTypeModel.findById(req.params.id))) {
+    if (!(await StudentCategoriesModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await ComplaintTypeModel.findByIdAndDelete(req.params.id);
+    await StudentCategoriesModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -32,9 +31,9 @@ const deleteComplainType = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateComplainType = async (req, res) => {
+const UpdateStudentCategories = async (req, res) => {
   try {
-    const visitorBook = await ComplaintTypeModel.findByIdAndUpdate(
+    const visitorBook = await StudentCategoriesModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -48,9 +47,9 @@ const UpdateComplainType = async (req, res) => {
   }
 };
 
-const getAllComplainType = async (req, res) => {
+const getAllStudentCategories = async (req, res) => {
   try {
-    const admissionEnquiries = await ComplaintTypeModel.find();
+    const admissionEnquiries = await StudentCategoriesModel.find();
     return res.send(admissionEnquiries);
   } catch (error) {
     return res.status(400).send(error);
@@ -58,8 +57,8 @@ const getAllComplainType = async (req, res) => {
 };
 
 export {
-  createComplainType,
-  deleteComplainType,
-  UpdateComplainType,
-  getAllComplainType,
+  createStudentCategories,
+  deleteStudentCategories,
+  UpdateStudentCategories,
+  getAllStudentCategories,
 };
