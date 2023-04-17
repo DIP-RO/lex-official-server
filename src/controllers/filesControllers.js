@@ -6,9 +6,12 @@ const complainFiles = async (req, res) => {
   try {
     const fileName = req.params.fileName;
     const normalizedPath = __dirname.replace(/^\/+/, "");
+
     console.log(normalizedPath);
     const filePath = path.join(
       normalizedPath,
+      "..",
+      "..",
       "uploads",
       "files",
       "complain_box",
