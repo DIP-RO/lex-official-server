@@ -4,13 +4,15 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname);
 // serve products images
 const complainFiles = async (req, res) => {
   try {
-    const imageName = req.params.fileName;
+    const fileName = req.params.fileName;
+    const normalizedPath = __dirname.replace(/^\/+/, "");
+    console.log(normalizedPath);
     const filePath = path.join(
-      __dirname,
+      normalizedPath,
       "uploads",
       "files",
       "complain_box",
-      imageName
+      fileName
     );
     console.log(filePath);
     return res.sendFile(filePath);
