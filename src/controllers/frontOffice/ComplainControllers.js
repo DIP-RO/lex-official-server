@@ -13,7 +13,9 @@ const createComplain = async (req, res) => {
       actionTaken: req.body.actionTaken,
       assigned: req.body.assigned,
       note: req.body.note,
-      attachDocument: `${req.file.filename}`,
+      attachDocument: `http://localhost:5000/complain/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
       date: req.body.date,
     });
     await result.validate();

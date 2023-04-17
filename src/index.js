@@ -5,6 +5,8 @@ import express from "express";
 import morgan from "morgan";
 import path, { join } from "path";
 import connectDB from "./configs/databaseConfigs.js";
+import frontOfficeRoutes from "./routes/frontOfficeRoutes.js";
+import { complainFiles } from "./controllers/filesControllers.js";
 import fontOfficeRoutes from "./routes/frontOfficeRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
@@ -31,8 +33,9 @@ app.get("/", (req, res) => {
 // users routes
 app.use("/api/v1/auth/", userRoutes);
 
-app.use("/api/v1/font-office/", fontOfficeRoutes);
-
+app.use("/api/v1/font-office/", frontOfficeRoutes);
+// files and images path:
+app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
 app.use("*", (req, res) => {
   return res.send("Invalid Route!");
