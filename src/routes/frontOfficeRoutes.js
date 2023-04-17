@@ -33,26 +33,13 @@ import {
   getAllPostalReceive,
   getPostalReceive,
 } from "../controllers/frontOffice/PostalReceiveContgrollers.js";
+
 import {
-  UpdateVisitorBook,
-  createVisitorBook,
-  deleteVisitorBook,
-  getAllVisitorBooks,
-  getVisitorBook,
-} from "../controllers/frontOffice/visitorBookControllers.js";
-import { uploadComplainFiles } from "../middleware/complainFileUploadMiddleware.js";
-import {
-  UpdateSource,
-  createSource,
-  deleteSource,
-  getAllSource,
-} from "../controllers/frontOffice/SetupFrontOffice/SourceControllers.js";
-import {
-  UpdateReference,
-  createReference,
-  deleteReference,
-  getAllReference,
-} from "../controllers/frontOffice/SetupFrontOffice/ReferenceControllers.js";
+  UpdateComplainType,
+  createComplainType,
+  deleteComplainType,
+  getAllComplainType,
+} from "../controllers/frontOffice/SetupFrontOffice/ComplainTypeControllers.js";
 import {
   UpdatePurpose,
   createPurpose,
@@ -60,11 +47,25 @@ import {
   getAllPurpose,
 } from "../controllers/frontOffice/SetupFrontOffice/PurposeControllers.js";
 import {
-  UpdateComplainType,
-  createComplainType,
-  deleteComplainType,
-  getAllComplainType,
-} from "../controllers/frontOffice/SetupFrontOffice/ComplainTypeControllers.js";
+  UpdateReference,
+  createReference,
+  deleteReference,
+  getAllReference,
+} from "../controllers/frontOffice/SetupFrontOffice/ReferenceControllers.js";
+import {
+  UpdateSource,
+  createSource,
+  deleteSource,
+  getAllSource,
+} from "../controllers/frontOffice/SetupFrontOffice/SourceControllers.js";
+import { uploadComplainFiles } from "../middleware/complainFileUploadMiddleware.js";
+import {
+  UpdateVisitorBook,
+  createVisitorBook,
+  deleteVisitorBook,
+  getAllVisitorBooks,
+  getVisitorBook,
+} from "../controllers/frontOffice/VisitorBookControllers.js";
 
 const router = Router();
 
@@ -82,7 +83,7 @@ router.delete("/visitor-book/:id", deleteVisitorBook);
 router.patch("/visitor-book/:id", UpdateVisitorBook);
 router.get("/visitor-book/:id", getVisitorBook);
 router.get("/visitor-book", getAllVisitorBooks);
-/* End */
+// /* End */
 
 /* phone log */
 router.post("/phone-call-log", createPhoneCallLog);
