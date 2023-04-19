@@ -1,22 +1,22 @@
 import { Router } from "express";
 import {
+  UpdateHostel,
+  createHostel,
+  deleteHostel,
+  getAllHostel,
+} from "../controllers/Hostel/HostelControllers.js";
+import {
   UpdateHostelRoom,
   createHostelRoom,
   deleteHostelRoom,
   getAllHostelRoom,
-} from "../controllers/Hostel/HostelRoomsControllers";
+} from "../controllers/Hostel/HostelRoomsControllers.js";
 import {
   UpdateRoomType,
   createRoomType,
   deleteRoomType,
   getAllRoomType,
-} from "../controllers/Hostel/RoomTypeControllers";
-import {
-  UpdateHostel,
-  createHostel,
-  deleteHostel,
-  getAllHostel,
-} from "../controllers/Hostel/HostelControllers";
+} from "../controllers/Hostel/RoomTypeControllers.js";
 
 const router = Router();
 
