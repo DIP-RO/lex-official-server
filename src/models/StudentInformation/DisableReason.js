@@ -5,11 +5,6 @@ const DisableReasonSchema = new mongoose.Schema({
     type: String,
     required: [true, "school id required!"],
   },
-  DisableReason: {
-    type: String,
-    required: [true, "DisableReason required!"],
-  },
-
   created_at: {
     type: Date,
     required: true,
@@ -19,6 +14,10 @@ const DisableReasonSchema = new mongoose.Schema({
     type: Date,
     required: true,
     default: Date.now,
+  },
+  DisableReason: {
+    type: String,
+    required: [true, "disable reason required!"],
   },
 });
 

@@ -5,14 +5,6 @@ const StudentHouseSchema = new mongoose.Schema({
     type: String,
     required: [true, "school id required!"],
   },
-  name: {
-    type: String,
-    required: [true, "name required!"],
-  },
-  description: {
-    type: String,
-    required: false,
-  },
   created_at: {
     type: Date,
     required: true,
@@ -22,6 +14,14 @@ const StudentHouseSchema = new mongoose.Schema({
     type: Date,
     required: true,
     default: Date.now,
+  },
+  name: {
+    type: String,
+    required: [true, "name required!"],
+  },
+  description: {
+    type: String,
+    required: false,
   },
 });
 
