@@ -1,25 +1,18 @@
-import AdmissionEnquiryModel from "../../models/frontOffice/AdmissionEnquiry.js";
+import AddItemStockModel from "../../models/Inventory/AddItemStock.js";
 
 const createAdmissionEnquiry = async (req, res) => {
   try {
-    const result = new AdmissionEnquiryModel({
+    const result = new AddItemStockModel({
       school: req.body.school,
-      name: req.body.name,
-      phone: req.body.phone,
-      email: req.body.email,
-      address: req.body.address,
-      class: req.body.class,
-      numberOfChild: req.body.numberOfChild,
+      item: req.body.item,
+      itemCategory: req.body.itemCategory,
+      supplier: req.body.supplier,
+      store: req.body.store,
+      purchasePrice: req.body.purchasePrice,
       date: req.body.date,
-      assigned: req.body.assigned,
-      note: req.body.note,
+      attachDocument: req.body.attachDocument,
+      quantity: req.body.quantity,
       description: req.body.description,
-      reference: req.body.reference,
-      source: req.body.source,
-      enquiryData: req.body.enquiryData,
-      lastFollowUpData: req.body.lastFollowUpData,
-      nextFollowUpData: req.body.nextFollowUpData,
-      status: req.body.status,
     });
     await result.validate();
     await result.save();
@@ -31,12 +24,12 @@ const createAdmissionEnquiry = async (req, res) => {
 
 const deleteAdmissionEnquiry = async (req, res) => {
   try {
-    if (!(await AdmissionEnquiryModel.findById(req.params.id))) {
+    if (!(await AddItemStockModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await AdmissionEnquiryModel.findByIdAndDelete(req.params.id);
+    await AddItemStockModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -48,7 +41,7 @@ const deleteAdmissionEnquiry = async (req, res) => {
 };
 const UpdateAdmissionEnquiry = async (req, res) => {
   try {
-    const visitorBook = await AdmissionEnquiryModel.findByIdAndUpdate(
+    const visitorBook = await AddItemStockModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -62,10 +55,10 @@ const UpdateAdmissionEnquiry = async (req, res) => {
   }
 };
 
-const getAllAdmissionEnquiries = async (req, res) => {
+const getAllAddItemStock = async (req, res) => {
   try {
-    const admissionEnquiries = await AdmissionEnquiryModel.find();
-    return res.send(admissionEnquiries);
+    const AddItemStock = await AddItemStockModel.find();
+    return res.send(AddItemStock);
   } catch (error) {
     return res.status(400).send(error);
   }
@@ -75,7 +68,5 @@ export {
   createAdmissionEnquiry,
   deleteAdmissionEnquiry,
   UpdateAdmissionEnquiry,
-  getAllAdmissionEnquiries,
+  getAllAddItemStock,
 };
-
-

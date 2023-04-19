@@ -1,17 +1,17 @@
 import mongoose from "mongoose";
 
-const BulkDeleteSchema = new mongoose.Schema({
+const ItemCategorySchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
   },
-  complaintType: {
+  itemCategory: {
     type: String,
-    required: [true, "complaintType required!"],
+    required: [true, "itemCategory required!"],
   },
   description: {
     type: String,
-    required: [true, "description required!"],
+    required: [true, "Description required!"],
   },
   created_at: {
     type: Date,
@@ -25,6 +25,6 @@ const BulkDeleteSchema = new mongoose.Schema({
   },
 });
 
-const BulkDeleteModel = mongoose.model("BulkDelete", BulkDeleteSchema);
+const ItemCategoryModel = mongoose.model("ItemCategory", ItemCategorySchema);
 
-export default BulkDeleteModel;
+export default ItemCategoryModel;

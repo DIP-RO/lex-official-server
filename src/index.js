@@ -7,6 +7,8 @@ import path, { join } from "path";
 import connectDB from "./configs/databaseConfigs.js";
 import { complainFiles } from "./controllers/filesControllers.js";
 import frontOfficeRoutes from "./routes/frontOfficeRoutes.js";
+import InventoryRoutes from "./routes/InventoryRoutes.js";
+import hostelRoutes from "./routes/hostelRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
 // Application
@@ -33,6 +35,8 @@ app.get("/", (req, res) => {
 app.use("/api/v1/auth/", userRoutes);
 
 app.use("/api/v1/font-office/", frontOfficeRoutes);
+app.use("/api/v1/inventory/", InventoryRoutes);
+app.use("/api/v1/hostel/", hostelRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
