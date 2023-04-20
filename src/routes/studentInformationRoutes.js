@@ -5,19 +5,19 @@ import {
   createDisableReason,
   deleteDisableReason,
   getAllDisableReasons,
-} from "../controllers/StudentInformation/DisableReasonControllers";
+} from "../controllers/StudentInformation/DisableReasonControllers.js";
 import {
   UpdateStudentHouse,
   createStudentHouse,
   deleteStudentHouse,
   getAllStudentHouse,
-} from "../controllers/StudentInformation/StudentHouseControllers";
+} from "../controllers/StudentInformation/StudentHouseControllers.js";
 import {
   UpdateStudentCategories,
   createStudentCategories,
   deleteStudentCategories,
   getAllStudentCategories,
-} from "../controllers/StudentInformation/StudentCategoriesControllers";
+} from "../controllers/StudentInformation/StudentCategoriesControllers.js";
 
 // router
 const router = Router();

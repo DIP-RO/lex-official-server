@@ -4,7 +4,7 @@ const createComplainType = async (req, res) => {
   try {
     const result = new ComplaintTypeModel({
       school: req.body.school,
-      complainType: req.body.ComplainType,
+      complaintType: req.body.ComplainType,
       description: req.body.description,
     });
     await result.validate();

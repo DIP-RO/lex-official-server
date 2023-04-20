@@ -34,7 +34,7 @@ const courseSettingSchema = new mongoose.Schema({
 });
 
 const courseSettingModel = mongoose.model(
-  "Courses-Category",
+  "setting",
   courseSettingSchema
 );
 

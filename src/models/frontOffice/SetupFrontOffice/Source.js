@@ -7,7 +7,7 @@ const SourceSchema = new mongoose.Schema({
   },
   source: {
     type: String,
-    required: [true, "purpose required!"],
+    required: [true, "source required!"],
   },
   description: {
     type: String,
