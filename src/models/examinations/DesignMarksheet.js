@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const admitCardDesignSchema = new mongoose.Schema({
+const designMarksheetSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -19,14 +19,6 @@ const admitCardDesignSchema = new mongoose.Schema({
     type: String,
     required: [true, "template required!"],
   },
-  heading: {
-    type: String,
-    required: [true, "heading required!"],
-  },
-  title: {
-    type: String,
-    required: [true, "title required!"],
-  },
   examName: {
     type: String,
     required: [true, "exam name required!"],
@@ -39,6 +31,18 @@ const admitCardDesignSchema = new mongoose.Schema({
     type: String,
     required: [true, "exam center required!"],
   },
+  bodyText: {
+    type: String,
+    required: [true, "body text required!"],
+  },
+  printDate: {
+    type: Date,
+    required: false,
+  },
+  headerImage: {
+    type: String,
+    required: [true, "header image required!"],
+  },
   leftSideLogo: {
     type: String,
     required: [true, "left logo required!"],
@@ -47,7 +51,15 @@ const admitCardDesignSchema = new mongoose.Schema({
     type: String,
     required: [true, "right logo required!"],
   },
-  sign: {
+  leftSign: {
+    type: String,
+    required: [true, "sign required!"],
+  },
+  middleSign: {
+    type: String,
+    required: [true, "sign required!"],
+  },
+  rightSign: {
     type: String,
     required: [true, "sign required!"],
   },
@@ -67,7 +79,7 @@ const admitCardDesignSchema = new mongoose.Schema({
     type: Boolean,
     required: false,
   },
-  dob: {
+  examSession: {
     type: Boolean,
     required: false,
   },
@@ -75,15 +87,15 @@ const admitCardDesignSchema = new mongoose.Schema({
     type: Boolean,
     required: false,
   },
+  division: {
+    type: Boolean,
+    required: false,
+  },
+  rank: {
+    type: Boolean,
+    required: false,
+  },
   roll: {
-    type: Boolean,
-    required: false,
-  },
-  address: {
-    type: Boolean,
-    required: false,
-  },
-  gender: {
     type: Boolean,
     required: false,
   },
@@ -99,11 +111,19 @@ const admitCardDesignSchema = new mongoose.Schema({
     type: Boolean,
     required: false,
   },
+  dob: {
+    type: Boolean,
+    required: false,
+  },
+  remark: {
+    type: Boolean,
+    required: false,
+  },
 });
 
-const admitCardDesignModel = mongoose.model(
-  "admitCardDesign",
-  admitCardDesignSchema
+const designMarksheetModel = mongoose.model(
+  "designMarksheet",
+  designMarksheetSchema
 );
 
-export default admitCardDesignModel;
+export default designMarksheetModel;
