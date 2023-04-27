@@ -11,6 +11,7 @@ import InventoryRoutes from "./routes/InventoryRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import studentDetailsRoutes from "./routes/studentInformationRoutes.js";
+import feesCollectionRoutes from "./routes/feesCollectionRoutes.js";
 
 // Application
 const app = express();
@@ -39,6 +40,7 @@ app.use("/api/v1/font-office/", frontOfficeRoutes);
 app.use("/api/v1/inventory/", InventoryRoutes);
 app.use("/api/v1/hostel/", hostelRoutes);
 app.use("/api/v1/student-details/", studentDetailsRoutes);
+app.use("/api/v1/fees-collection/", feesCollectionRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
