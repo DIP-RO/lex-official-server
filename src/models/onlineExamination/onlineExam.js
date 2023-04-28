@@ -72,11 +72,11 @@ const onlineExamSchema = new mongoose.Schema({
     required: false,
   },
   description: {
-    type: Boolean,
+    type: String,
     required: [true, "description required!"],
   },
 });
 
-const onlineExamModel = mongoose.model("onlineExam", onlineExamSchema);
+const OnlineExamModel = mongoose.model("onlineExam", onlineExamSchema);
 
-export default onlineExamModel;
+export default OnlineExamModel;

@@ -41,6 +41,6 @@ const questionBankSchema = new mongoose.Schema({
   },
 });
 
-const questionBankModel = mongoose.model("questionBank", questionBankSchema);
+const QuestionBankModel = mongoose.model("questionBank", questionBankSchema);
 
-export default questionBankModel;
+export default QuestionBankModel;
