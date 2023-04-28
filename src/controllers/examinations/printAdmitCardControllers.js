@@ -5,9 +5,7 @@ const createPrintAdmitCard = async (req, res) => {
     const result = new PrintAdmitCardModel({
       school: req.body.school,
       name: req.body.name,
-      discountCode: req.body.discountCode,
-      discountType: req.body.discountType,
-      discount: req.body.discount,
+      feesCode: req.body.feesCode,
       description: req.body.description,
     });
     await result.validate();
