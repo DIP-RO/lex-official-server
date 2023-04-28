@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const fessDiscountSchema = new mongoose.Schema({
+const feesDiscountSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -37,6 +37,6 @@ const fessDiscountSchema = new mongoose.Schema({
   },
 });
 
-const fessDiscountModel = mongoose.model("DisableReason", fessDiscountSchema);
+const feesDiscountModel = mongoose.model("feesDiscount", feesDiscountSchema);
 
-export default fessDiscountModel;
+export default feesDiscountModel;
