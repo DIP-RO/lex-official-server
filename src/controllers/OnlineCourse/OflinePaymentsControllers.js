@@ -1,4 +1,4 @@
-import offlinePaymentModel from "../../models/OnlineCourse/OflinePayments.js";
+import offlinePaymentModel from "../../models/onlineCourse/OflinePayments";
 
 
 const createOfflinePayment = async (req, res) => {

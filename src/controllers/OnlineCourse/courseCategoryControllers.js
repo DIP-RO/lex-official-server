@@ -1,4 +1,4 @@
-import courseCategoryModel from "../../models/OnlineCourse/courseCategory.js";
+import courseCategoryModel from "../../models/onlineCourse/courseCategory";
 
 const createCourseCategory = async (req, res) => {
   try {

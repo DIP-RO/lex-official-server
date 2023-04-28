@@ -1,5 +1,4 @@
-
-import courseSettingModel from "../../models/OnlineCourse/setting.js";
+import courseSettingModel from "../../models/onlineCourse/setting";
 
 
 const createSetting = async (req, res) => {
