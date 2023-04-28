@@ -28,7 +28,7 @@ const fessMasterSchema = new mongoose.Schema({
     required: [true, "due date required!"],
   },
   amount: {
-    type: Number,
+    type: String,
     required: [true, "fees amount required!"],
   },
   fineType: {
