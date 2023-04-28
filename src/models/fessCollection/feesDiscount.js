@@ -37,6 +37,6 @@ const fessDiscountSchema = new mongoose.Schema({
   },
 });
 
-const fessDiscountModel = mongoose.model("DisableReason", fessDiscountSchema);
+const fessDiscountModel = mongoose.model("fessDiscount", fessDiscountSchema);
 
 export default fessDiscountModel;

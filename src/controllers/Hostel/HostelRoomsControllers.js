@@ -4,9 +4,11 @@ const createHostelRoom = async (req, res) => {
   try {
     const result = new HostelRoomModel({
       school: req.body.school,
-      item: req.body.item,
-      itemCategory: req.body.itemCategory,
-      unit: req.body.unit,
+      name: req.body.name,
+      hostelRoom: req.body.hostelRoom,
+      roomType: req.body.roomType,
+      noOfBed: req.body.noOfBed,
+      constPerBed: req.body.constPerBed,
       description: req.body.description,
     });
     await result.validate();

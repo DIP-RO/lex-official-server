@@ -4,9 +4,7 @@ const createRoomType = async (req, res) => {
   try {
     const result = new RoomTypeModel({
       school: req.body.school,
-      item: req.body.item,
-      itemCategory: req.body.itemCategory,
-      unit: req.body.unit,
+      roomType: req.body.roomType,
       description: req.body.description,
     });
     await result.validate();
