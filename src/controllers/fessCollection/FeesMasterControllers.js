@@ -7,8 +7,9 @@ const createFeesMaster = async (req, res) => {
       feesGroup: req.body.feesGroup,
       dueDate: req.body.dueDate,
       amount: req.body.amount,
-      fineType: req.body.fineType,
+      feesType: req.body.feesType,
       fineAmount: req.body.fineAmount,
+      fineType: req.body.fineType,
     });
     await result.validate();
     await result.save();
