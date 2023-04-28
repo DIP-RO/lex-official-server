@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { UpdateCourseCategory, createCourseCategory, deleteCourseCategory, getAllCourseCategory } from "../controllers/OnlineCourse/courseCategoryControllers";
-import { UpdateOfflinePayment, createOfflinePayment, deleteOfflinePayment, getAllOfflinePayment } from "../controllers/OnlineCourse/OflinePaymentsControllers";
-import { UpdateOnlineCourse, createOnlineCourse, deleteOnlineCourse, getAllOnlineCourse } from "../controllers/OnlineCourse/OnlineCourseControllers";
-import { UpdateSetting, createSetting, deleteSetting, getAllSetting } from "../controllers/OnlineCourse/settingControllers";
+import { UpdateCourseCategory, createCourseCategory, deleteCourseCategory, getAllCourseCategory } from "../controllers/OnlineCourse/courseCategoryControllers.js";
+import { UpdateOfflinePayment, createOfflinePayment, deleteOfflinePayment, getAllOfflinePayment } from "../controllers/OnlineCourse/OflinePaymentsControllers.js";
+import { UpdateOnlineCourse, createOnlineCourse, deleteOnlineCourse, getAllOnlineCourse } from "../controllers/OnlineCourse/OnlineCourseControllers.js";
+import { UpdateSetting, createSetting, deleteSetting, getAllSetting } from "../controllers/OnlineCourse/settingControllers.js";
 
 const router = Router();
 /*course-category */

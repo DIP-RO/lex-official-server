@@ -1,4 +1,4 @@
-import onlineCourseModel from "../../models/onlineCourse/OnlineCourse";
+import onlineCourseModel from "../../models/onlineCourse/OnlineCourse.js";
 
 
 const createOnlineCourse = async (req, res) => {

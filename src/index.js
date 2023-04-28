@@ -13,6 +13,7 @@ import userRoutes from "./routes/userRoutes.js";
 import studentDetailsRoutes from "./routes/studentInformationRoutes.js";
 import feesCollectionRoutes from "./routes/feesCollectionRoutes.js";
 import examinationsRoutes from "./routes/examinationsRoutes.js";
+import onlineCourseRoutes from "./routes/onlineCourseRoutes.js";
 
 // Application
 const app = express();
@@ -43,6 +44,7 @@ app.use("/api/v1/hostel/", hostelRoutes);
 app.use("/api/v1/student-details/", studentDetailsRoutes);
 app.use("/api/v1/fees-collection/", feesCollectionRoutes);
 app.use("/api/v1/examinations/", examinationsRoutes);
+app.use("/api/v1/onlineCourse/", onlineCourseRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
