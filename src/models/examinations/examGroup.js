@@ -29,6 +29,6 @@ const examGroupSchema = new mongoose.Schema({
   },
 });
 
-const examGroupModel = mongoose.model("ExamGroup", examGroupSchema);
+const ExamGroupModel = mongoose.model("ExamGroup", examGroupSchema);
 
-export default examGroupModel;
+export default ExamGroupModel;

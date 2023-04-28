@@ -121,9 +121,9 @@ const designMarksheetSchema = new mongoose.Schema({
   },
 });
 
-const designMarksheetModel = mongoose.model(
+const DesignMarksheetModel = mongoose.model(
   "designMarksheet",
   designMarksheetSchema
 );
 
-export default designMarksheetModel;
+export default DesignMarksheetModel;

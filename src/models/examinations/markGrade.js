@@ -41,6 +41,6 @@ const markGradeSchema = new mongoose.Schema({
   },
 });
 
-const markGradeModel = mongoose.model("markGrade", markGradeSchema);
+const MarkGradeModel = mongoose.model("markGrade", markGradeSchema);
 
-export default markGradeModel;
+export default MarkGradeModel;

@@ -29,6 +29,6 @@ const printAdmitCardSchema = new mongoose.Schema({
   },
 });
 
-const printAdmitCardModel = mongoose.model("printCard", printAdmitCardSchema);
+const PrintAdmitCardModel = mongoose.model("printCard", printAdmitCardSchema);
 
-export default printAdmitCardModel;
+export default PrintAdmitCardModel;

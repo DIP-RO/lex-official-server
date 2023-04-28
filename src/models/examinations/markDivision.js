@@ -29,6 +29,6 @@ const markDivisionSchema = new mongoose.Schema({
   },
 });
 
-const markDivisionModel = mongoose.model("markDivision", markDivisionSchema);
+const MarkDivisionModel = mongoose.model("markDivision", markDivisionSchema);
 
-export default markDivisionModel;
+export default MarkDivisionModel;
