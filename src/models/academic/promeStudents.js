@@ -49,9 +49,9 @@ const promoteStudentSchema = new mongoose.Schema({
   },
 });
 
-const promoteStudentModel = mongoose.model(
+const PromoteStudentModel = mongoose.model(
   "promoteStudent",
   promoteStudentSchema
 );
 
-export default promoteStudentModel;
+export default PromoteStudentModel;

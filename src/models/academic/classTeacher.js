@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const subjectSchema = new mongoose.Schema({
+const classTeacherSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -15,20 +15,20 @@ const subjectSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
-  subject: {
+  class: {
     type: String,
-    required: [true, "subject name required!"],
+    required: [true, "class name required!"],
   },
-  subjectType: {
+  section: {
     type: String,
-    required: [true, "subject type required!"],
+    required: [true, "section name required!"],
   },
-  subjectCode: {
+  classTeacher: {
     type: String,
-    required: [true, "subject code required!"],
+    required: [true, "class teacher required!"],
   },
 });
 
-const subjectModel = mongoose.model("subject", subjectSchema);
+const ClassTeacherModel = mongoose.model("classTeacher", classTeacherSchema);
 
-export default subjectModel;
+export default ClassTeacherModel;
