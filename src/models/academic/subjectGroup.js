@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const classTeacherSchema = new mongoose.Schema({
+const subjectGroupSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -15,20 +15,20 @@ const classTeacherSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
+  name: {
+    type: String,
+    required: [true, "subject group name required!"],
+  },
   class: {
     type: String,
-    required: [true, "class name required!"],
+    required: [true, "class required!"],
   },
-  section: {
+  subject: {
     type: String,
-    required: [true, "section name required!"],
-  },
-  classTeacher: {
-    type: String,
-    required: [true, "class teacher required!"],
+    required: [true, "subjects required!"],
   },
 });
 
-const classTeacherModel = mongoose.model("classTeacher", classTeacherSchema);
+const SubjectGroupModel = mongoose.model("subjectGroup", subjectGroupSchema);
 
-export default classTeacherModel;
+export default SubjectGroupModel;

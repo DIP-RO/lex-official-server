@@ -53,9 +53,9 @@ const classTimeTableSchema = new mongoose.Schema({
   },
 });
 
-const classTimeTableModel = mongoose.model(
+const ClassTimeTableModel = mongoose.model(
   "classTimeTable",
   classTimeTableSchema
 );
 
-export default classTimeTableModel;
+export default ClassTimeTableModel;

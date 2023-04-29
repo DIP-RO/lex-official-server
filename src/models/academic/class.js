@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const sectionSchema = new mongoose.Schema({
+const classSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -17,10 +17,14 @@ const sectionSchema = new mongoose.Schema({
   },
   name: {
     type: String,
+    required: [true, "class name required!"],
+  },
+  section: {
+    type: String,
     required: [true, "section name required!"],
   },
 });
 
-const sectionModel = mongoose.model("section", sectionSchema);
+const ClassModel = mongoose.model("class", classSchema);
 
-export default sectionModel;
+export default ClassModel;
