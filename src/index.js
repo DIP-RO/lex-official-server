@@ -16,6 +16,7 @@ import examinationsRoutes from "./routes/examinationsRoutes.js";
 import onlineCourseRoutes from "./routes/onlineCourseRoutes.js";
 import onlineExaminationRoutes from "./routes/onlineExaminationRoutes.js";
 import academicRoutes from "./routes/academicRoutes.js";
+import attendanceRoutes from "./routes/attendanceRoutes.js";
 
 // Application
 const app = express();
@@ -49,6 +50,7 @@ app.use("/api/v1/examinations/", examinationsRoutes);
 app.use("/api/v1/onlineCourse/", onlineCourseRoutes);
 app.use("/api/v1/online-examination/", onlineExaminationRoutes);
 app.use("/api/v1/academic/", academicRoutes);
+app.use("/api/v1/attendance/", attendanceRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
