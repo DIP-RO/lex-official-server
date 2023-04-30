@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const GenerateIDCardSchema = new mongoose.Schema({
+const GenerateStaffIDCardSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -15,9 +15,9 @@ const GenerateIDCardSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
-  student: {
+  staff: {
     type: String,
-    required: [true, "student required!"],
+    required: [true, "staff required!"],
   },
   idCard: {
     type: String,
@@ -29,9 +29,9 @@ const GenerateIDCardSchema = new mongoose.Schema({
   },
 });
 
-const GenerateIDCardModel = mongoose.model(
-  "GenerateIDCard",
-  GenerateIDCardSchema
+const GenerateStaffIDCardModel = mongoose.model(
+  "GenerateStaffIDCard",
+  GenerateStaffIDCardSchema
 );
 
-export default GenerateIDCardModel;
+export default GenerateStaffIDCardModel;

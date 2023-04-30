@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const StudentIDCardSchema = new mongoose.Schema({
+const StaffIDCardSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -39,15 +39,19 @@ const StudentIDCardSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  admissionNo: {
+  StaffName: {
     type: Boolean,
     required: false,
   },
-  StudentName: {
+  StaffID: {
     type: Boolean,
     required: false,
   },
-  class: {
+  designation: {
+    type: Boolean,
+    required: false,
+  },
+  department: {
     type: Boolean,
     required: false,
   },
@@ -59,7 +63,11 @@ const StudentIDCardSchema = new mongoose.Schema({
     type: Boolean,
     required: false,
   },
-  studentAddress: {
+  currentAddress: {
+    type: Boolean,
+    required: false,
+  },
+  dateOfJoining: {
     type: Boolean,
     required: false,
   },
@@ -68,10 +76,6 @@ const StudentIDCardSchema = new mongoose.Schema({
     required: false,
   },
   dob: {
-    type: Boolean,
-    required: false,
-  },
-  bloodGroup: {
     type: Boolean,
     required: false,
   },
@@ -85,6 +89,6 @@ const StudentIDCardSchema = new mongoose.Schema({
   },
 });
 
-const StudentIDCardModel = mongoose.model("StudentIDCard", StudentIDCardSchema);
+const StaffIDCardModel = mongoose.model("StaffIDCard", StaffIDCardSchema);
 
-export default StudentIDCardModel;
+export default StaffIDCardModel;
