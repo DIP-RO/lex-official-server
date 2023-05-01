@@ -25,6 +25,6 @@ const incomeHeadSchema = new mongoose.Schema({
   },
 });
 
-const incomeHeadModel = mongoose.model("incomeHead", incomeHeadSchema);
+const IncomeHeadModel = mongoose.model("incomeHead", incomeHeadSchema);
 
-export default incomeHeadModel;
+export default IncomeHeadModel;

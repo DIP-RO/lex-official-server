@@ -37,6 +37,6 @@ const incidentsSchema = new mongoose.Schema({
   },
 });
 
-const incidentsModel = mongoose.model("behaviour", incidentsSchema);
+const IncidentsModel = mongoose.model("behaviour", incidentsSchema);
 
-export default incidentsModel;
+export default IncidentsModel;
