@@ -41,14 +41,14 @@ const SmsSchema = new mongoose.Schema({
   },
   sendNow: {
     type: Boolean,
-    required: [true, "send now required!"],
+    required: true,
   },
   scheduleDate: {
-    type: Boolean,
-    required: [true, "schedule date required!"],
+    type: Date,
+    required: true,
   },
   status: {
-    type: Boolean,
+    type: String,
     required: [true, "status required!"],
   },
 });

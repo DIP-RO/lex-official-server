@@ -28,11 +28,11 @@ const incidentsSchema = new mongoose.Schema({
     required: false,
   },
   description: {
-    type: Boolean,
+    type: String,
     required: [true, "description required!"],
   },
   studentID: {
-    type: Boolean,
+    type: String,
     required: [true, "student id required!"],
   },
 });

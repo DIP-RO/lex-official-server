@@ -40,11 +40,11 @@ const SendMailSchema = new mongoose.Schema({
     required: [true, "send now required!"],
   },
   scheduleDate: {
-    type: Boolean,
-    required: [true, "schedule date required!"],
+    type: Date,
+    required: true,
   },
   status: {
-    type: Boolean,
+    type: String,
     required: [true, "status required!"],
   },
 });

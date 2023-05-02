@@ -61,8 +61,8 @@ app.use("/api/v1/lesson/", lessonRoutes);
 app.use("/api/v1/behaviour/", behaviourRoutes);
 app.use("/api/v1/income/", incomeRoutes);
 app.use("/api/v1/expenses/", expensesRoutes);
-app.use("/api/v1/humanResource/", humanResourceRoutes);
-app.use("/api/v1/communicateRoutes/", communicateRoutes);
+app.use("/api/v1/human-resource/", humanResourceRoutes);
+app.use("/api/v1/communicate/", communicateRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
