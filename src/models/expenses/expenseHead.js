@@ -25,6 +25,6 @@ const expenseHeadSchema = new mongoose.Schema({
   },
 });
 
-const expenseHeadModel = mongoose.model("expenseHead", expenseHeadSchema);
+const ExpenseHeadModel = mongoose.model("expenseHead", expenseHeadSchema);
 
-export default expenseHeadModel;
+export default ExpenseHeadModel;

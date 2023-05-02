@@ -21,6 +21,6 @@ const departmentSchema = new mongoose.Schema({
   },
 });
 
-const departmentModel = mongoose.model("department", departmentSchema);
+const DepartmentModel = mongoose.model("department", departmentSchema);
 
-export default departmentModel;
+export default DepartmentModel;

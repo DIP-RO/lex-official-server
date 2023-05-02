@@ -37,9 +37,9 @@ const staffAttendanceSchema = new mongoose.Schema({
   },
 });
 
-const staffAttendanceModel = mongoose.model(
+const StaffAttendanceModel = mongoose.model(
   "staffAttendance",
   staffAttendanceSchema
 );
 
-export default staffAttendanceModel;
+export default StaffAttendanceModel;

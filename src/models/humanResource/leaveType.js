@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const lessonSchema = new mongoose.Schema({
+const leaveTypeSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -21,6 +21,6 @@ const lessonSchema = new mongoose.Schema({
   },
 });
 
-const lessonModel = mongoose.model("lesson", lessonSchema);
+const LeaveTypeModel = mongoose.model("leaveType", leaveTypeSchema);
 
-export default lessonModel;
+export default LeaveTypeModel;

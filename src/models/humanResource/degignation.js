@@ -21,6 +21,6 @@ const designationSchema = new mongoose.Schema({
   },
 });
 
-const designationModel = mongoose.model("designation", designationSchema);
+const DesignationModel = mongoose.model("designation", designationSchema);
 
-export default designationModel;
+export default DesignationModel;

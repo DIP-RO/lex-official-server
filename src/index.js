@@ -20,6 +20,9 @@ import attendanceRoutes from "./routes/attendanceRoutes.js";
 import lessonRoutes from "./routes/lessonPlanRoutes.js";
 import behaviourRoutes from "./routes/behaviourRecordRoutes.js";
 import incomeRoutes from "./routes/incomeRoutes.js";
+import expensesRoutes from "./routes/examinationsRoutes.js";
+import humanResourceRoutes from "./routes/humanResourceRoutes.js";
+import communicateRoutes from "./routes/communicateRoutes.js";
 
 // Application
 const app = express();
@@ -57,6 +60,9 @@ app.use("/api/v1/attendance/", attendanceRoutes);
 app.use("/api/v1/lesson/", lessonRoutes);
 app.use("/api/v1/behaviour/", behaviourRoutes);
 app.use("/api/v1/income/", incomeRoutes);
+app.use("/api/v1/expenses/", expensesRoutes);
+app.use("/api/v1/humanResource/", humanResourceRoutes);
+app.use("/api/v1/communicateRoutes/", communicateRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
