@@ -23,6 +23,11 @@ import incomeRoutes from "./routes/incomeRoutes.js";
 import expensesRoutes from "./routes/examinationsRoutes.js";
 import humanResourceRoutes from "./routes/humanResourceRoutes.js";
 import communicateRoutes from "./routes/communicateRoutes.js";
+import downloadCenterRoutes from "./routes/downloadCenterRoutes.js";
+import homeworkRoutes from "./routes/homeworkRoutes.js";
+import libraryRoutes from "./routes/libraryRoutes.js";
+import transportRoutes from "./routes/transportRoutes.js";
+import certificateRoutes from "./routes/certificateRoutes.js";
 
 // Application
 const app = express();
@@ -63,6 +68,11 @@ app.use("/api/v1/income/", incomeRoutes);
 app.use("/api/v1/expenses/", expensesRoutes);
 app.use("/api/v1/human-resource/", humanResourceRoutes);
 app.use("/api/v1/communicate/", communicateRoutes);
+app.use("/api/v1/download-center/", downloadCenterRoutes);
+app.use("/api/v1/home-work/", homeworkRoutes);
+app.use("/api/v1/library/", libraryRoutes);
+app.use("/api/v1/transport/", transportRoutes);
+app.use("/api/v1/certificate/", certificateRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes

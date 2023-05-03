@@ -41,6 +41,9 @@ const PickupPointsSchema = new mongoose.Schema({
   },
 });
 
-const PickupPointsModel = mongoose.model("PickupPoints", PickupPointsSchema);
+const RoutePickupPointsModel = mongoose.model(
+  "RoutePickupPoints",
+  PickupPointsSchema
+);
 
-export default PickupPointsModel;
+export default RoutePickupPointsModel;
