@@ -24,11 +24,11 @@ const NewsSchema = new mongoose.Schema({
     required: [true, "date required!"],
   },
   description: {
-    type: Date,
+    type: String,
     required: [true, "description required!"],
   },
   images: {
-    type: Date,
+    type: String,
     required: [true, "description required!"],
   },
 });

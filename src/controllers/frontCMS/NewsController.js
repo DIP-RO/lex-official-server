@@ -1,14 +1,13 @@
-import HostelModel from "../../models/Hostel/Hoste.js";
+import NewsModel from "../../models/frontCMS/News.js";
 
-const createHostel = async (req, res) => {
+const createNews = async (req, res) => {
   try {
-    const result = new HostelModel({
+    const result = new NewsModel({
       school: req.body.school,
-      hostelName: req.body.hostelName,
-      type: req.body.type,
-      address: req.body.address,
-      intake: req.body.intake,
+      title: req.body.title,
+      date: req.body.date,
       description: req.body.description,
+      images: req.body.images,
     });
     await result.validate();
     await result.save();
@@ -18,14 +17,14 @@ const createHostel = async (req, res) => {
   }
 };
 
-const deleteHostel = async (req, res) => {
+const deleteNews = async (req, res) => {
   try {
-    if (!(await HostelModel.findById(req.params.id))) {
+    if (!(await NewsModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await HostelModel.findByIdAndDelete(req.params.id);
+    await NewsModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -35,9 +34,9 @@ const deleteHostel = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateHostel = async (req, res) => {
+const UpdateNews = async (req, res) => {
   try {
-    const visitorBook = await HostelModel.findByIdAndUpdate(
+    const visitorBook = await NewsModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -51,13 +50,13 @@ const UpdateHostel = async (req, res) => {
   }
 };
 
-const getAllHostel = async (req, res) => {
+const getAllNews = async (req, res) => {
   try {
-    const Hostel = await HostelModel.find();
-    return res.send(Hostel);
+    const News = await NewsModel.find();
+    return res.send(News);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-export { createHostel, deleteHostel, UpdateHostel, getAllHostel };
+export { createNews, deleteNews, UpdateNews, getAllNews };

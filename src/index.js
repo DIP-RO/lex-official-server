@@ -28,6 +28,8 @@ import homeworkRoutes from "./routes/homeworkRoutes.js";
 import libraryRoutes from "./routes/libraryRoutes.js";
 import transportRoutes from "./routes/transportRoutes.js";
 import certificateRoutes from "./routes/certificateRoutes.js";
+import frontCMSRoutes from "./routes/frontCMSRoutes.js";
+import zMeetRoutes from "./routes/zMeetRoutes.js";
 
 // Application
 const app = express();
@@ -73,6 +75,8 @@ app.use("/api/v1/home-work/", homeworkRoutes);
 app.use("/api/v1/library/", libraryRoutes);
 app.use("/api/v1/transport/", transportRoutes);
 app.use("/api/v1/certificate/", certificateRoutes);
+app.use("/api/v1/front-cms/", frontCMSRoutes);
+app.use("/api/v1/z-meet/", zMeetRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes

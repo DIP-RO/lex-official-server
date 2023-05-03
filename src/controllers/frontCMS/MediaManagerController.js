@@ -1,14 +1,11 @@
-import HostelModel from "../../models/Hostel/Hoste.js";
+import MediaManagerModel from "../../models/frontCMS/MediaManager.js";
 
-const createHostel = async (req, res) => {
+const createMediaManager = async (req, res) => {
   try {
-    const result = new HostelModel({
+    const result = new MediaManagerModel({
       school: req.body.school,
-      hostelName: req.body.hostelName,
-      type: req.body.type,
-      address: req.body.address,
-      intake: req.body.intake,
-      description: req.body.description,
+      file: req.body.file,
+      youtube: req.body.youtube,
     });
     await result.validate();
     await result.save();
@@ -18,14 +15,14 @@ const createHostel = async (req, res) => {
   }
 };
 
-const deleteHostel = async (req, res) => {
+const deleteMediaManager = async (req, res) => {
   try {
-    if (!(await HostelModel.findById(req.params.id))) {
+    if (!(await MediaManagerModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await HostelModel.findByIdAndDelete(req.params.id);
+    await MediaManagerModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -35,9 +32,9 @@ const deleteHostel = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateHostel = async (req, res) => {
+const UpdateMediaManager = async (req, res) => {
   try {
-    const visitorBook = await HostelModel.findByIdAndUpdate(
+    const visitorBook = await MediaManagerModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -51,13 +48,18 @@ const UpdateHostel = async (req, res) => {
   }
 };
 
-const getAllHostel = async (req, res) => {
+const getAllMediaManager = async (req, res) => {
   try {
-    const Hostel = await HostelModel.find();
-    return res.send(Hostel);
+    const MediaManager = await MediaManagerModel.find();
+    return res.send(MediaManager);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-export { createHostel, deleteHostel, UpdateHostel, getAllHostel };
+export {
+  createMediaManager,
+  deleteMediaManager,
+  UpdateMediaManager,
+  getAllMediaManager,
+};
