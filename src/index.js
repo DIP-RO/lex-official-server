@@ -30,6 +30,7 @@ import transportRoutes from "./routes/transportRoutes.js";
 import certificateRoutes from "./routes/certificateRoutes.js";
 import frontCMSRoutes from "./routes/frontCMSRoutes.js";
 import zMeetRoutes from "./routes/zMeetRoutes.js";
+import alumniRoutes from "./routes/alumniRoutes.js";
 
 // Application
 const app = express();
@@ -77,6 +78,7 @@ app.use("/api/v1/transport/", transportRoutes);
 app.use("/api/v1/certificate/", certificateRoutes);
 app.use("/api/v1/front-cms/", frontCMSRoutes);
 app.use("/api/v1/z-meet/", zMeetRoutes);
+app.use("/api/v1/alumni/", alumniRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
