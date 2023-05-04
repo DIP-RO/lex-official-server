@@ -6,32 +6,32 @@ import morgan from "morgan";
 import path, { join } from "path";
 import connectDB from "./configs/databaseConfigs.js";
 import { complainFiles } from "./controllers/filesControllers.js";
-import frontOfficeRoutes from "./routes/frontOfficeRoutes.js";
 import InventoryRoutes from "./routes/InventoryRoutes.js";
-import hostelRoutes from "./routes/hostelRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
-import studentDetailsRoutes from "./routes/studentInformationRoutes.js";
-import feesCollectionRoutes from "./routes/feesCollectionRoutes.js";
-import examinationsRoutes from "./routes/examinationsRoutes.js";
-import onlineCourseRoutes from "./routes/onlineCourseRoutes.js";
-import onlineExaminationRoutes from "./routes/onlineExaminationRoutes.js";
 import academicRoutes from "./routes/academicRoutes.js";
+import alumniRoutes from "./routes/alumniRoutes.js";
 import attendanceRoutes from "./routes/attendanceRoutes.js";
-import lessonRoutes from "./routes/lessonPlanRoutes.js";
 import behaviourRoutes from "./routes/behaviourRecordRoutes.js";
-import incomeRoutes from "./routes/incomeRoutes.js";
 import expensesRoutes from "./routes/expensesRoutes.js";
 import humanResourceRoutes from "./routes/humanResourceRoutes.js";
+import certificateRoutes from "./routes/certificateRoutes.js";
 import communicateRoutes from "./routes/communicateRoutes.js";
 import downloadCenterRoutes from "./routes/downloadCenterRoutes.js";
+import examinationsRoutes from "./routes/examinationsRoutes.js";
+import feesCollectionRoutes from "./routes/feesCollectionRoutes.js";
+import frontOfficeRoutes from "./routes/frontOfficeRoutes.js";
 import homeworkRoutes from "./routes/homeworkRoutes.js";
+import hostelRoutes from "./routes/hostelRoutes.js";
+import incomeRoutes from "./routes/incomeRoutes.js";
+import lessonRoutes from "./routes/lessonPlanRoutes.js";
 import libraryRoutes from "./routes/libraryRoutes.js";
+import onlineCourseRoutes from "./routes/onlineCourseRoutes.js";
+import onlineExaminationRoutes from "./routes/onlineExaminationRoutes.js";
+import studentDetailsRoutes from "./routes/studentInformationRoutes.js";
 import transportRoutes from "./routes/transportRoutes.js";
-import certificateRoutes from "./routes/certificateRoutes.js";
 import frontCMSRoutes from "./routes/frontCMSRoutes.js";
 import zMeetRoutes from "./routes/zMeetRoutes.js";
-import alumniRoutes from "./routes/alumniRoutes.js";
 import gMeetRoutes from "./routes/gMeetRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 // Application
 const app = express();
@@ -85,7 +85,7 @@ app.use("/api/v1/g-meet/", gMeetRoutes);
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
 app.use("*", (req, res) => {
-  return res.send("Invalid Route!");
+  return res.status(404).send("Invalid Route!");
 });
 
 // listen to port
