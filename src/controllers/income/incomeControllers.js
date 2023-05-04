@@ -7,6 +7,7 @@ const createIncome = async (req, res) => {
       incomeHead: req.body.incomeHead,
       name: req.body.name,
       invoiceNumber: req.body.invoiceNumber,
+      date: req.body.date,
       amount: req.body.amount,
       document: req.body.document,
       description: req.body.description,

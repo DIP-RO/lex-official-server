@@ -27,6 +27,10 @@ const incomeSchema = new mongoose.Schema({
     type: Number,
     required: false,
   },
+  date: {
+    type: Date,
+    required: [true, "date required!"],
+  },
   amount: {
     type: Number,
     required: [true, "amount required!"],
