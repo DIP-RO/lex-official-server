@@ -82,7 +82,7 @@ app.use("/api/v1/alumni/", alumniRoutes);
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
 app.use("*", (req, res) => {
-  return res.status(400).send("Invalid Route!");
+  return res.status(404).send("Invalid Route!");
 });
 
 // listen to port
