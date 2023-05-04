@@ -53,6 +53,6 @@ const gMeetSchema = new mongoose.Schema({
   },
 });
 
-const gMeetModel = mongoose.model("gMeet", gMeetSchema);
+const ZMeetModel = mongoose.model("zMeet", gMeetSchema);
 
-export default gMeetModel;
+export default ZMeetModel;

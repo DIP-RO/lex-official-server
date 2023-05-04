@@ -8,6 +8,7 @@ import connectDB from "./configs/databaseConfigs.js";
 import { complainFiles } from "./controllers/filesControllers.js";
 import InventoryRoutes from "./routes/InventoryRoutes.js";
 import academicRoutes from "./routes/academicRoutes.js";
+import alumniRoutes from './routes/alumniRoutes.js';
 import attendanceRoutes from "./routes/attendanceRoutes.js";
 import behaviourRoutes from "./routes/behaviourRecordRoutes.js";
 import certificateRoutes from "./routes/certificateRoutes.js";
@@ -15,6 +16,7 @@ import communicateRoutes from "./routes/communicateRoutes.js";
 import downloadCenterRoutes from "./routes/downloadCenterRoutes.js";
 import { default as examinationsRoutes, default as expensesRoutes } from "./routes/examinationsRoutes.js";
 import feesCollectionRoutes from "./routes/feesCollectionRoutes.js";
+import frontCMSRoutes from './routes/frontCMSRoutes.js';
 import frontOfficeRoutes from "./routes/frontOfficeRoutes.js";
 import homeworkRoutes from "./routes/homeworkRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
@@ -26,7 +28,8 @@ import onlineCourseRoutes from "./routes/onlineCourseRoutes.js";
 import onlineExaminationRoutes from "./routes/onlineExaminationRoutes.js";
 import studentDetailsRoutes from "./routes/studentInformationRoutes.js";
 import transportRoutes from "./routes/transportRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
+import userRoutes from './routes/userRoutes.js';
+import zMeetRoutes from './routes/zMeetRoutes.js';
 
 // Application
 const app = express();
@@ -72,6 +75,9 @@ app.use("/api/v1/home-work/", homeworkRoutes);
 app.use("/api/v1/library/", libraryRoutes);
 app.use("/api/v1/transport/", transportRoutes);
 app.use("/api/v1/certificate/", certificateRoutes);
+app.use("/api/v1/front-cms/", frontCMSRoutes);
+app.use("/api/v1/z-meet/", zMeetRoutes);
+app.use("/api/v1/alumni/", alumniRoutes);
 // files and images path:
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes

@@ -1,12 +1,18 @@
-import GalleryModel from "../../models/frontCMS/Gallery.js";
+import ZMeetModel from "../../models/zMeet/zMeet.js";
 
-const createGallery = async (req, res) => {
+const createZMeet = async (req, res) => {
   try {
-    const result = new GalleryModel({
+    const result = new ZMeetModel({
       school: req.body.school,
-      title: req.body.title,
+      meetTitle: req.body.meetTitle,
+      meetDate: req.body.meetDate,
+      meetDuration: req.body.meetDuration,
+      staff: req.body.staff,
+      class: req.body.class,
+      section: req.body.section,
+      url: req.body.url,
       description: req.body.description,
-      image: req.body.image,
+      status: req.body.status,
     });
     await result.validate();
     await result.save();
@@ -16,14 +22,14 @@ const createGallery = async (req, res) => {
   }
 };
 
-const deleteGallery = async (req, res) => {
+const deleteZMeet = async (req, res) => {
   try {
-    if (!(await GalleryModel.findById(req.params.id))) {
+    if (!(await ZMeetModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await GalleryModel.findByIdAndDelete(req.params.id);
+    await ZMeetModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -33,9 +39,9 @@ const deleteGallery = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateGallery = async (req, res) => {
+const UpdateZMeet = async (req, res) => {
   try {
-    const visitorBook = await GalleryModel.findByIdAndUpdate(
+    const visitorBook = await ZMeetModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -49,13 +55,13 @@ const UpdateGallery = async (req, res) => {
   }
 };
 
-const getAllGallery = async (req, res) => {
+const getAllZMeet = async (req, res) => {
   try {
-    const Gallery = await GalleryModel.find();
-    return res.send(Gallery);
+    const ZMeet = await ZMeetModel.find();
+    return res.send(ZMeet);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-export { createGallery, deleteGallery, UpdateGallery, getAllGallery };
+export { createZMeet, deleteZMeet, UpdateZMeet, getAllZMeet };

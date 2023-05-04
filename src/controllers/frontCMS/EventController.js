@@ -1,14 +1,14 @@
-import HostelModel from "../../models/Hostel/Hoste.js";
+import EventModel from "../../models/frontCMS/Event.js";
 
-const createHostel = async (req, res) => {
+const createEvent = async (req, res) => {
   try {
-    const result = new HostelModel({
+    const result = new EventModel({
       school: req.body.school,
-      hostelName: req.body.hostelName,
-      type: req.body.type,
-      address: req.body.address,
-      intake: req.body.intake,
-      description: req.body.description,
+      title: req.body.title,
+      venue: req.body.venue,
+      eventStart: req.body.eventStart,
+      eventEnd: req.body.eventEnd,
+      eventBanner: req.body.eventBanner,
     });
     await result.validate();
     await result.save();
@@ -18,14 +18,14 @@ const createHostel = async (req, res) => {
   }
 };
 
-const deleteHostel = async (req, res) => {
+const deleteEvent = async (req, res) => {
   try {
-    if (!(await HostelModel.findById(req.params.id))) {
+    if (!(await EventModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await HostelModel.findByIdAndDelete(req.params.id);
+    await EventModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -35,9 +35,9 @@ const deleteHostel = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateHostel = async (req, res) => {
+const UpdateEvent = async (req, res) => {
   try {
-    const visitorBook = await HostelModel.findByIdAndUpdate(
+    const visitorBook = await EventModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -51,13 +51,13 @@ const UpdateHostel = async (req, res) => {
   }
 };
 
-const getAllHostel = async (req, res) => {
+const getAllEvent = async (req, res) => {
   try {
-    const Hostel = await HostelModel.find();
-    return res.send(Hostel);
+    const Event = await EventModel.find();
+    return res.send(Event);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-export { createHostel, deleteHostel, UpdateHostel, getAllHostel };
+export { createEvent, deleteEvent, UpdateEvent, getAllEvent };

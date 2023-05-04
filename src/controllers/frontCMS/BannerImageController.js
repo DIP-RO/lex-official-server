@@ -1,14 +1,11 @@
-import HostelModel from "../../models/Hostel/Hoste.js";
+import BannerImageModel from "../../models/frontCMS/BannerImage.js";
 
-const createHostel = async (req, res) => {
+const createBannerImage = async (req, res) => {
   try {
-    const result = new HostelModel({
+    const result = new BannerImageModel({
       school: req.body.school,
-      hostelName: req.body.hostelName,
-      type: req.body.type,
-      address: req.body.address,
-      intake: req.body.intake,
-      description: req.body.description,
+      file: req.body.file,
+      fileType: req.body.fileType,
     });
     await result.validate();
     await result.save();
@@ -18,14 +15,14 @@ const createHostel = async (req, res) => {
   }
 };
 
-const deleteHostel = async (req, res) => {
+const deleteBannerImage = async (req, res) => {
   try {
-    if (!(await HostelModel.findById(req.params.id))) {
+    if (!(await BannerImageModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await HostelModel.findByIdAndDelete(req.params.id);
+    await BannerImageModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -35,9 +32,9 @@ const deleteHostel = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateHostel = async (req, res) => {
+const UpdateBannerImage = async (req, res) => {
   try {
-    const visitorBook = await HostelModel.findByIdAndUpdate(
+    const visitorBook = await BannerImageModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -51,13 +48,18 @@ const UpdateHostel = async (req, res) => {
   }
 };
 
-const getAllHostel = async (req, res) => {
+const getAllBannerImage = async (req, res) => {
   try {
-    const Hostel = await HostelModel.find();
-    return res.send(Hostel);
+    const BannerImage = await BannerImageModel.find();
+    return res.send(BannerImage);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-export { createHostel, deleteHostel, UpdateHostel, getAllHostel };
+export {
+  createBannerImage,
+  deleteBannerImage,
+  UpdateBannerImage,
+  getAllBannerImage,
+};
