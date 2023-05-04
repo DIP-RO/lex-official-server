@@ -36,8 +36,8 @@ const PickupPointsSchema = new mongoose.Schema({
     required: [true, "monthly fees required!"],
   },
   status: {
-    type: Number,
-    required: [true, "status required!"],
+    type: String,
+    required: false,
   },
 });
 

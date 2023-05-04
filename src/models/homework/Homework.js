@@ -32,11 +32,11 @@ const HomeworkSchema = new mongoose.Schema({
     required: [true, "subject required!"],
   },
   homeworkDate: {
-    type: String,
+    type: Date,
     required: [true, "homework date required!"],
   },
   submitDate: {
-    type: String,
+    type: Date,
     required: [true, "submit date required!"],
   },
   maxMark: {

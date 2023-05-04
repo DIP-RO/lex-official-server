@@ -4,6 +4,15 @@ const createHomework = async (req, res) => {
   try {
     const result = new HomeworkModel({
       school: req.body.school,
+      class: req.body.class,
+      section: req.body.section,
+      subjectGroup: req.body.subjectGroup,
+      subject: req.body.subject,
+      homeworkDate: req.body.homeworkDate,
+      submitDate: req.body.submitDate,
+      maxMark: req.body.maxMark,
+      attachedFiles: req.body.attachedFiles,
+      description: req.body.description,
     });
     await result.validate();
     await result.save();
