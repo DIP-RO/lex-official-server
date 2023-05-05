@@ -39,6 +39,10 @@ const expenseSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const ExpenseModel = mongoose.model("Expense", expenseSchema);

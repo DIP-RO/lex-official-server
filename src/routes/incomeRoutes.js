@@ -11,10 +11,15 @@ import {
   deleteIncomeHead,
   getAllIncomeHead,
 } from "../controllers/income/incomeHeadControllers.js";
+import { uploadIncomeFiles } from "../middleware/IncomeFile,.js";
 const router = Router();
 
 /* income */
-router.post("/income", createIncome);
+router.post(
+  "/income",
+  uploadIncomeFiles.single("attachDocument"),
+  createIncome
+);
 router.delete("/income/:id", deleteIncome);
 router.patch("/income/:id", UpdateIncome);
 router.get("/income", getAllIncome);

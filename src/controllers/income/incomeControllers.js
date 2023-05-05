@@ -11,6 +11,9 @@ const createIncome = async (req, res) => {
       amount: req.body.amount,
       document: req.body.document,
       description: req.body.description,
+      attachDocument: `http://localhost:5000/income/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

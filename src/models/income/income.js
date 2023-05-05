@@ -43,6 +43,10 @@ const incomeSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const IncomeModel = mongoose.model("income", incomeSchema);
