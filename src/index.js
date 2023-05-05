@@ -50,7 +50,7 @@ connectDB();
 
 // Routes
 app.get("/", (req, res) => {
-  return res.send("HellWet Server Running...");
+  return res.send("HellWet Server Running...!!");
 });
 
 // users routes
@@ -85,9 +85,9 @@ app.use("/api/v1/g-meet/", gMeetRoutes);
 app.get("/complains/files/:fileName", complainFiles);
 // Handle Not valid routes
 app.use("*", (req, res) => {
-  return res.status(404).send("Invalid Route!");
+  return res.status(404).send("Invalid Route!!");
 });
 
 // listen to port
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server started on port::: ${PORT}`));
+app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));

@@ -47,6 +47,10 @@ const PostalDispatchSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const PostalDispatchModel = mongoose.model(

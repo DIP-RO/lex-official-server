@@ -13,6 +13,9 @@ const createVisitorBook = async (req, res) => {
       date: req.body.date,
       inTime: req.body.inTime,
       outTime: req.body.outTime,
+      attachDocument: `http://localhost:5000/visitor-book/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

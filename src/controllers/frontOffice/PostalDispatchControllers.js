@@ -11,6 +11,9 @@ const createPostalDispatch = async (req, res) => {
       Note: req.body.Note,
       inTime: req.body.inTime,
       outTime: req.body.outTime,
+      attachDocument: `http://localhost:5000/postal-dispatch/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

@@ -10,6 +10,9 @@ const createPostalReceive = async (req, res) => {
       note: req.body.note,
       toTitle: req.body.toTitle,
       date: req.body.date,
+      attachDocument: `http://localhost:5000/postal-receive/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

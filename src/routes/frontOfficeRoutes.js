@@ -58,7 +58,7 @@ import {
   deleteSource,
   getAllSource,
 } from "../controllers/frontOffice/SetupFrontOffice/SourceControllers.js";
-import { uploadComplainFiles } from "../middleware/complainFileUploadMiddleware.js";
+
 import {
   UpdateVisitorBook,
   createVisitorBook,
@@ -66,6 +66,12 @@ import {
   getAllVisitorBooks,
   getVisitorBook,
 } from "../controllers/frontOffice/VisitorBookControllers.js";
+import {
+  uploadComplainFiles,
+  uploadPostalDispatchFiles,
+  uploadPostalReceiveFiles,
+  uploadVisitorFiles,
+} from "../middleware/FrontOfficeFile.js";
 
 const router = Router();
 
@@ -78,7 +84,11 @@ router.get("/admission-enquiry", getAllAdmissionEnquiries);
 /* End */
 
 /* Visitor Book */
-router.post("/visitor-book", createVisitorBook);
+router.post(
+  "/visitor-book",
+  uploadVisitorFiles.single("attachDocument"),
+  createVisitorBook
+);
 router.delete("/visitor-book/:id", deleteVisitorBook);
 router.patch("/visitor-book/:id", UpdateVisitorBook);
 router.get("/visitor-book/:id", getVisitorBook);
@@ -94,7 +104,11 @@ router.get("/phone-call-log", getAllPhoneCallLogs);
 /* End */
 
 /* postal-dispatch */
-router.post("/postal-dispatch", createPostalDispatch);
+router.post(
+  "/postal-dispatch",
+  uploadPostalDispatchFiles.single("attachDocument"),
+  createPostalDispatch
+);
 router.delete("/postal-dispatch/:id", deletePostalDispatch);
 router.patch("/postal-dispatch/:id", UpdatePostalDispatch);
 router.get("/postal-dispatch/:id", getPostalDispatch);
@@ -102,7 +116,11 @@ router.get("/postal-dispatch", getAllPostalDispatch);
 /* End */
 
 /* postal-receive */
-router.post("/postal-receive", createPostalReceive);
+router.post(
+  "/postal-receive",
+  uploadPostalReceiveFiles.single("attachDocument"),
+  createPostalReceive
+);
 router.delete("/postal-receive/:id", deletePostalReceive);
 router.patch("/postal-receive/:id", UpdatePostalReceive);
 router.get("/postal-receive/:id", getPostalReceive);

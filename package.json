@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "node src/index.js",
-    "start-dev": "supervisor src/index.js",
+    "start-dev": "nodemon src/index.js",
     "start-nodemon": "nodemon src/index.js"
   },
   "dependencies": {
