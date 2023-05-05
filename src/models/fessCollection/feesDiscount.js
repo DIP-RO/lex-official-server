@@ -38,5 +38,4 @@ const feesDiscountSchema = new mongoose.Schema({
 });
 
 const feesDiscountModel = mongoose.model("feesDiscount", feesDiscountSchema);
-
 export default feesDiscountModel;
