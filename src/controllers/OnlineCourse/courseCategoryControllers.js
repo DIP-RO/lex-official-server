@@ -5,6 +5,9 @@ const createCourseCategory = async (req, res) => {
     const result = new courseCategoryModel({
       school: req.body.school,
       categoryName: req.body.categoryName,
+      attachDocument: `http://localhost:5000/course-category/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();
@@ -56,4 +59,9 @@ const getAllCourseCategory = async (req, res) => {
   }
 };
 
-export { createCourseCategory, deleteCourseCategory, UpdateCourseCategory, getAllCourseCategory };
+export {
+  createCourseCategory,
+  deleteCourseCategory,
+  UpdateCourseCategory,
+  getAllCourseCategory,
+};

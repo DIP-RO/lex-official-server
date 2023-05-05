@@ -19,6 +19,10 @@ const courseCategorySchema = new mongoose.Schema({
     type: String,
     required: [true, "category name required!"],
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const courseCategoryModel = mongoose.model(
