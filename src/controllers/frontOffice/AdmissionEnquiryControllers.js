@@ -62,27 +62,70 @@ const UpdateAdmissionEnquiry = async (req, res) => {
   }
 };
 
+// const getAllAdmissionEnquiries = async (req, res) => {
+//   try {
+//     if (req.params.id) {
+//       const admissionEnquiries = await AdmissionEnquiryModel.findById(
+//         req.params.id
+//       );
+//       return res.status(200).send(admissionEnquiries);
+//     }
+//     const query = req.query.school;
+//     const page = parseInt(req.query.page) || 1;
+//     const limit = parseInt(req.query.limit) || 2;
+//     const startIndex = (page - 1) * limit;
+//     const admissionEnquiries = await AdmissionEnquiryModel.find({
+//       school: query,
+//     })
+//       .sort({ created_at: -1 })
+//       .skip(startIndex)
+//       .limit(limit);
+//     console.log(admissionEnquiries);
+
+//     const count = await AdmissionEnquiryModel.countDocuments();
+
+//     return res.status(200).send({
+//       data: admissionEnquiries,
+//       pagination: {
+//         currentPage: page,
+//         totalPages: Math.ceil(count / limit),
+//         totalItems: count,
+//       },
+//     });
+//   } catch (error) {
+//     return res.status(500).send(error.message);
+//   }
+// };
 const getAllAdmissionEnquiries = async (req, res) => {
   try {
-    if(req.params.id){
-      const admissionEnquiries = await AdmissionEnquiryModel.findById(req.params.id);
+    if (req.params.id) {
+      const admissionEnquiries = await AdmissionEnquiryModel.findById(
+        req.params.id
+      );
       return res.status(200).send(admissionEnquiries);
     }
-    const query = req.query.school
+    const query = req.query.school;
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 2;
     const startIndex = (page - 1) * limit;
-    const admissionEnquiries = await AdmissionEnquiryModel.find({school:query}).sort({ created_at: -1 }).skip(startIndex).limit(limit);
+    const admissionEnquiries = await AdmissionEnquiryModel.find(
+      query ? { school: query } : {}
+    )
+      .sort({ created_at: -1 })
+      .skip(startIndex)
+      .limit(limit);
 
-    const count = await AdmissionEnquiryModel.countDocuments();
+    const count = await AdmissionEnquiryModel.countDocuments(
+      query ? { school: query } : {}
+    );
 
     return res.status(200).send({
-      data: admissionEnquiries ,
+      data: admissionEnquiries,
       pagination: {
         currentPage: page,
         totalPages: Math.ceil(count / limit),
-        totalItems: count
-      }
+        totalItems: count,
+      },
     });
   } catch (error) {
     return res.status(500).send(error.message);
@@ -95,5 +138,3 @@ export {
   UpdateAdmissionEnquiry,
   getAllAdmissionEnquiries,
 };
-
-
