@@ -12,5 +12,6 @@ router.post("/home-work", createHomework);
 router.delete("/home-work/:id", deleteHomework);
 router.patch("/home-work/:id", UpdateHomework);
 router.get("/home-work", getAllHomework);
+router.get("/home-work/:id", getAllHomework);
 /* End */
 export default router;

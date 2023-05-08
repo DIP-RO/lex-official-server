@@ -11,6 +11,7 @@ const router = Router();
 router.post("/alumni-event", createAlumniEvent);
 router.delete("/alumni-event/:id", deleteAlumniEvent);
 router.patch("/alumni-event/:id", UpdateAlumniEvent);
+router.get("/alumni-event/:id", getAllAlumniEvent);
 router.get("/alumni-event", getAllAlumniEvent);
 /* End */
 export default router;

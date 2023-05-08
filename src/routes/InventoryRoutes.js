@@ -40,6 +40,7 @@ const router = Router();
 router.post("/issue-items", createIssueItem);
 router.delete("/issue-items/:id", deleteIssueItem);
 router.get("/issue-items", getAllIssueItem);
+router.get("/issue-items/:id", getAllIssueItem);
 /* End */
 
 /* add-item-stock */
@@ -47,30 +48,35 @@ router.post("/add-item-stock", createAdmissionEnquiry);
 router.delete("/add-item-stock/:id", deleteAdmissionEnquiry);
 router.patch("/add-item-stock/:id", UpdateAdmissionEnquiry);
 router.get("/add-item-stock", getAllAddItemStock);
+router.get("/add-item-stock/:id", getAllAddItemStock);
 /* End */
 /* add-item */
 router.post("/add-item", createAddItem);
 router.delete("/add-item/:id", deleteAddItem);
 router.patch("/add-item/:id", UpdateAddItem);
 router.get("/add-item", getAllAddItem);
+router.get("/add-item/:id", getAllAddItem);
 /* End */
 /* item-category */
 router.post("/item-category", createItemCategory);
 router.delete("/item-category/:id", deleteItemCategory);
 router.patch("/item-category/:id", UpdateItemCategory);
 router.get("/item-category", getAllItemCategory);
+router.get("/item-category/:id", getAllItemCategory);
 /* End */
 /* item-store */
 router.post("/item-store", createItemStore);
 router.delete("/item-store/:id", deleteItemStore);
 router.patch("/item-store/:id", UpdateItemStore);
 router.get("/item-store", getAllItemStore);
+router.get("/item-store/:id", getAllItemStore);
 /* End */
 /* item-supplier */
 router.post("/item-supplier", createItemSupplier);
 router.delete("/item-supplier/:id", deleteItemSupplier);
 router.patch("/item-supplier/:id", UpdateItemSupplier);
 router.get("/item-supplier", getAllItemSupplier);
+router.get("/item-supplier/:id", getAllItemSupplier);
 /* End */
 
 export default router;

@@ -19,11 +19,13 @@ router.post("/lesson", createLesson);
 router.delete("/lesson/:id", deleteLesson);
 router.patch("/lesson/:id", UpdateLesson);
 router.get("/lesson", getAllLesson);
+router.get("/lesson/:id", getAllLesson);
 /* End */
 /* topic */
 router.post("/topic", createTopic);
 router.delete("/topic/:id", deleteTopic);
 router.patch("/topic/:id", UpdateTopic);
 router.get("/topic", getAllTopic);
+router.get("/topic/:id", getAllTopic);
 /* End */
 export default router;

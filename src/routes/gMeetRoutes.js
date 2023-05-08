@@ -12,5 +12,6 @@ router.post("/g-meet", createLiveClass);
 router.delete("/g-meet/:id", deleteLiveClass);
 router.patch("/g-meet/:id", UpdateGMeets);
 router.get("/g-meet", getGMeets);
+router.get("/g-meet/:id", getGMeets);
 /* End */
 export default router;

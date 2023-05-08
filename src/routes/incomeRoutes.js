@@ -23,11 +23,13 @@ router.post(
 router.delete("/income/:id", deleteIncome);
 router.patch("/income/:id", UpdateIncome);
 router.get("/income", getAllIncome);
+router.get("/income/:id", getAllIncome);
 /* End */
 /* income-head */
 router.post("/income-head", createIncomeHead);
 router.delete("/income-head/:id", deleteIncomeHead);
 router.patch("/income-head/:id", UpdateIncomeHead);
 router.get("/income-head", getAllIncomeHead);
+router.get("/income-head/:id", getAllIncomeHead);
 /* End */
 export default router;

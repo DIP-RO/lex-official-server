@@ -1,6 +1,5 @@
 import ClassTimeTableModel from "../../models/academic/classTimeTable.js";
 
-
 const createClassTimeTable = async (req, res) => {
   try {
     const result = new ClassTimeTableModel({
@@ -58,13 +57,35 @@ const UpdateClassTimeTable = async (req, res) => {
 
 const getAllClassTimeTable = async (req, res) => {
   try {
-    const ClassTimeTable = await ClassTimeTableModel.find();
-    return res.send(ClassTimeTable);
+    if (req.params.id) {
+      const data = await ClassTimeTableModel.findById(req.params.id);
+      return res.status(200).send(data);
+    }
+    const query = req.query.school;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 2;
+    const startIndex = (page - 1) * limit;
+    const data = await ClassTimeTableModel.find(query ? { school: query } : {})
+      .sort({ created_at: -1 })
+      .skip(startIndex)
+      .limit(limit);
+
+    const count = await ClassTimeTableModel.countDocuments(
+      query ? { school: query } : {}
+    );
+
+    return res.status(200).send({
+      data: data,
+      pagination: {
+        currentPage: page,
+        totalPages: Math.ceil(count / limit),
+        totalItems: count,
+      },
+    });
   } catch (error) {
-    return res.status(400).send(error);
+    return res.status(500).send(error.message);
   }
 };
-
 export {
   createClassTimeTable,
   deleteClassTimeTable,

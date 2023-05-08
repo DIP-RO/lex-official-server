@@ -9,7 +9,6 @@ import {
   UpdateComplain,
   createComplain,
   deleteComplain,
-  getAllComplain,
   getComplain,
 } from "../controllers/frontOffice/ComplainControllers.js";
 import {
@@ -17,21 +16,18 @@ import {
   createPhoneCallLog,
   deletePhoneCallLog,
   getAllPhoneCallLogs,
-  getPhoneCallLog,
 } from "../controllers/frontOffice/PhoneCallLogControllers.js";
 import {
   UpdatePostalDispatch,
   createPostalDispatch,
   deletePostalDispatch,
   getAllPostalDispatch,
-  getPostalDispatch,
 } from "../controllers/frontOffice/PostalDispatchControllers.js";
 import {
   UpdatePostalReceive,
   createPostalReceive,
   deletePostalReceive,
   getAllPostalReceive,
-  getPostalReceive,
 } from "../controllers/frontOffice/PostalReceiveContgrollers.js";
 
 import {
@@ -64,7 +60,6 @@ import {
   createVisitorBook,
   deleteVisitorBook,
   getAllVisitorBooks,
-  getVisitorBook,
 } from "../controllers/frontOffice/VisitorBookControllers.js";
 import {
   uploadComplainFiles,
@@ -91,16 +86,17 @@ router.post(
 );
 router.delete("/visitor-book/:id", deleteVisitorBook);
 router.patch("/visitor-book/:id", UpdateVisitorBook);
-router.get("/visitor-book/:id", getVisitorBook);
+router.get("/visitor-book/:id", getAllVisitorBooks);
 router.get("/visitor-book", getAllVisitorBooks);
+router.get("/visitor-book/:id", getAllVisitorBooks);
 // /* End */
 
 /* phone log */
 router.post("/phone-call-log", createPhoneCallLog);
 router.delete("/phone-call-log/:id", deletePhoneCallLog);
 router.patch("/phone-call-log/:id", UpdatePhoneCallLog);
-router.get("/phone-call-log/:id", getPhoneCallLog);
 router.get("/phone-call-log", getAllPhoneCallLogs);
+router.get("/phone-call-log/:id", getAllPhoneCallLogs);
 /* End */
 
 /* postal-dispatch */
@@ -111,8 +107,9 @@ router.post(
 );
 router.delete("/postal-dispatch/:id", deletePostalDispatch);
 router.patch("/postal-dispatch/:id", UpdatePostalDispatch);
-router.get("/postal-dispatch/:id", getPostalDispatch);
+router.get("/postal-dispatch/:id", getAllPostalDispatch);
 router.get("/postal-dispatch", getAllPostalDispatch);
+router.get("/postal-dispatch/:id", getAllPostalDispatch);
 /* End */
 
 /* postal-receive */
@@ -123,20 +120,16 @@ router.post(
 );
 router.delete("/postal-receive/:id", deletePostalReceive);
 router.patch("/postal-receive/:id", UpdatePostalReceive);
-router.get("/postal-receive/:id", getPostalReceive);
+router.get("/postal-receive/:id", getAllPostalReceive);
 router.get("/postal-receive", getAllPostalReceive);
+router.get("/postal-receive/:id", getAllPostalReceive);
 /* End */
 
 /* complain */
-router.post(
-  "/complain",
-  uploadComplainFiles.single("attachDocument"),
-  createComplain
-);
-router.delete("/complain/:id", deleteComplain);
 router.patch("/complain/:id", UpdateComplain);
 router.get("/complain/:id", getComplain);
-router.get("/complain", getAllComplain);
+router.get("/complain", getComplain);
+router.get("/complain/:id", getComplain);
 /* End */
 
 /* source */
@@ -144,6 +137,7 @@ router.post("/source", createSource);
 router.delete("/source/:id", deleteSource);
 router.patch("/source/:id", UpdateSource);
 router.get("/source", getAllSource);
+router.get("/source/:id", getAllSource);
 /* End */
 
 /* reference */
@@ -151,6 +145,7 @@ router.post("/reference", createReference);
 router.delete("/reference/:id", deleteReference);
 router.patch("/reference/:id", UpdateReference);
 router.get("/reference", getAllReference);
+router.get("/reference/:id", getAllReference);
 /* End */
 
 /* purpose */
@@ -158,6 +153,7 @@ router.post("/purpose", createPurpose);
 router.delete("/purpose/:id", deletePurpose);
 router.patch("/purpose/:id", UpdatePurpose);
 router.get("/purpose", getAllPurpose);
+router.get("/purpose/:id", getAllPurpose);
 /* End */
 
 /* complain-type */
@@ -165,5 +161,6 @@ router.post("/complain-type", createComplainType);
 router.delete("/complain-type/:id", deleteComplainType);
 router.patch("/complain-type/:id", UpdateComplainType);
 router.get("/complain-type", getAllComplainType);
+router.get("/complain-type/:id", getAllComplainType);
 /* End */
 export default router;

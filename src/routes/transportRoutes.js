@@ -42,35 +42,41 @@ router.post("/assign-vehicle", createAssignVehicle);
 router.delete("/assign-vehicle/:id", deleteAssignVehicle);
 router.patch("/assign-vehicle/:id", UpdateAssignVehicle);
 router.get("/assign-vehicle", getAllAssignVehicle);
+router.get("/assign-vehicle/:id", getAllAssignVehicle);
 /* End */
 /* fees-master */
 router.post("/fees-master", createFeesMaster);
 router.delete("/fees-master/:id", deleteFeesMaster);
 router.patch("/fees-master/:id", UpdateFeesMaster);
 router.get("/fees-master", getAllFeesMaster);
+router.get("/fees-master/:id", getAllFeesMaster);
 /* End */
 /* pickup-point */
 router.post("/pickup-point", createPickupPoint);
 router.delete("/pickup-point/:id", deletePickupPoint);
 router.patch("/pickup-point/:id", UpdatePickupPoint);
 router.get("/pickup-point", getAllPickupPoint);
+router.get("/pickup-point/:id", getAllPickupPoint);
 /* End */
 /* route-pickup-point */
 router.post("/route-pickup-point", createRoutePickupPoints);
 router.delete("/route-pickup-point/:id", deleteRoutePickupPoints);
 router.patch("/route-pickup-point/:id", UpdateRoutePickupPoints);
 router.get("/route-pickup-point", getAllRoutePickupPoints);
+router.get("/route-pickup-point/:id", getAllRoutePickupPoints);
 /* End */
 /* routes */
 router.post("/routes", createRoutes);
 router.delete("/routes/:id", deleteRoutes);
 router.patch("/routes/:id", UpdateRoutes);
 router.get("/routes", getAllRoutes);
+router.get("/routes/:id", getAllRoutes);
 /* End */
 /* vehicle */
 router.post("/vehicle", createVehicle);
 router.delete("/vehicle/:id", deleteVehicle);
 router.patch("/vehicle/:id", UpdateVehicle);
 router.get("/vehicle", getAllVehicle);
+router.get("/vehicle/:id", getAllVehicle);
 /* End */
 export default router;

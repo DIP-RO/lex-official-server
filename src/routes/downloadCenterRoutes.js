@@ -24,17 +24,20 @@ router.post("/content-type", createContentType);
 router.delete("/content-type/:id", deleteContentType);
 router.patch("/content-type/:id", UpdateContentType);
 router.get("/content-type", getAllContentType);
+router.get("/content-type/:id", getAllContentType);
 /* End */
 /* upload-content */
 router.post("/upload-content", createUploadContent);
 router.delete("/upload-content/:id", deleteUploadContent);
 router.patch("/upload-content/:id", UpdateUploadContent);
 router.get("/upload-content", getAllUploadContent);
+router.get("/upload-content/:id", getAllUploadContent);
 /* End */
 /* video-tutorial */
 router.post("/video-tutorial", createVideoTutorial);
 router.delete("/video-tutorial/:id", deleteVideoTutorial);
 router.patch("/video-tutorial/:id", UpdateVideoTutorial);
 router.get("/video-tutorial", getAllVideoTutorial);
+router.get("/video-tutorial/:id", getAllVideoTutorial);
 /* End */
 export default router;
