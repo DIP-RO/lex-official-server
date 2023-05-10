@@ -1,7 +1,7 @@
 import path from "path";
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-const productImage = async (req, res) => {
+const complainFile = async (req, res) => {
   try {
     const imageName = req.params.imageName;
     const imagePath = path.join(
