@@ -3,13 +3,12 @@ import {
   UpdateAdmissionEnquiry,
   createAdmissionEnquiry,
   deleteAdmissionEnquiry,
+  filterAdmissionEnquiry,
   getAllAdmissionEnquiries,
 } from "../controllers/frontOffice/AdmissionEnquiryControllers.js";
 import {
   UpdateComplain,
-  createComplain,
-  deleteComplain,
-  getComplain,
+  getComplain
 } from "../controllers/frontOffice/ComplainControllers.js";
 import {
   UpdatePhoneCallLog,
@@ -62,10 +61,9 @@ import {
   getAllVisitorBooks,
 } from "../controllers/frontOffice/VisitorBookControllers.js";
 import {
-  uploadComplainFiles,
   uploadPostalDispatchFiles,
   uploadPostalReceiveFiles,
-  uploadVisitorFiles,
+  uploadVisitorFiles
 } from "../middleware/FrontOfficeFile.js";
 
 const router = Router();
@@ -76,6 +74,7 @@ router.delete("/admission-enquiry/:id", deleteAdmissionEnquiry);
 router.patch("/admission-enquiry/:id", UpdateAdmissionEnquiry);
 router.get("/admission-enquiry/:id", UpdateAdmissionEnquiry);
 router.get("/admission-enquiry", getAllAdmissionEnquiries);
+router.get("/admission-enquiry/filter", filterAdmissionEnquiry);
 /* End */
 
 /* Visitor Book */
