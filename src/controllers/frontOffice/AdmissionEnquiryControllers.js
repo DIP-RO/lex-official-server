@@ -132,9 +132,36 @@ const getAllAdmissionEnquiries = async (req, res) => {
   }
 };
 
+const filterAdmissionEnquiry = async(req,res)=>{
+  try {
+    const filters = {};
+    if (req.query.class) {
+      filters.class = req.query.class;
+    }
+    if (req.query.source) {
+      filters.source = req.query.source;
+    }
+    if (req.query.fromDate) {
+      filters.date = req.query.fromDate;
+    }
+    if (req.query.toDate) {
+      filters.date = req.query.toDate;
+    }
+    if (req.query.status) {
+      filters.status = req.query.status;
+    }
+    const data = await User.AdmissionEnquiryModel(filters);
+    return res.status(200).send(data)
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+}
+
 export {
   createAdmissionEnquiry,
   deleteAdmissionEnquiry,
   UpdateAdmissionEnquiry,
   getAllAdmissionEnquiries,
+  filterAdmissionEnquiry
 };
+
