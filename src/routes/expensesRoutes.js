@@ -11,10 +11,15 @@ import {
   deleteExpenseHead,
   getAllExpenseHead,
 } from "../controllers/expenses/expenseHeadControllers.js";
+import { uploadExpensesFiles } from "../middleware/expensesFile.js";
 const router = Router();
 
 /* expenses */
-router.post("/expenses", createExpense);
+router.post(
+  "/expenses",
+  uploadExpensesFiles.single("attachDocument"),
+  createExpense
+);
 router.delete("/expenses/:id", deleteExpense);
 router.patch("/expenses/:id", UpdateExpense);
 router.get("/expenses", getAllExpense);

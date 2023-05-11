@@ -35,18 +35,50 @@ import {
   deletePrintAdmitCard,
   getAllPrintAdmitCard,
 } from "../controllers/examinations/printAdmitCardControllers.js";
+import { uploadAdmitCartDesignFiles } from "../middleware/ExaminationsFile.js";
+import {
+  uploadDesignAdmitCardFiles,
+  uploadDesignMarlSheetFiles,
+} from "../middleware/designAdmitCardFile.js";
 
 const router = Router();
 
 /* admit-cart-design */
-router.post("/admit-cart-design", createAdmitCardDesign);
+// router.post(
+//   "/expenses",
+//   uploadExpensesFiles.single("attachDocument"),
+//   createExpense
+// );
+router.post(
+  "/admit-card-design",
+  uploadDesignAdmitCardFiles.fields([
+    { name: "LeftLogo", maxCount: 1 },
+    { name: "RightLogo", maxCount: 1 },
+    { name: "Sign", maxCount: 1 },
+    { name: "BackgroundImage", maxCount: 1 },
+  ]),
+  createAdmitCardDesign
+);
+
 router.delete("/admit-cart-design/:id", deleteAdmitCardDesign);
 router.patch("/admit-cart-design/:id", UpdateAdmitCardDesign);
 router.get("/admit-cart-design", getAllAdmitCardDesign);
 router.get("/admit-cart-design/:id", getAllAdmitCardDesign);
 /* End */
 /* design-mark-sheet */
-router.post("/design-mark-sheet", createDesignMarksheet);
+router.post(
+  "/design-mark-sheet",
+  uploadDesignMarlSheetFiles.fields([
+    { name: "HeaderImage", maxCount: 1 },
+    { name: "LeftLogo", maxCount: 1 },
+    { name: "RightLogo", maxCount: 1 },
+    { name: "LeftSign", maxCount: 1 },
+    { name: "MiddleSign", maxCount: 1 },
+    { name: "RightSign", maxCount: 1 },
+    { name: "BackgroundImage", maxCount: 1 },
+  ]),
+  createDesignMarksheet
+);
 router.delete("/design-mark-sheet/:id", deleteDesignMarksheet);
 router.patch("/design-mark-sheet/:id", UpdateDesignMarksheet);
 router.get("/design-mark-sheet", getAllDesignMarksheet);

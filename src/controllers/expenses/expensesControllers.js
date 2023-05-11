@@ -10,6 +10,9 @@ const createExpense = async (req, res) => {
       amount: req.body.amount,
       document: req.body.document,
       description: req.body.description,
+      attachDocument: `http://localhost:5000/expenses/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

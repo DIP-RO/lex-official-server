@@ -2,6 +2,26 @@ import admitCardDesignModel from "../../models/examinations/DesignAdminCard.js";
 
 const createAdmitCardDesign = async (req, res) => {
   try {
+    const attachDocuments = [];
+
+    if (req.files) {
+      for (const fieldName in req.files) {
+        const files = req.files[fieldName];
+        files.forEach((file) => {
+          const originalName = file.originalname;
+          const fileName = originalName.substring(
+            0,
+            originalName.lastIndexOf(".")
+          );
+          const fileUrl = `http://localhost:5000/admit-card-design/files/${file.filename}`;
+          const document = {
+            [fieldName]: fileUrl,
+          };
+          attachDocuments.push(document);
+        });
+      }
+    }
+    console.log(attachDocuments);
     const result = new admitCardDesignModel({
       school: req.body.school,
       template: req.body.template,
@@ -25,7 +45,9 @@ const createAdmitCardDesign = async (req, res) => {
       photo: req.body.photo,
       class: req.body.class,
       section: req.body.section,
+      attachDocument: attachDocuments,
     });
+    console.log("files name", req.files);
     await result.validate();
     await result.save();
     return res.status(201).send(result);

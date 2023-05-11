@@ -15,6 +15,10 @@ const MediaManagerSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
   file: {
     type: String,
     required: false,

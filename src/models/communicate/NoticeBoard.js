@@ -39,6 +39,10 @@ const NoticeBoardSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const NoticeBoardModel = mongoose.model("NoticeBoard", NoticeBoardSchema);

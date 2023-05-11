@@ -59,6 +59,10 @@ const VehicleSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const VehicleModel = mongoose.model("Vehicle", VehicleSchema);

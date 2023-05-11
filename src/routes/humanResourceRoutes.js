@@ -29,6 +29,23 @@ import {
   deleteStaff,
   getAllStaff,
 } from "../controllers/humanResource/staffControllers.js";
+import {
+  uploadCreateApplyLeave,
+  uploadCreateApproveLeaveRequests,
+  uploadStaffFiles,
+} from "../middleware/HumanResourceFile.js";
+import {
+  UpdateApproveLeaveRequest,
+  createApproveLeaveRequest,
+  deleteApproveLeaveRequest,
+  getAllApproveLeaveRequest,
+} from "../controllers/humanResource/ApproveLeaveRequestController.js";
+import {
+  UpdateApplyLeaveModel,
+  createApplyLeaveModel,
+  deleteApplyLeaveModel,
+  getAllApplyLeaveModel,
+} from "../controllers/humanResource/ApplyleaveControllers.js";
 const router = Router();
 
 /* designation */
@@ -60,10 +77,32 @@ router.get("/staff-attendance", getAllStaffAttendance);
 router.get("/staff-attendance/:id", getAllStaffAttendance);
 /* End */
 /* staff */
-router.post("/staff", createStaff);
+router.post("/staff", uploadStaffFiles.single("attachDocument"), createStaff);
 router.delete("/staff/:id", deleteStaff);
 router.patch("/staff/:id", UpdateStaff);
 router.get("/staff", getAllStaff);
 router.get("/staff/:id", getAllStaff);
+/* End */
+/* approve-leave-request */
+router.post(
+  "/approve-leave-request",
+  uploadCreateApproveLeaveRequests.single("attachDocument"),
+  createApproveLeaveRequest
+);
+router.delete("/approve-leave-request/:id", deleteApproveLeaveRequest);
+router.patch("/staff/:id", UpdateApproveLeaveRequest);
+router.get("/approve-leave-request", getAllApproveLeaveRequest);
+router.get("/approve-leave-request/:id", getAllApproveLeaveRequest);
+/* End */
+/* apply-leave */
+router.post(
+  "/apply-leave",
+  uploadCreateApplyLeave.single("attachDocument"),
+  createApplyLeaveModel
+);
+router.delete("/apply-leave/:id", deleteApplyLeaveModel);
+router.patch("/staff/:id", UpdateApplyLeaveModel);
+router.get("/apply-leave", getAllApplyLeaveModel);
+router.get("/apply-leave/:id", getAllApplyLeaveModel);
 /* End */
 export default router;

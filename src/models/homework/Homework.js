@@ -51,6 +51,10 @@ const HomeworkSchema = new mongoose.Schema({
     type: String,
     required: [true, "description required!"],
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const HomeworkModel = mongoose.model("Homework", HomeworkSchema);

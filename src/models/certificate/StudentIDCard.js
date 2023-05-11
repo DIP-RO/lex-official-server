@@ -67,6 +67,10 @@ const StudentIDCardSchema = new mongoose.Schema({
     type: Boolean,
     required: false,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
   dob: {
     type: Boolean,
     required: false,

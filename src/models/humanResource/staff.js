@@ -103,6 +103,10 @@ const staffSchema = new mongoose.Schema({
     type: String,
     required: [true, "status required!"],
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const StaffModel = mongoose.model("staff", staffSchema);

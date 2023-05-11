@@ -67,6 +67,10 @@ const StudentCertificatesSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const StudentCertificatesModel = mongoose.model(

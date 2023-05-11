@@ -47,6 +47,10 @@ const SendMailSchema = new mongoose.Schema({
     type: String,
     required: [true, "status required!"],
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const SendMailModel = mongoose.model("SendMail", SendMailSchema);

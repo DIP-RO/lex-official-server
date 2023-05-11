@@ -27,6 +27,10 @@ const EmailTemplateSchema = new mongoose.Schema({
     type: String,
     required: [true, "attached file required!"],
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
 });
 
 const EmailTemplateModel = mongoose.model("EmailTemplate", EmailTemplateSchema);

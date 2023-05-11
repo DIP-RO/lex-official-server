@@ -26,6 +26,9 @@ const createStaff = async (req, res) => {
       note: req.body.note,
       panNumber: req.body.panNumber,
       status: req.body.status,
+      attachDocument: `http://localhost:5000/staff/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

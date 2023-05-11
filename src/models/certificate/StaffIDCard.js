@@ -19,6 +19,10 @@ const StaffIDCardSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  attachDocument: {
+    type: String,
+    required: false,
+  },
   logo: {
     type: String,
     required: false,
