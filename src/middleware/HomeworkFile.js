@@ -2,11 +2,11 @@
 import fs from "fs";
 import multer from "multer";
 
-// student_admission file storage
-const studentAdmissionFileStorage = multer.diskStorage({
+// home-work file storage
+const HomeWorkFileStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    fs.mkdir("./uploads/files/student_admission", (err) => {
-      cb(null, "./uploads/files/student_admission");
+    fs.mkdir("./uploads/files/home-work", (err) => {
+      cb(null, "./uploads/files/home-work");
     });
   },
   filename: function (req, file, cb) {
@@ -14,12 +14,12 @@ const studentAdmissionFileStorage = multer.diskStorage({
   },
 });
 
-// student_admission file upload handler
-const uploadStudentAdmissionFiles = multer({
-  storage: studentAdmissionFileStorage,
+// home-work file upload handler
+const uploadHomeWorkFiles = multer({
+  storage: HomeWorkFileStorage,
   limits: {
     fileSize: 1024 * 1024 * 50,
   },
 });
 
-export { uploadStudentAdmissionFiles };
+export { uploadHomeWorkFiles };

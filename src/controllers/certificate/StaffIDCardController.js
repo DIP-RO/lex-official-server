@@ -1,6 +1,25 @@
 import StaffIDCardModel from "../../models/certificate/StaffIDCard.js";
 
 const createStaffIDCard = async (req, res) => {
+  const attachDocuments = [];
+
+  if (req.files) {
+    for (const fieldName in req.files) {
+      const files = req.files[fieldName];
+      files.forEach((file) => {
+        const originalName = file.originalname;
+        const fileName = originalName.substring(
+          0,
+          originalName.lastIndexOf(".")
+        );
+        const fileUrl = `http://localhost:5000/admit-card-design/files/${file.filename}`;
+        const document = {
+          [fieldName]: fileUrl,
+        };
+        attachDocuments.push(document);
+      });
+    }
+  }
   try {
     const result = new StaffIDCardModel({
       school: req.body.school,
@@ -22,6 +41,7 @@ const createStaffIDCard = async (req, res) => {
       dob: req.body.dob,
       designType: req.body.designType,
       barCode: req.body.barCode,
+      attachDocument: attachDocuments,
     });
     await result.validate();
     await result.save();

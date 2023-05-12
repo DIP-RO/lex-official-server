@@ -17,6 +17,9 @@ const createAlumniEvent = async (req, res) => {
       email: req.body.email,
       sms: req.body.sms,
       templateID: req.body.templateID,
+      attachDocument: `http://localhost:5000/alumni-event/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

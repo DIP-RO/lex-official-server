@@ -17,6 +17,9 @@ const createStudentCertificates = async (req, res) => {
       bodyHeight: req.body.bodyHeight,
       bodyWidth: req.body.bodyWidth,
       bgImage: req.body.bgImage,
+      attachDocument: `http://localhost:5000/student-certificates/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

@@ -34,6 +34,7 @@ import {
   createItemSupplier,
   deleteItemSupplier,
 } from "../controllers/Inventory/ItemSupplierControllers.js";
+import { uploadAddItemStockFiles } from "../middleware/InventoryFile.js";
 
 const router = Router();
 /* issue-items */
@@ -44,7 +45,11 @@ router.get("/issue-items/:id", getAllIssueItem);
 /* End */
 
 /* add-item-stock */
-router.post("/add-item-stock", createAdmissionEnquiry);
+router.post(
+  "/add-item-stock",
+  uploadAddItemStockFiles.single("attachDocument"),
+  createAdmissionEnquiry
+);
 router.delete("/add-item-stock/:id", deleteAdmissionEnquiry);
 router.patch("/add-item-stock/:id", UpdateAdmissionEnquiry);
 router.get("/add-item-stock", getAllAddItemStock);

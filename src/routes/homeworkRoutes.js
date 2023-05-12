@@ -5,10 +5,15 @@ import {
   deleteHomework,
   getAllHomework,
 } from "../controllers/homework/homeworkControllers.js";
+import { uploadHomeWorkFiles } from "../middleware/HomeworkFile.js";
 const router = Router();
 
 /* home-work */
-router.post("/home-work", createHomework);
+router.post(
+  "/home-work",
+  uploadHomeWorkFiles.single("attachDocument"),
+  createHomework
+);
 router.delete("/home-work/:id", deleteHomework);
 router.patch("/home-work/:id", UpdateHomework);
 router.get("/home-work", getAllHomework);

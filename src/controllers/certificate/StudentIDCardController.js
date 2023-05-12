@@ -1,6 +1,25 @@
 import StudentIDCardModel from "../../models/certificate/StudentIDCard.js";
 
 const createStudentIDCard = async (req, res) => {
+  const attachDocuments = [];
+
+  if (req.files) {
+    for (const fieldName in req.files) {
+      const files = req.files[fieldName];
+      files.forEach((file) => {
+        const originalName = file.originalname;
+        const fileName = originalName.substring(
+          0,
+          originalName.lastIndexOf(".")
+        );
+        const fileUrl = `http://localhost:5000/admit-card-design/files/${file.filename}`;
+        const document = {
+          [fieldName]: fileUrl,
+        };
+        attachDocuments.push(document);
+      });
+    }
+  }
   try {
     const result = new StudentIDCardModel({
       school: req.body.school,
@@ -21,6 +40,7 @@ const createStudentIDCard = async (req, res) => {
       bloodGroup: req.body.bloodGroup,
       designType: req.body.designType,
       barCode: req.body.barCode,
+      attachDocument: attachDocuments,
     });
     await result.validate();
     await result.save();

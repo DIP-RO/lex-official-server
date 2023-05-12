@@ -15,6 +15,9 @@ const createVehicle = async (req, res) => {
       driverContact: req.body.driverContact,
       vehiclePhoto: req.body.vehiclePhoto,
       note: req.body.note,
+      attachDocument: `http://localhost:5000/vehicle/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

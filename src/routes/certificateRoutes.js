@@ -35,6 +35,11 @@ import {
   deleteStudentIDCard,
   getAllStudentIDCard,
 } from "../controllers/certificate/StudentIDCardController.js";
+import {
+  uploadStaffIdCardFiles,
+  uploadStudentCertificatesFiles,
+  uploadStudentIdCardFiles,
+} from "../middleware/CertificateFile.js";
 const router = Router();
 
 /* generate-certificates */
@@ -59,21 +64,42 @@ router.get("/generate-student-id-card", getAllGenerateStudentIDCard);
 router.get("/generate-student-id-card/:id", getAllGenerateStudentIDCard);
 /* End */
 /* staff-id-card */
-router.post("/staff-id-card", createStaffIDCard);
+
+router.post(
+  "/staff-id-card",
+  uploadStaffIdCardFiles.fields([
+    { name: "BackgroundImage", maxCount: 1 },
+    { name: "Logo", maxCount: 1 },
+    { name: "Signature", maxCount: 1 },
+  ]),
+  createStaffIDCard
+);
 router.delete("/staff-id-card/:id", deleteStaffIDCard);
 router.patch("/staff-id-card/:id", UpdateStaffIDCard);
 router.get("/staff-id-card", getAllStaffIDCard);
 router.get("/staff-id-card/:id", getAllStaffIDCard);
 /* End */
 /* student-certificates */
-router.post("/student-certificates", createStudentCertificates);
+router.post(
+  "/student-certificates",
+  uploadStudentCertificatesFiles.single("attachDocument"),
+  createStudentCertificates
+);
 router.delete("/student-certificates/:id", deleteStudentCertificates);
 router.patch("/student-certificates/:id", UpdateStudentCertificates);
 router.get("/student-certificates", getAllStudentCertificates);
 router.get("/student-certificates/:id", getAllStudentCertificates);
 /* End */
 /* student-id-card */
-router.post("/student-id-card", createStudentIDCard);
+router.post(
+  "/student-id-card",
+  uploadStudentIdCardFiles.fields([
+    { name: "BackgroundImage", maxCount: 1 },
+    { name: "Logo", maxCount: 1 },
+    { name: "Signature", maxCount: 1 },
+  ]),
+  createStudentIDCard
+);
 router.delete("/student-id-card/:id", deleteStudentIDCard);
 router.patch("/student-id-card/:id", UpdateStudentIDCard);
 router.get("/student-id-card", getAllStudentIDCard);

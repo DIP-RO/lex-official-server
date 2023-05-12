@@ -29,6 +29,7 @@ import {
   deleteNews,
   getAllNews,
 } from "../controllers/frontCMS/NewsController.js";
+import { uploadMedianManagerFiles } from "../middleware/FrontCMSFile.js";
 const router = Router();
 
 /* banner-image */
@@ -53,7 +54,11 @@ router.get("/gallery", getAllGallery);
 router.get("/gallery/:id", getAllGallery);
 /* End */
 /*median-manager */
-router.post("/median-manager", createMediaManager);
+router.post(
+  "/median-manager",
+  uploadMedianManagerFiles.single("attachDocument"),
+  createMediaManager
+);
 router.delete("/median-manager/:id", deleteMediaManager);
 router.patch("/median-manager/:id", UpdateMediaManager);
 router.get("/median-manager", getAllMediaManager);

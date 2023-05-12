@@ -35,6 +35,7 @@ import {
   deleteVehicle,
   getAllVehicle,
 } from "../controllers/transport/VehicleControllers.js";
+import { uploadVehicleFiles } from "../middleware/TransportFile.js";
 const router = Router();
 
 /* assign-vehicle */
@@ -73,7 +74,11 @@ router.get("/routes", getAllRoutes);
 router.get("/routes/:id", getAllRoutes);
 /* End */
 /* vehicle */
-router.post("/vehicle", createVehicle);
+router.post(
+  "/vehicle",
+  uploadVehicleFiles.single("attachDocument"),
+  createVehicle
+);
 router.delete("/vehicle/:id", deleteVehicle);
 router.patch("/vehicle/:id", UpdateVehicle);
 router.get("/vehicle", getAllVehicle);

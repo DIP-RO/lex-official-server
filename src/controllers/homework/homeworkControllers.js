@@ -13,6 +13,9 @@ const createHomework = async (req, res) => {
       maxMark: req.body.maxMark,
       attachedFiles: req.body.attachedFiles,
       description: req.body.description,
+      attachDocument: `http://localhost:5000/home-work/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

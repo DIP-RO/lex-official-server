@@ -13,6 +13,9 @@ const createAdmissionEnquiry = async (req, res) => {
       attachDocument: req.body.attachDocument,
       quantity: req.body.quantity,
       description: req.body.description,
+      attachDocument: `http://localhost:5000/add-item-stock/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();
