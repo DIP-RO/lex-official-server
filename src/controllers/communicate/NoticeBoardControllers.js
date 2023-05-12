@@ -10,6 +10,9 @@ const createNoticeBoard = async (req, res) => {
       attachedFile: req.body.attachedFile,
       message: req.body.message,
       messageTo: req.body.messageTo,
+      attachDocument: `http://localhost:5000/notice-board/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

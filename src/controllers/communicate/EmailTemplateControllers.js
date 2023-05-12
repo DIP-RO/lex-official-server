@@ -7,6 +7,9 @@ const createEmailTemplate = async (req, res) => {
       title: req.body.title,
       attachedFile: req.body.attachedFile,
       message: req.body.message,
+      attachDocument: `http://localhost:5000/email-template/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

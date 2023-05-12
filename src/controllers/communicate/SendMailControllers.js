@@ -12,6 +12,9 @@ const createSendMail = async (req, res) => {
       sendNow: req.body.sendNow,
       scheduleDate: req.body.scheduleDate,
       status: req.body.status,
+      attachDocument: `http://localhost:5000/send-mail/files/${
+        req?.file?.filename ? req?.file?.filename : "null"
+      }`,
     });
     await result.validate();
     await result.save();

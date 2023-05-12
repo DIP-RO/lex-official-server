@@ -29,24 +29,42 @@ import {
   deleteSmsTemplate,
   getAllSmsTemplate,
 } from "../controllers/communicate/SmsTemplateControllers.js";
+import {
+  uploadEmailTemplateFiles,
+  uploadNoticeBoardFiles,
+  uploadSendMailFiles,
+} from "../middleware/CommunicateFile.js";
 const router = Router();
 
 /* email-template */
-router.post("/email-template", createEmailTemplate);
+
+router.post(
+  "/email-template",
+  uploadEmailTemplateFiles.single("attachDocument"),
+  createEmailTemplate
+);
 router.delete("/email-template/:id", deleteEmailTemplate);
 router.patch("/email-template/:id", UpdateEmailTemplate);
 router.get("/email-template", getAllEmailTemplate);
 router.get("/email-template/:id", getAllEmailTemplate);
 /* End */
 /* notice-board */
-router.post("/notice-board", createNoticeBoard);
+router.post(
+  "/notice-board",
+  uploadNoticeBoardFiles.single("attachDocument"),
+  createNoticeBoard
+);
 router.delete("/notice-board/:id", deleteNoticeBoard);
 router.patch("/notice-board/:id", UpdateNoticeBoard);
 router.get("/notice-board", getAllNoticeBoard);
 router.get("/notice-board/:id", getAllNoticeBoard);
 /* End */
 /* send-mail */
-router.post("/send-mail", createSendMail);
+router.post(
+  "/send-mail",
+  uploadSendMailFiles.single("attachDocument"),
+  createSendMail
+);
 router.delete("/send-mail/:id", deleteSendMail);
 router.patch("/send-mail/:id", UpdateSendMail);
 router.get("/send-mail", getAllSendMail);
