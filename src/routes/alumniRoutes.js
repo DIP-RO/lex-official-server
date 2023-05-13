@@ -6,7 +6,9 @@ import {
   getAllAlumniEvent,
 } from "../controllers/alumni/EventsControllers.js";
 import { uploadAlumniEventFiles } from "../middleware/AlumniFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* print-admit-card */
 router.post(

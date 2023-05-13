@@ -34,7 +34,9 @@ import {
   uploadNoticeBoardFiles,
   uploadSendMailFiles,
 } from "../middleware/CommunicateFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* email-template */
 

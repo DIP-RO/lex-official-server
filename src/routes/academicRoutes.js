@@ -41,8 +41,10 @@ import {
   deleteSubject,
   getAllSubject,
 } from "../controllers/academic/subjectsControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
+router.use(authorizedUser)
 
 /* class */
 router.post("/class", createClass);

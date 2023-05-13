@@ -7,20 +7,22 @@ import {
   getAllDisableReasons,
 } from "../controllers/StudentInformation/DisableReasonControllers.js";
 import {
-  UpdateStudentHouse,
-  createStudentHouse,
-  deleteStudentHouse,
-  getAllStudentHouse,
-} from "../controllers/StudentInformation/StudentHouseControllers.js";
-import {
   UpdateStudentCategories,
   createStudentCategories,
   deleteStudentCategories,
   getAllStudentCategories,
 } from "../controllers/StudentInformation/StudentCategoriesControllers.js";
+import {
+  UpdateStudentHouse,
+  createStudentHouse,
+  deleteStudentHouse,
+  getAllStudentHouse,
+} from "../controllers/StudentInformation/StudentHouseControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 
 // router
 const router = Router();
+router.use(authorizedUser)
 
 /* DisableReason */
 router.post("/disable-reason", createDisableReason);

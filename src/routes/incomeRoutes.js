@@ -12,7 +12,9 @@ import {
   getAllIncomeHead,
 } from "../controllers/income/incomeHeadControllers.js";
 import { uploadIncomeFiles } from "../middleware/IncomeFile,.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* income */
 router.post(

@@ -30,7 +30,9 @@ import {
   getAllNews,
 } from "../controllers/frontCMS/NewsController.js";
 import { uploadMedianManagerFiles } from "../middleware/FrontCMSFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* banner-image */
 router.post("/banner-image", createBannerImage);

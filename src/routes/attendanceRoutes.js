@@ -1,15 +1,17 @@
 import { Router } from "express";
 import {
-  createStudentAttendance,
-  getAllStudentAttendance,
-} from "../controllers/attendance/studentAttendanceControllers.js";
-import {
   UpdateLeave,
   createLeave,
   deleteLeave,
   getAllLeave,
 } from "../controllers/attendance/leaveControllers.js";
+import {
+  createStudentAttendance,
+  getAllStudentAttendance,
+} from "../controllers/attendance/studentAttendanceControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 /* student-attendance */
 router.post("/student-attendance", createStudentAttendance);
 router.get("/student-attendance", getAllStudentAttendance);

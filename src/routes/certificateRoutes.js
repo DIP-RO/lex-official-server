@@ -40,7 +40,9 @@ import {
   uploadStudentCertificatesFiles,
   uploadStudentIdCardFiles,
 } from "../middleware/CertificateFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* generate-certificates */
 router.post("/generate-certificates", createGenerateCertificates);

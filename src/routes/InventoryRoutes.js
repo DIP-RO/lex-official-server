@@ -1,9 +1,10 @@
 import { Router } from "express";
 import {
-  createIssueItem,
-  deleteIssueItem,
-  getAllIssueItem,
-} from "../controllers/Inventory/IssueItemControllers.js";
+  UpdateAddItem,
+  createAddItem,
+  deleteAddItem,
+  getAllAddItem,
+} from "../controllers/Inventory/AddItemControllers.js";
 import {
   UpdateAdmissionEnquiry,
   createAdmissionEnquiry,
@@ -11,11 +12,10 @@ import {
   getAllAddItemStock,
 } from "../controllers/Inventory/AddItemStockControllers.js";
 import {
-  UpdateAddItem,
-  createAddItem,
-  deleteAddItem,
-  getAllAddItem,
-} from "../controllers/Inventory/AddItemControllers.js";
+  createIssueItem,
+  deleteIssueItem,
+  getAllIssueItem,
+} from "../controllers/Inventory/IssueItemControllers.js";
 import {
   UpdateItemCategory,
   createItemCategory,
@@ -30,13 +30,15 @@ import {
 } from "../controllers/Inventory/ItemStoreControllers.js";
 import {
   UpdateItemSupplier,
-  getAllItemSupplier,
   createItemSupplier,
   deleteItemSupplier,
+  getAllItemSupplier,
 } from "../controllers/Inventory/ItemSupplierControllers.js";
 import { uploadAddItemStockFiles } from "../middleware/InventoryFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
+router.use(authorizedUser)
 /* issue-items */
 router.post("/issue-items", createIssueItem);
 router.delete("/issue-items/:id", deleteIssueItem);

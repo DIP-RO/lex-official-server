@@ -1,18 +1,20 @@
 import { Router } from "express";
 import {
-  UpdateExpense,
-  createExpense,
-  deleteExpense,
-  getAllExpense,
-} from "../controllers/expenses/expensesControllers.js";
-import {
   UpdateExpenseHead,
   createExpenseHead,
   deleteExpenseHead,
   getAllExpenseHead,
 } from "../controllers/expenses/expenseHeadControllers.js";
+import {
+  UpdateExpense,
+  createExpense,
+  deleteExpense,
+  getAllExpense,
+} from "../controllers/expenses/expensesControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 import { uploadExpensesFiles } from "../middleware/expensesFile.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* expenses */
 router.post(

@@ -18,30 +18,31 @@ import {
   getAllExamGroup,
 } from "../controllers/examinations/examGroupControllers.js";
 import {
-  UpdateMarkGrade,
-  createMarkGrade,
-  deleteMarkGrade,
-  getAllMarkGrade,
-} from "../controllers/examinations/markGradeControllers.js";
-import {
   UpdateMarkDivision,
   createMarkDivision,
   deleteMarkDivision,
   getAllMarkDivision,
 } from "../controllers/examinations/markDivisionControllers.js";
 import {
+  UpdateMarkGrade,
+  createMarkGrade,
+  deleteMarkGrade,
+  getAllMarkGrade,
+} from "../controllers/examinations/markGradeControllers.js";
+import {
   UpdatePrintAdmitCard,
   createPrintAdmitCard,
   deletePrintAdmitCard,
   getAllPrintAdmitCard,
 } from "../controllers/examinations/printAdmitCardControllers.js";
-import { uploadAdmitCartDesignFiles } from "../middleware/ExaminationsFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 import {
   uploadDesignAdmitCardFiles,
   uploadDesignMarlSheetFiles,
 } from "../middleware/designAdmitCardFile.js";
 
 const router = Router();
+router.use(authorizedUser)
 
 /* admit-cart-design */
 // router.post(

@@ -5,7 +5,9 @@ import {
   deleteIncidents,
   getAllIncidents,
 } from "../controllers/behaviourRecord/incidentsControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* incidents */
 router.post("/incidents", createIncidents);

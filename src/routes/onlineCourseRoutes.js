@@ -1,11 +1,5 @@
 import { Router } from "express";
 import {
-  UpdateCourseCategory,
-  createCourseCategory,
-  deleteCourseCategory,
-  getAllCourseCategory,
-} from "../controllers/OnlineCourse/courseCategoryControllers.js";
-import {
   UpdateOfflinePayment,
   createOfflinePayment,
   deleteOfflinePayment,
@@ -18,14 +12,22 @@ import {
   getAllOnlineCourse,
 } from "../controllers/OnlineCourse/OnlineCourseControllers.js";
 import {
+  UpdateCourseCategory,
+  createCourseCategory,
+  deleteCourseCategory,
+  getAllCourseCategory,
+} from "../controllers/OnlineCourse/courseCategoryControllers.js";
+import {
   UpdateSetting,
   createSetting,
   deleteSetting,
   getAllSetting,
 } from "../controllers/OnlineCourse/settingControllers.js";
 import { uploadOnlineCourseFiles } from "../middleware/OnlineCourseFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
+router.use(authorizedUser)
 /*course-category */
 router.post(
   "/course-category",

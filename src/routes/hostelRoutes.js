@@ -17,8 +17,10 @@ import {
   deleteRoomType,
   getAllRoomType,
 } from "../controllers/Hostel/RoomTypeControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
+router.use(authorizedUser)
 
 /* hostel-rooms */
 router.post("/hostel-rooms", createHostelRoom);

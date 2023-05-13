@@ -6,6 +6,12 @@ import {
   getAllFeesMaster,
 } from "../controllers/fessCollection/FeesMasterControllers.js";
 import {
+  UpdateFeesDiscount,
+  createFeesDiscount,
+  deleteFeesDiscount,
+  getAllFeesDiscount,
+} from "../controllers/fessCollection/feesDiscountControllers.js";
+import {
   UpdateFeesGroup,
   createFeesGroup,
   deleteFeesGroup,
@@ -17,14 +23,10 @@ import {
   deleteFeesType,
   getAllFeesType,
 } from "../controllers/fessCollection/fessTypeControllers.js";
-import {
-  UpdateFeesDiscount,
-  createFeesDiscount,
-  deleteFeesDiscount,
-  getAllFeesDiscount,
-} from "../controllers/fessCollection/feesDiscountControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
+router.use(authorizedUser)
 
 /* fees-master */
 router.post("/fees-master", createFeesMaster);

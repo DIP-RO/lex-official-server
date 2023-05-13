@@ -65,8 +65,10 @@ import {
   uploadPostalReceiveFiles,
   uploadVisitorFiles
 } from "../middleware/FrontOfficeFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
+router.use(authorizedUser)
 
 /* Admission Enquiry Routes */
 router.post("/admission-enquiry", createAdmissionEnquiry);

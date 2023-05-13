@@ -11,8 +11,10 @@ import {
   deleteTopic,
   getAllTopic,
 } from "../controllers/lessonPlan/topicControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
+router.use(authorizedUser)
 
 /* lesson */
 router.post("/lesson", createLesson);

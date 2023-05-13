@@ -6,7 +6,9 @@ import {
   getAllHomework,
 } from "../controllers/homework/homeworkControllers.js";
 import { uploadHomeWorkFiles } from "../middleware/HomeworkFile.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* home-work */
 router.post(

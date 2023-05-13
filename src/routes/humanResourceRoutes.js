@@ -1,5 +1,17 @@
 import { Router } from "express";
 import {
+  UpdateApplyLeaveModel,
+  createApplyLeaveModel,
+  deleteApplyLeaveModel,
+  getAllApplyLeaveModel,
+} from "../controllers/humanResource/ApplyleaveControllers.js";
+import {
+  UpdateApproveLeaveRequest,
+  createApproveLeaveRequest,
+  deleteApproveLeaveRequest,
+  getAllApproveLeaveRequest,
+} from "../controllers/humanResource/ApproveLeaveRequestController.js";
+import {
   UpdateDesignation,
   createDesignation,
   deleteDesignation,
@@ -34,19 +46,9 @@ import {
   uploadCreateApproveLeaveRequests,
   uploadStaffFiles,
 } from "../middleware/HumanResourceFile.js";
-import {
-  UpdateApproveLeaveRequest,
-  createApproveLeaveRequest,
-  deleteApproveLeaveRequest,
-  getAllApproveLeaveRequest,
-} from "../controllers/humanResource/ApproveLeaveRequestController.js";
-import {
-  UpdateApplyLeaveModel,
-  createApplyLeaveModel,
-  deleteApplyLeaveModel,
-  getAllApplyLeaveModel,
-} from "../controllers/humanResource/ApplyleaveControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* designation */
 router.post("/designation", createDesignation);

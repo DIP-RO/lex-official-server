@@ -17,7 +17,9 @@ import {
   deleteLibraryMember,
   getAllLibraryMember,
 } from "../controllers/library/LibraryMemberControllers.js";
+import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
+router.use(authorizedUser)
 
 /* book-list */
 router.post("/book-list", createBookList);
