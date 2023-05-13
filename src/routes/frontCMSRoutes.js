@@ -53,16 +53,16 @@ router.patch("/gallery/:id", UpdateGallery);
 router.get("/gallery", getAllGallery);
 router.get("/gallery/:id", getAllGallery);
 /* End */
-/*median-manager */
+/*media-manager */
 router.post(
-  "/median-manager",
+  "/media-manager",
   uploadMedianManagerFiles.single("attachDocument"),
   createMediaManager
 );
-router.delete("/median-manager/:id", deleteMediaManager);
-router.patch("/median-manager/:id", UpdateMediaManager);
-router.get("/median-manager", getAllMediaManager);
-router.get("/median-manager/:id", getAllMediaManager);
+router.delete("/media-manager/:id", deleteMediaManager);
+router.patch("/media-manager/:id", UpdateMediaManager);
+router.get("/media-manager", getAllMediaManager);
+router.get("/media-manager/:id", getAllMediaManager);
 /* End */
 /*news */
 router.post("/news", createNews);

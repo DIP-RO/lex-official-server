@@ -6,7 +6,7 @@ const createMediaManager = async (req, res) => {
       school: req.body.school,
       file: req.body.file,
       youtube: req.body.youtube,
-      attachDocument: `http://localhost:5000/median-manager/files/${
+      attachDocument: `http://localhost:5000/media-manager/files/${
         req?.file?.filename ? req?.file?.filename : "null"
       }`,
     });

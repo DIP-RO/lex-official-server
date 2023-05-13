@@ -2,11 +2,11 @@
 import fs from "fs";
 import multer from "multer";
 
-// median-manager file storage
+// media-manager file storage
 const MedianManagerFileStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    fs.mkdir("./uploads/files/median-manager", (err) => {
-      cb(null, "./uploads/files/median-manager");
+    fs.mkdir("./uploads/files/media-manager", (err) => {
+      cb(null, "./uploads/files/media-manager");
     });
   },
   filename: function (req, file, cb) {
@@ -14,7 +14,7 @@ const MedianManagerFileStorage = multer.diskStorage({
   },
 });
 
-// median-manager file upload handler
+// media-manager file upload handler
 const uploadMedianManagerFiles = multer({
   storage: MedianManagerFileStorage,
   limits: {
