@@ -19,7 +19,7 @@ import {
 } from "../controllers/downloadCenter/VideoTutorialControllers.js";
 import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 
 /* content-type */
 router.post("/content-type", createContentType);

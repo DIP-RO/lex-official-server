@@ -56,7 +56,7 @@ app.get("/", (req, res) => {
 // users routes
 app.use("/api/v1/auth/", userRoutes);
 
-app.use("/api/v1/font-office/", frontOfficeRoutes);
+app.use("/api/v1/front-office/", frontOfficeRoutes);
 app.use("/api/v1/inventory/", InventoryRoutes);
 app.use("/api/v1/hostel/", hostelRoutes);
 app.use("/api/v1/student-details/", studentDetailsRoutes);

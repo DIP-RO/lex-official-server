@@ -38,7 +38,7 @@ import {
 import { uploadVehicleFiles } from "../middleware/TransportFile.js";
 import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 
 /* assign-vehicle */
 router.post("/assign-vehicle", createAssignVehicle);

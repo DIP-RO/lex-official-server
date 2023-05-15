@@ -8,6 +8,8 @@ import {
 } from "../controllers/frontOffice/AdmissionEnquiryControllers.js";
 import {
   UpdateComplain,
+  createComplain,
+  deleteComplain,
   getComplain,
 } from "../controllers/frontOffice/ComplainControllers.js";
 import {
@@ -68,7 +70,7 @@ import {
 import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 
 /* Admission Enquiry Routes */
 router.post("/admission-enquiry", createAdmissionEnquiry);
@@ -128,7 +130,8 @@ router.get("/postal-receive/:id", getAllPostalReceive);
 
 /* complain */
 router.patch("/complain/:id", UpdateComplain);
-router.get("/complain/:id", getComplain);
+router.post("/complain", createComplain);
+router.delete("/complain", deleteComplain);
 router.get("/complain", getComplain);
 router.get("/complain/:id", getComplain);
 /* End */

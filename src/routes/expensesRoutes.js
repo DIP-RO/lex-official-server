@@ -14,7 +14,7 @@ import {
 import { authorizedUser } from "../middleware/authentication.js";
 import { uploadExpensesFiles } from "../middleware/expensesFile.js";
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 
 /* expenses */
 router.post(

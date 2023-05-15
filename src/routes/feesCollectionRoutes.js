@@ -26,7 +26,7 @@ import {
 import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 
 /* fees-master */
 router.post("/fees-master", createFeesMaster);

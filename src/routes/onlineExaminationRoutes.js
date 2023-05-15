@@ -14,7 +14,7 @@ import {
 import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 /* online-exam */
 router.post("/online-exam", createOnlineExam);
 router.delete("/online-exam/:id", deleteOnlineExam);

@@ -1,11 +1,6 @@
 import jwt from "jsonwebtoken";
 import UserModel from "../models/userModels.js";
-
-const routeRoles = {
-  "/api/v1/font-office/admission-enquiry": ["SUPER_ADMIN", "ADMIN"],
-  "/api/v1/font-office/admission-enquiry/:id": ["SUPER_ADMIN", "ADMIN"],
-  "/api/v1/font-office/admission-enquiry/filter": ["SUPER_ADMIN", "ADMIN"],
-};
+import routeRoles from "./routeRoles.js";
 
 const authorizedUser = async (req, res, next) => {
   const { authorization } = req.headers;

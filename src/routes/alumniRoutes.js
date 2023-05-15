@@ -8,7 +8,7 @@ import {
 import { uploadAlumniEventFiles } from "../middleware/AlumniFile.js";
 import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 
 /* print-admit-card */
 router.post(

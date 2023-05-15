@@ -11,11 +11,12 @@ import {
 } from "../controllers/attendance/studentAttendanceControllers.js";
 import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 /* student-attendance */
 router.post("/student-attendance", createStudentAttendance);
 router.get("/student-attendance", getAllStudentAttendance);
 router.get("/student-attendance/:id", getAllStudentAttendance);
+router.get("/student-attendance", getAllStudentAttendance);
 /* End */
 /* leave */
 router.post("/leave", createLeave);

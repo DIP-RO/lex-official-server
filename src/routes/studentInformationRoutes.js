@@ -22,7 +22,7 @@ import { authorizedUser } from "../middleware/authentication.js";
 
 // router
 const router = Router();
-// router.use(authorizedUser)
+router.use(authorizedUser);
 
 /* DisableReason */
 router.post("/disable-reason", createDisableReason);
