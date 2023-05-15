@@ -513,7 +513,7 @@ const routeRoles = {
     "RECEPTIONIST",
   ],
   /* end */
-  /* class-teacher */
+  /* class-teacher Ata baki ace*/
   "/api/v1/academic/class-teacher": ["SUPER_ADMIN", "ADMIN", "RECEPTIONIST"],
   "/api/v1/academic/class-teacher/:id": [
     "SUPER_ADMIN",
