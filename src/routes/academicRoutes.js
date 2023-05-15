@@ -44,7 +44,7 @@ import {
 import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 
 /* class */
 router.post("/class", createClass);

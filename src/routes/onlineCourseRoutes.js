@@ -27,7 +27,7 @@ import { uploadOnlineCourseFiles } from "../middleware/OnlineCourseFile.js";
 import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 /*course-category */
 router.post(
   "/course-category",

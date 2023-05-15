@@ -20,7 +20,7 @@ import {
 import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 
 /* hostel-rooms */
 router.post("/hostel-rooms", createHostelRoom);

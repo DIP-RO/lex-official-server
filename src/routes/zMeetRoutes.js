@@ -7,7 +7,7 @@ import {
 } from "../controllers/zMeet/zMeetControllers.js";
 import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 
 /* z-meet */
 router.post("/z-meet", createZMeet);

@@ -8,7 +8,7 @@ import {
 import { uploadHomeWorkFiles } from "../middleware/HomeworkFile.js";
 import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 
 /* home-work */
 router.post(

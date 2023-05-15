@@ -42,7 +42,7 @@ import {
 } from "../middleware/designAdmitCardFile.js";
 
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 
 /* admit-cart-design */
 // router.post(

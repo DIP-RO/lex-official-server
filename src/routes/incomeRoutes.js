@@ -14,7 +14,7 @@ import {
 import { uploadIncomeFiles } from "../middleware/IncomeFile,.js";
 import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 
 /* income */
 router.post(

@@ -8,7 +8,7 @@ import {
 } from "../controllers/frontOffice/AdmissionEnquiryControllers.js";
 import {
   UpdateComplain,
-  getComplain
+  getComplain,
 } from "../controllers/frontOffice/ComplainControllers.js";
 import {
   UpdatePhoneCallLog,
@@ -63,12 +63,12 @@ import {
 import {
   uploadPostalDispatchFiles,
   uploadPostalReceiveFiles,
-  uploadVisitorFiles
+  uploadVisitorFiles,
 } from "../middleware/FrontOfficeFile.js";
 import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 
 /* Admission Enquiry Routes */
 router.post("/admission-enquiry", createAdmissionEnquiry);

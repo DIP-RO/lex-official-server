@@ -38,7 +38,7 @@ import { uploadAddItemStockFiles } from "../middleware/InventoryFile.js";
 import { authorizedUser } from "../middleware/authentication.js";
 
 const router = Router();
-router.use(authorizedUser)
+// router.use(authorizedUser)
 /* issue-items */
 router.post("/issue-items", createIssueItem);
 router.delete("/issue-items/:id", deleteIssueItem);
