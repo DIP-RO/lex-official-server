@@ -285,5 +285,89 @@ const routeRoles = {
   "/api/v1/onlineCourse/online-course-setting/:id": ["SUPER_ADMIN", "ADMIN"],
   "/api/v1/onlineCourse/online-course-setting/filter": ["SUPER_ADMIN", "ADMIN"],
   /* end */
+  /* Gmeet Live Classes */
+  /* g-meet */
+  "/api/v1/g-meet/g-meet": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  "/api/v1/g-meet/g-meet/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  "/api/v1/g-meet/g-meet/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  /* end */
+  /* End g meet */
+  /* Zoom Live Classes */
+  /* z-meet */
+  "/api/v1/z-meet/z-meet": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  "/api/v1/z-meet/z-meet/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  "/api/v1/z-meet/z-meet/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  /* end */
+  /* End Zoom Live Classes */
+  /* Behaviour Records */
+  /* behaviour */
+  "/api/v1/behaviour/incidents": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "LIBRARIAN",
+  ],
+  "/api/v1/behaviour/incidents/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "LIBRARIAN",
+  ],
+  "/api/v1/behaviour/incidents/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "LIBRARIAN",
+  ],
+  /* end */
+  /*End Behaviour Records */
+  /* Income */
+  /* income */
+  "/api/v1/income/income": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/income/income/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/income/income/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* income-head */
+  "/api/v1/income/income-head": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/income/income-head/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/income/income-head/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* End Income */
 };
 export default routeRoles;
