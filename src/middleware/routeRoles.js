@@ -369,5 +369,162 @@ const routeRoles = {
   "/api/v1/income/income-head/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
   /* end */
   /* End Income */
+
+  /* Expenses */
+  /* expenses */
+  "/api/v1/expenses/expenses": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/expenses/expenses/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/expenses/expenses/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* expenses-head */
+  "/api/v1/expenses/expenses-head": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/expenses/expenses-head/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/expenses/expenses-head/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* End Expenses */
+
+  /* Examinations */
+  /* admit-cart-design */
+  "/api/v1/examinations/admit-cart-design": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/examinations/admit-cart-design/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/examinations/admit-cart-design/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* design-mark-sheet */
+  "/api/v1/examinations/design-mark-sheet": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/examinations/design-mark-sheet/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/examinations/design-mark-sheet/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* exam-group */
+  "/api/v1/examinations/exam-group": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/examinations/exam-group/:id": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/examinations/exam-group/filter": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  /* end */
+  /* mark-grade */
+  "/api/v1/examinations/mark-grade": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/examinations/mark-grade/:id": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/examinations/mark-grade/filter": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  /* end */
+  /* mark-division */
+  "/api/v1/examinations/mark-division": ["SUPER_ADMIN"],
+  "/api/v1/examinations/mark-division/:id": ["SUPER_ADMIN"],
+  "/api/v1/examinations/mark-division/filter": ["SUPER_ADMIN"],
+  /* end */
+  /* print-admit-card */
+  "/api/v1/examinations/print-admit-card": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/examinations/print-admit-card/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/examinations/print-admit-card/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* End Examinations */
+  /* Attendance */
+  /* student-attendance */
+  "/api/v1/attendance/student-attendance": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/attendance/student-attendance/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/attendance/student-attendance/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* leave */
+  "/api/v1/attendance/leave": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/attendance/leave/:id": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/attendance/leave/filter": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  /* end */
+  /* End Attendance */
+
+  /* Online Examinations */
+  /* online-exam */
+  "/api/v1/online-examination/online-exam": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/online-examination/online-exam/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/online-examination/online-exam/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* question-bank */
+  "/api/v1/online-examination/question-bank": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/online-examination/question-bank/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/online-examination/question-bank/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* End Online Examinations */
+
+  /* Academics */
+  /* class */
+  "/api/v1/academic/class": ["SUPER_ADMIN", "ADMIN", "TEACHER", "RECEPTIONIST"],
+  "/api/v1/academic/class/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/academic/class/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+  ],
+  /* end */
+  /* class-teacher */
+  "/api/v1/academic/class-teacher": ["SUPER_ADMIN", "ADMIN", "RECEPTIONIST"],
+  "/api/v1/academic/class-teacher/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/academic/class-teacher/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+  ],
+  /* end */
 };
 export default routeRoles;
