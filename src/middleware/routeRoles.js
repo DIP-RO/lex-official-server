@@ -100,11 +100,190 @@ const routeRoles = {
   ],
   /* end */
   /* End Front Office */
+
   /* Student Information  */
-  /* source */
-  "/api/v1/inventory/source": ["SUPER_ADMIN", "ADMIN", "RECEPTIONIST"],
-  "/api/v1/inventory/source/:id": ["SUPER_ADMIN", "ADMIN", "RECEPTIONIST"],
-  "/api/v1/inventory/source/filter": ["SUPER_ADMIN", "ADMIN", "RECEPTIONIST"],
+  /* disable-reason */
+  "/api/v1/student-details/disable-reason": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/student-details/disable-reason/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/student-details/disable-reason/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* student-house */
+  "/api/v1/student-details/student-house": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/student-details/student-house/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/student-details/student-house/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* student-categories */
+  "/api/v1/student-details/student-categories": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/student-details/student-categories/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/student-details/student-categories/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* student-categories */
+  "/api/v1/student-details/student-categories": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/student-details/student-categories/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/student-details/student-categories/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+
+  /* End  Student Information*/
+
+  /* fees-collection */
+  /* fees-master */
+  "/api/v1/fees-collection/fees-master": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/fees-collection/fees-master/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/fees-collection/fees-master/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* fees-group */
+  "/api/v1/fees-collection/fees-group": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/fees-collection/fees-group/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/fees-collection/fees-group/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* fees-type */
+  "/api/v1/fees-collection/fees-type": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/fees-collection/fees-type/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/fees-collection/fees-type/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* fees-discount */
+  "/api/v1/fees-collection/fees-discount": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/fees-collection/fees-discount/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/fees-collection/fees-discount/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* End fees-collection  */
+
+  /* onlineCourse */
+  /* course-category */
+  "/api/v1/onlineCourse/course-category": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "ACCOUNTANT",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  "/api/v1/onlineCourse/course-category/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "ACCOUNTANT",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  "/api/v1/onlineCourse/course-category/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "ACCOUNTANT",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  /* end */
+  /* offline-payment */
+  "/api/v1/onlineCourse/offline-payment": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/onlineCourse/offline-payment/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/onlineCourse/offline-payment/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* online-course */
+  "/api/v1/onlineCourse/online-course": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/onlineCourse/online-course/:id": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/onlineCourse/online-course/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* online-course-setting */
+  "/api/v1/onlineCourse/online-course-setting": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/onlineCourse/online-course-setting/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/onlineCourse/online-course-setting/filter": ["SUPER_ADMIN", "ADMIN"],
   /* end */
 };
 export default routeRoles;
