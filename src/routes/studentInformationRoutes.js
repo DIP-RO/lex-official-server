@@ -6,6 +6,7 @@ import {
   deleteDisableReason,
   getAllDisableReasons,
 } from "../controllers/StudentInformation/DisableReasonControllers.js";
+import { createAdmission } from "../controllers/StudentInformation/StudentAdmissionControllers.js";
 import {
   UpdateStudentCategories,
   createStudentCategories,
@@ -23,6 +24,9 @@ import { authorizedUser } from "../middleware/authentication.js";
 // router
 const router = Router();
 router.use(authorizedUser);
+
+// student information 
+router.post('/student-admission',createAdmission)
 
 /* DisableReason */
 router.post("/disable-reason", createDisableReason);
