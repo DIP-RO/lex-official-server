@@ -35,7 +35,7 @@ router.patch("/issue-return/:id", UpdateIssueReturn);
 router.get("/issue-return", getAllIssueReturn);
 router.get("/issue-return/:id", getAllIssueReturn);
 /* End */
-/* library-member */
+/* library-member authorization baki ase */
 router.post("/library-member", createLibraryMember);
 router.delete("/library-member/:id", deleteLibraryMember);
 router.patch("/library-member/:id", UpdateLibraryMember);
