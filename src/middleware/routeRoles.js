@@ -841,8 +841,8 @@ const routeRoles = {
     "ADMIN",
     "ACCOUNTANT",
     "TEACHER",
-    "LIBRARIAN",
     "RECEPTIONIST",
+    "LIBRARIAN",
   ],
   /* end */
   /* send-template */
@@ -877,5 +877,263 @@ const routeRoles = {
   "/api/v1/download-center/video-tutorial/filter": ["SUPER_ADMIN", "TEACHER"],
   /* end */
   /* End Download Center */
+
+  /* Homework */
+  /* home-work */
+  "/api/v1/home-work/home-work": ["SUPER_ADMIN", "TEACHER", "ADMIN"],
+  "/api/v1/home-work/home-work/:id": ["SUPER_ADMIN", "TEACHER", "ADMIN"],
+  "/api/v1/home-work/home-work/filter": ["SUPER_ADMIN", "TEACHER", "ADMIN"],
+  /* end */
+  /* End Home Work */
+
+  /* Library */
+  /* book-list */
+  "/api/v1/library/book-list": ["SUPER_ADMIN", "TEACHER", "LIBRARIAN"],
+  "/api/v1/library/book-list/:id": ["SUPER_LIBRARIAN", "TEACHER", "LIBRARIAN"],
+  "/api/v1/library/book-list/filter": ["SUPER_ADMIN", "TEACHER", "LIBRARIAN"],
+  /* end */
+  /* issue-return */
+  "/api/v1/library/issue-return": ["SUPER_ADMIN", "TEACHER", "LIBRARIAN"],
+  "/api/v1/library/issue-return/:id": [
+    "SUPER_LIBRARIAN",
+    "TEACHER",
+    "LIBRARIAN",
+  ],
+  "/api/v1/library/issue-return/filter": [
+    "SUPER_ADMIN",
+    "TEACHER",
+    "LIBRARIAN",
+  ],
+  /* end */
+  /* End Library */
+
+  /* Inventory */
+  /* issue-items */
+  "/api/v1/inventory/issue-items": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/issue-items/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/issue-items/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* add-item-stock */
+  "/api/v1/inventory/add-item-stock": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/add-item-stock/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/inventory/add-item-stock/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* add-item */
+  "/api/v1/inventory/add-item": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/add-item/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/add-item/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* item-category */
+  "/api/v1/inventory/item-category": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/item-category/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/item-category/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* item-store */
+  "/api/v1/inventory/item-store": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/item-store/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/item-store/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* item-supplier */
+  "/api/v1/inventory/item-supplier": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/item-supplier/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/inventory/item-supplier/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* End Inventory */
+
+  /* Transport */
+  /* assign-vehicle */
+  "/api/v1/transport/assign-vehicle": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/transport/assign-vehicle/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/transport/assign-vehicle/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* fees-master */
+  "/api/v1/transport/fees-master": ["SUPER_ADMIN"],
+  "/api/v1/transport/fees-master/:id": ["SUPER_ADMIN"],
+  "/api/v1/transport/fees-master/filter": ["SUPER_ADMIN"],
+  /* end */
+  /* pickup-point */
+  "/api/v1/transport/pickup-point": ["SUPER_ADMIN"],
+  "/api/v1/transport/pickup-point/:id": ["SUPER_ADMIN"],
+  "/api/v1/transport/pickup-point/filter": ["SUPER_ADMIN"],
+  /* end */
+  /* route-pickup-point */
+  "/api/v1/transport/route-pickup-point": ["SUPER_ADMIN"],
+  "/api/v1/transport/route-pickup-point/:id": ["SUPER_ADMIN"],
+  "/api/v1/transport/route-pickup-point/filter": ["SUPER_ADMIN"],
+  /* end */
+  /* routes */
+  "/api/v1/transport/routes": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/transport/routes/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/transport/routes/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* vehicle */
+  "/api/v1/transport/vehicle": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/transport/vehicle/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/transport/vehicle/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* End Transport */
+
+  /* Hostel */
+  /* hostel-rooms */
+  "/api/v1/hostel/hostel-rooms": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/hostel/hostel-rooms/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/hostel/hostel-rooms/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* room-type */
+  "/api/v1/hostel/room-type": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/hostel/room-type/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/hostel/room-type/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* hostel */
+  "/api/v1/hostel/hostel": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/hostel/hostel/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/hostel/hostel/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  /* end */
+  /* End Hostel */
+
+  /* Certificate */
+  /* generate-certificates */
+  "/api/v1/certificate/generate-certificates": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/certificate/generate-certificates/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/certificate/generate-certificates/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* generate-staff-id-card */
+  "/api/v1/certificate/generate-staff-id-card": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/certificate/generate-staff-id-card/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/certificate/generate-staff-id-card/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "RECEPTIONIST",
+  ],
+  /* end */
+  /* generate-student-id-card */
+  "/api/v1/certificate/generate-student-id-card": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/certificate/generate-student-id-card/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  "/api/v1/certificate/generate-student-id-card/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+  ],
+  /* end */
+  /* staff-id-card */
+  "/api/v1/certificate/staff-id-card": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/certificate/staff-id-card/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/certificate/staff-id-card/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* student-certificates */
+  "/api/v1/certificate/student-certificates": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/certificate/student-certificates/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/certificate/student-certificates/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* student-id-card */
+  "/api/v1/certificate/student-id-card": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/certificate/student-id-card/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/certificate/student-id-card/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "RECEPTIONIST",
+  ],
+  /* end */
+  /* End Certificate */
+
+  /* Front CMS */
+  /* banner-image */
+  "/api/v1/front-cms/banner-image": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/banner-image/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/banner-image/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* event */
+  "/api/v1/front-cms/event": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/event/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/event/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* gallery */
+  "/api/v1/front-cms/gallery": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/gallery/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/gallery/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* media-manager */
+  "/api/v1/front-cms/media-manager": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/media-manager/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/media-manager/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* news */
+  "/api/v1/front-cms/news": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/news/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/news/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* End Front CMS */
+
+  /* Alumni */
+  /* alumni-event */
+  "/api/v1/alumni/alumni-event": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/alumni/alumni-event/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/alumni/alumni-event/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* End Alumni */
 };
 export default routeRoles;
