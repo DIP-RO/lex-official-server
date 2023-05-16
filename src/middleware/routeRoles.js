@@ -760,5 +760,122 @@ const routeRoles = {
   ],
   /* end */
   /* End  Human Resource*/
+
+  /* Communicate */
+  /* email-template */
+  "/api/v1/communicate/email-template": ["SUPER_ADMIN"],
+  "/api/v1/communicate/email-template/:id": ["SUPER_ADMIN"],
+  "/api/v1/communicate/email-template/filter": ["SUPER_ADMIN"],
+  /* end */
+  /* notice-board */
+  "/api/v1/communicate/notice-board": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/communicate/notice-board/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/communicate/notice-board/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  /* end */
+  /* send-mail */
+  "/api/v1/communicate/send-mail": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/communicate/send-mail/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/communicate/send-mail/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  /* end */
+  /* send-sms */
+  "/api/v1/communicate/send-sms": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/communicate/send-sms/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/communicate/send-sms/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  /* end */
+  /* send-template */
+  "/api/v1/communicate/send-template": ["SUPER_ADMIN"],
+  "/api/v1/communicate/send-template/:id": ["SUPER_ADMIN"],
+  "/api/v1/communicate/send-template/filter": ["SUPER_ADMIN"],
+  /* end */
+  /* End Communicate */
+
+  /* Download Center */
+  /* content-type */
+  "/api/v1/download-center/content-type": ["SUPER_ADMIN"],
+  "/api/v1/download-center/content-type/:id": ["SUPER_ADMIN"],
+  "/api/v1/download-center/content-type/filter": ["SUPER_ADMIN"],
+  /* end */
+  /* upload-content */
+  "/api/v1/download-center/upload-content": ["SUPER_ADMIN", "TEACHER", "ADMIN"],
+  "/api/v1/download-center/upload-content/:id": [
+    "SUPER_ADMIN",
+    "TEACHER",
+    "ADMIN",
+  ],
+  "/api/v1/download-center/upload-content/filter": [
+    "SUPER_ADMIN",
+    "TEACHER",
+    "ADMIN",
+  ],
+  /* end */
+  /* video-tutorial */
+  "/api/v1/download-center/video-tutorial": ["SUPER_ADMIN", "TEACHER"],
+  "/api/v1/download-center/video-tutorial/:id": ["SUPER_ADMIN", "TEACHER"],
+  "/api/v1/download-center/video-tutorial/filter": ["SUPER_ADMIN", "TEACHER"],
+  /* end */
+  /* End Download Center */
 };
 export default routeRoles;
