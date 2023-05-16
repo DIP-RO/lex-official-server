@@ -513,17 +513,109 @@ const routeRoles = {
     "RECEPTIONIST",
   ],
   /* end */
-  /* class-teacher Ata baki ace*/
-  "/api/v1/academic/class-teacher": ["SUPER_ADMIN", "ADMIN", "RECEPTIONIST"],
+  /* class-teacher */
+  "/api/v1/academic/class-teacher": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
   "/api/v1/academic/class-teacher/:id": [
     "SUPER_ADMIN",
     "ADMIN",
     "RECEPTIONIST",
+    "TEACHER",
   ],
   "/api/v1/academic/class-teacher/filter": [
     "SUPER_ADMIN",
     "ADMIN",
     "RECEPTIONIST",
+    "TEACHER",
+  ],
+  /* end */
+  /* class-time-table */
+  "/api/v1/academic/class-time-table": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  "/api/v1/academic/class-time-table/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  "/api/v1/academic/class-time-table/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  /* end */
+  /* class-promote-student */
+  "/api/v1/academic/class-promote-student": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/academic/class-promote-student/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/academic/class-promote-student/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
+  /* section */
+  "/api/v1/academic/section": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  "/api/v1/academic/section/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  "/api/v1/academic/section/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  /* end */
+  /* subject-group */
+  "/api/v1/academic/subject-group": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  "/api/v1/academic/subject-group/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  "/api/v1/academic/subject-group/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  /* end */
+  /* subject */
+  "/api/v1/academic/subject": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  "/api/v1/academic/subject/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
+  ],
+  "/api/v1/academic/subject/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "RECEPTIONIST",
+    "TEACHER",
   ],
   /* end */
 };
