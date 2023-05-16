@@ -14,9 +14,9 @@ const authorizedUser = async (req, res, next) => {
       }
       const { userID } = jwt.verify(token, process.env.JWT_SECRET_KEY);
       const user = await UserModel.findById(userID).select("-password");
+      console.log(user);
       const userRole = user.role;
       const requiredRoles = routeRoles[req.path];
-
       if (!requiredRoles || requiredRoles.includes(userRole)) {
         req.user = user;
         return next();
@@ -25,6 +25,7 @@ const authorizedUser = async (req, res, next) => {
         .status(403)
         .send({ status: "failed", message: "access denied!" });
     } catch (error) {
+      console.log(error.message);
       return res
         .status(403)
         .send({ status: "failed", message: "access denied!" });

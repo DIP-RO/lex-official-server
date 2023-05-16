@@ -110,7 +110,6 @@ router.post(
 );
 router.delete("/postal-dispatch/:id", deletePostalDispatch);
 router.patch("/postal-dispatch/:id", UpdatePostalDispatch);
-router.get("/postal-dispatch/:id", getAllPostalDispatch);
 router.get("/postal-dispatch", getAllPostalDispatch);
 router.get("/postal-dispatch/:id", getAllPostalDispatch);
 /* End */
@@ -123,7 +122,6 @@ router.post(
 );
 router.delete("/postal-receive/:id", deletePostalReceive);
 router.patch("/postal-receive/:id", UpdatePostalReceive);
-router.get("/postal-receive/:id", getAllPostalReceive);
 router.get("/postal-receive", getAllPostalReceive);
 router.get("/postal-receive/:id", getAllPostalReceive);
 /* End */
