@@ -630,5 +630,135 @@ const routeRoles = {
   "/api/v1/lesson/topic/:id": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
   "/api/v1/lesson/topic/filter": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
   /* end */
+  /* End Lesson Plan */
+
+  /* Human Resource */
+  /* designation */
+  "/api/v1/human-resource/designation": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/human-resource/designation/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/human-resource/designation/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* department */
+  "/api/v1/human-resource/department": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/human-resource/department/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/human-resource/department/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* leave-type */
+  "/api/v1/human-resource/leave-type": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+  ],
+  "/api/v1/human-resource/leave-type/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+  ],
+  "/api/v1/human-resource/leave-type/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+  ],
+  /* end */
+  /* staff-attendance */
+  "/api/v1/human-resource/staff-attendance": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/human-resource/staff-attendance/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/human-resource/staff-attendance/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* staff */
+  "/api/v1/human-resource/staff": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/human-resource/staff/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  "/api/v1/human-resource/staff/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+    "LIBRARIAN",
+    "RECEPTIONIST",
+  ],
+  /* end */
+  /* approve-leave-request */
+  "/api/v1/human-resource/approve-leave-request": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/human-resource/approve-leave-request/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/human-resource/approve-leave-request/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* apply-leave */
+  "/api/v1/human-resource/apply-leave": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+  ],
+  "/api/v1/human-resource/apply-leave/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+  ],
+  "/api/v1/human-resource/apply-leave/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "ACCOUNTANT",
+    "TEACHER",
+  ],
+  /* end */
+  /* End  Human Resource*/
 };
 export default routeRoles;
