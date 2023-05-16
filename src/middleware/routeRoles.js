@@ -618,5 +618,17 @@ const routeRoles = {
     "TEACHER",
   ],
   /* end */
+  /* End academic */
+  /* lesson plan */
+  /* lesson */
+  "/api/v1/lesson/lesson": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/lesson/lesson/:id": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/lesson/lesson/filter": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  /* end */
+  /* topic */
+  "/api/v1/lesson/topic": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/lesson/topic/:id": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  "/api/v1/lesson/topic/filter": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  /* end */
 };
 export default routeRoles;
