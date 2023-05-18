@@ -132,7 +132,7 @@ const getAllAdmissionEnquiries = async (req, res) => {
   }
 };
 
-const filterAdmissionEnquiry = async(req,res)=>{
+const filterAdmissionEnquiry = async (req, res) => {
   try {
     const filters = {};
     if (req.query.class) {
@@ -150,18 +150,17 @@ const filterAdmissionEnquiry = async(req,res)=>{
     if (req.query.status) {
       filters.status = req.query.status;
     }
-    const data = await User.AdmissionEnquiryModel(filters);
-    return res.status(200).send(data)
+    const data = await AdmissionEnquiryModel(filters);
+    return res.status(200).send(data);
   } catch (error) {
     return res.status(500).send(error.message);
   }
-}
+};
 
 export {
   createAdmissionEnquiry,
   deleteAdmissionEnquiry,
   UpdateAdmissionEnquiry,
   getAllAdmissionEnquiries,
-  filterAdmissionEnquiry
+  filterAdmissionEnquiry,
 };
-

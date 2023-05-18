@@ -13,8 +13,9 @@ import {
 } from "../controllers/income/incomeHeadControllers.js";
 import { uploadIncomeFiles } from "../middleware/IncomeFile,.js";
 import { authorizedUser } from "../middleware/authentication.js";
+import { searchIncome } from "../controllers/income/SearchincomeController.js";
 const router = Router();
-router.use(authorizedUser);
+// router.use(authorizedUser);
 
 /* income */
 router.post(
@@ -26,6 +27,7 @@ router.delete("/income/:id", deleteIncome);
 router.patch("/income/:id", UpdateIncome);
 router.get("/income", getAllIncome);
 router.get("/income/:id", getAllIncome);
+router.get("/search-income", searchIncome);
 /* End */
 /* income-head */
 router.post("/income-head", createIncomeHead);
@@ -34,4 +36,5 @@ router.patch("/income-head/:id", UpdateIncomeHead);
 router.get("/income-head", getAllIncomeHead);
 router.get("/income-head/:id", getAllIncomeHead);
 /* End */
+/* search income */
 export default router;
