@@ -362,6 +362,7 @@ const routeRoles = {
   "/api/v1/income/income": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
   "/api/v1/income/income/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
   "/api/v1/income/income/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/income/search-income": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
   /* end */
   /* income-head */
   "/api/v1/income/income-head": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
