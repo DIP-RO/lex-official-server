@@ -31,6 +31,12 @@ import {
 } from "../controllers/frontCMS/NewsController.js";
 import { uploadMedianManagerFiles } from "../middleware/FrontCMSFile.js";
 import { authorizedUser } from "../middleware/authentication.js";
+import {
+  UpdatePageCreate,
+  createPageCreate,
+  deletePageCreate,
+  getAllPageCreate,
+} from "../controllers/frontCMS/PagecreateController.js";
 const router = Router();
 router.use(authorizedUser);
 
@@ -72,5 +78,12 @@ router.delete("/news/:id", deleteNews);
 router.patch("/news/:id", UpdateNews);
 router.get("/news", getAllNews);
 router.get("/news/:id", getAllNews);
+/* End */
+/*page */
+router.post("/page", createPageCreate);
+router.delete("/page/:id", deletePageCreate);
+router.patch("/page/:id", UpdatePageCreate);
+router.get("/page", getAllPageCreate);
+router.get("/page/:id", getAllPageCreate);
 /* End */
 export default router;

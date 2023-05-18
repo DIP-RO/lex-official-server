@@ -1126,6 +1126,11 @@ const routeRoles = {
   "/api/v1/front-cms/news/:id": ["SUPER_ADMIN", "ADMIN"],
   "/api/v1/front-cms/news/filter": ["SUPER_ADMIN", "ADMIN"],
   /* end */
+  /* page */
+  "/api/v1/front-cms/page": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/page/:id": ["SUPER_ADMIN", "ADMIN"],
+  "/api/v1/front-cms/page/filter": ["SUPER_ADMIN", "ADMIN"],
+  /* end */
   /* End Front CMS */
 
   /* Alumni */
