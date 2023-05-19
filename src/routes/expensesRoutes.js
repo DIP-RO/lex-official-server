@@ -13,6 +13,7 @@ import {
 } from "../controllers/expenses/expensesControllers.js";
 import { authorizedUser } from "../middleware/authentication.js";
 import { uploadExpensesFiles } from "../middleware/expensesFile.js";
+import { searchExpense } from "../controllers/expenses/searchExpenseController.js";
 const router = Router();
 router.use(authorizedUser);
 
@@ -25,6 +26,7 @@ router.post(
 router.delete("/expenses/:id", deleteExpense);
 router.patch("/expenses/:id", UpdateExpense);
 router.get("/expenses", getAllExpense);
+router.get("/search-expenses", searchExpense);
 router.get("/expenses/:id", getAllExpense);
 /* expenses-head */
 router.post("/expenses-head", createExpenseHead);
