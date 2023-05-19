@@ -21,7 +21,6 @@ const createAdmitCardDesign = async (req, res) => {
         });
       }
     }
-    console.log(attachDocuments);
     const result = new admitCardDesignModel({
       school: req.body.school,
       template: req.body.template,

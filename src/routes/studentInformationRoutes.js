@@ -6,8 +6,14 @@ import {
   deleteDisableReason,
   getAllDisableReasons,
 } from "../controllers/StudentInformation/DisableReasonControllers.js";
-import { bulkDelete, studentDetails } from "../controllers/StudentInformation/StudenDetails.js";
-import { createAdmission } from "../controllers/StudentInformation/StudentAdmissionControllers.js";
+import {
+  bulkDelete,
+  studentDetails,
+} from "../controllers/StudentInformation/StudenDetails.js";
+import {
+  createAdmission,
+  onlineAdmission,
+} from "../controllers/StudentInformation/StudentAdmissionControllers.js";
 import {
   UpdateStudentCategories,
   createStudentCategories,
@@ -21,15 +27,30 @@ import {
   getAllStudentHouse,
 } from "../controllers/StudentInformation/StudentHouseControllers.js";
 import { authorizedUser } from "../middleware/authentication.js";
+import { uploadStudentAdmissionFiles } from "../middleware/StudentInformationFile.js";
 
 // router
 const router = Router();
-router.use(authorizedUser);
+// router.use(authorizedUser);
 
-// student information 
-router.post('/student-admission',createAdmission)
-router.get('/student-details',studentDetails)
-router.get('/bulk-delete',bulkDelete)
+// student information
+router.post(
+  "/student-admission",
+  uploadStudentAdmissionFiles.fields([
+    { name: "studentPhoto", maxCount: 1 },
+    { name: "fatherPhoto", maxCount: 1 },
+    { name: "motherPhoto", maxCount: 1 },
+    { name: "guardianPhoto", maxCount: 1 },
+    { name: "title_1", maxCount: 1 },
+    { name: "title_2", maxCount: 1 },
+    { name: "title_3", maxCount: 1 },
+    { name: "title_4", maxCount: 1 },
+  ]),
+  createAdmission
+);
+router.get("/online-admission", onlineAdmission);
+router.get("/student-details", studentDetails);
+router.get("/bulk-delete", bulkDelete);
 
 /* DisableReason */
 router.post("/disable-reason", createDisableReason);
