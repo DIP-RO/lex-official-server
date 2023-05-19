@@ -376,6 +376,7 @@ const routeRoles = {
   "/api/v1/expenses/expenses": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
   "/api/v1/expenses/expenses/:id": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
   "/api/v1/expenses/expenses/filter": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
+  "/api/v1/expenses/search-expenses": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
   /* end */
   /* expenses-head */
   "/api/v1/expenses/expenses-head": ["SUPER_ADMIN", "ADMIN", "ACCOUNTANT"],
