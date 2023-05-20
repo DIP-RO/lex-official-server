@@ -4,7 +4,7 @@ import {
   createLiveClass,
   deleteLiveClass,
   getGMeets,
-} from "../controllers/gMeet/gMeetControllers.js";
+} from "../controllers/gMeet/LineClassControllers.js";
 import { authorizedUser } from "../middleware/authentication.js";
 const router = Router();
 router.use(authorizedUser);

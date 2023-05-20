@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const GMeetSchema = new mongoose.Schema({
+const LiveClassSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -15,29 +15,33 @@ const GMeetSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
-  meetTitle: {
+  classTitle: {
     type: String,
-    required: [true, "meet title required!"],
+    required: [true, "class title required!"],
   },
-  meetDate: {
+  classDate: {
     type: Date,
-    required: [true, "meet date required!"],
+    required: [true, "class date required!"],
   },
-  meetDuration: {
+  classDuration: {
     type: Date,
-    required: [true, "meet duration required!"],
+    required: [true, "class duration required!"],
   },
   staff: {
     type: String,
     required: [true, "staff required!"],
   },
+  role: {
+    type: String,
+    required: [true, "role required!"],
+  },
   class: {
     type: String,
-      required: false,
+    required: [true, "class required!"],
   },
   section: {
     type: String,
-    required: false,
+    required: [true, "section required!"],
   },
   url: {
     type: String,
@@ -47,12 +51,8 @@ const GMeetSchema = new mongoose.Schema({
     type: String,
     required: [true, "Google Meet description required!"],
   },
-  status: {
-    type: String,
-    required: [true, "Google Meet Status required!"],
-  },
 });
 
-const GMeetModel = mongoose.model("gMeet", GMeetSchema);
+const LiveClassModel = mongoose.model("lineClass", LiveClassSchema);
 
-export default GMeetModel;
+export default LiveClassModel;
