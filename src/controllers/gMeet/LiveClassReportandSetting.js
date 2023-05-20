@@ -62,7 +62,7 @@ const UpdateGMeetSetting = async (req, res) => {
 const getGMeetSetting = async (req, res) => {
   try {
     if (req.params.id) {
-      const data = await LiveClassModel.findById(req.params.id);
+      const data = await GMeetSettingModel.findById(req.params.id);
       return res.status(200).send(data);
     }
   } catch (error) {

@@ -4,13 +4,11 @@ const createLiveMeeting = async (req, res) => {
   try {
     const result = new LiveMeetingModel({
       school: req.body.school,
-      classTitle: req.body.classTitle,
-      classDate: req.body.classDate,
-      classDuration: req.body.classDuration,
-      staff: req.body.staff,
-      role: req.body.role,
-      class: req.body.class,
-      section: req.body.section,
+      meetingTitle: req.body.meetingTitle,
+      meetingDateTime: req.body.meetingDateTime,
+      meetingDuration: req.body.meetingDuration,
+      staffList: req.body.staffList,
+
       url: req.body.url,
       description: req.body.description,
     });

@@ -1,18 +1,18 @@
 import { Router } from "express";
-import {
-  UpdateZMeet,
-  createZMeet,
-  deleteZMeet,
-  getAllZMeet,
-} from "../controllers/zMeet/zMeetControllers.js";
 import { authorizedUser } from "../middleware/authentication.js";
+import {
+  UpdateLiveMeeting,
+  createLiveMeeting,
+  deleteLiveMeeting,
+  getAllLiveMeeting,
+} from "../controllers/zMeet/liveMeetingControllers.js";
 const router = Router();
 router.use(authorizedUser);
 
 /* z-meet */
-router.post("/z-meet", createZMeet);
-router.delete("/z-meet/:id", deleteZMeet);
-router.patch("/z-meet/:id", UpdateZMeet);
-router.get("/z-meet", getAllZMeet);
+router.post("/z-meet", createLiveMeeting);
+router.delete("/z-meet/:id", deleteLiveMeeting);
+router.patch("/z-meet/:id", UpdateLiveMeeting);
+router.get("/z-meet", getAllLiveMeeting);
 /* End */
 export default router;

@@ -20,7 +20,7 @@ import {
   liveClassReport,
 } from "../controllers/gMeet/LiveClassReportandSetting.js";
 const router = Router();
-router.use(authorizedUser);
+// router.use(authorizedUser);
 
 /* live-class */
 router.post("/live-class", createLiveClass);

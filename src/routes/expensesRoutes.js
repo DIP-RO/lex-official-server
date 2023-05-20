@@ -15,7 +15,7 @@ import { authorizedUser } from "../middleware/authentication.js";
 import { uploadExpensesFiles } from "../middleware/expensesFile.js";
 import { searchExpense } from "../controllers/expenses/searchExpenseController.js";
 const router = Router();
-router.use(authorizedUser);
+// router.use(authorizedUser);
 
 /* expenses */
 router.post(

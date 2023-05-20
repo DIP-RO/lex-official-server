@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const gMeetSchema = new mongoose.Schema({
+const liveMeetingSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -53,6 +53,6 @@ const gMeetSchema = new mongoose.Schema({
   },
 });
 
-const ZMeetModel = mongoose.model("zMeet", gMeetSchema);
+const LiveMeetingModel = mongoose.model("liveMeeting", liveMeetingSchema);
 
-export default ZMeetModel;
+export default LiveMeetingModel;

@@ -1,8 +1,8 @@
-import ZMeetModel from "../../models/zMeet/zMeet.js";
+import LiveMeetingModel from "../../models/zMeet/liveMeeting.js";
 
-const createZMeet = async (req, res) => {
+const createLiveMeeting = async (req, res) => {
   try {
-    const result = new ZMeetModel({
+    const result = new LiveMeetingModel({
       school: req.body.school,
       meetTitle: req.body.meetTitle,
       meetDate: req.body.meetDate,
@@ -22,14 +22,14 @@ const createZMeet = async (req, res) => {
   }
 };
 
-const deleteZMeet = async (req, res) => {
+const deleteLiveMeeting = async (req, res) => {
   try {
-    if (!(await ZMeetModel.findById(req.params.id))) {
+    if (!(await LiveMeetingModel.findById(req.params.id))) {
       return res.status(400).send({
         message: "Invalid Id!",
       });
     }
-    await ZMeetModel.findByIdAndDelete(req.params.id);
+    await LiveMeetingModel.findByIdAndDelete(req.params.id);
 
     return res.status(200).send({
       message: "Success",
@@ -39,9 +39,9 @@ const deleteZMeet = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateZMeet = async (req, res) => {
+const UpdateLiveMeeting = async (req, res) => {
   try {
-    const visitorBook = await ZMeetModel.findByIdAndUpdate(
+    const visitorBook = await LiveMeetingModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -55,22 +55,22 @@ const UpdateZMeet = async (req, res) => {
   }
 };
 
-const getAllZMeet = async (req, res) => {
+const getAllLiveMeeting = async (req, res) => {
   try {
     if (req.params.id) {
-      const data = await ZMeetModel.findById(req.params.id);
+      const data = await LiveMeetingModel.findById(req.params.id);
       return res.status(200).send(data);
     }
     const query = req.query.school;
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 2;
     const startIndex = (page - 1) * limit;
-    const data = await ZMeetModel.find(query ? { school: query } : {})
+    const data = await LiveMeetingModel.find(query ? { school: query } : {})
       .sort({ created_at: -1 })
       .skip(startIndex)
       .limit(limit);
 
-    const count = await ZMeetModel.countDocuments(
+    const count = await LiveMeetingModel.countDocuments(
       query ? { school: query } : {}
     );
 
@@ -87,4 +87,9 @@ const getAllZMeet = async (req, res) => {
   }
 };
 
-export { createZMeet, deleteZMeet, UpdateZMeet, getAllZMeet };
+export {
+  createLiveMeeting,
+  deleteLiveMeeting,
+  UpdateLiveMeeting,
+  getAllLiveMeeting,
+};
