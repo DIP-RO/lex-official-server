@@ -39,7 +39,7 @@ const deleteLiveClass = async (req, res) => {
     return res.status(400).send(error);
   }
 };
-const UpdateGMeets = async (req, res) => {
+const UpdateLiveClass = async (req, res) => {
   try {
     const meet = await LiveClassModel.findByIdAndUpdate(
       req.params.id,
@@ -59,7 +59,7 @@ const UpdateGMeets = async (req, res) => {
   }
 };
 
-const getGMeets = async (req, res) => {
+const getLiveClass = async (req, res) => {
   try {
     if (req.params.id) {
       const data = await LiveClassModel.findById(req.params.id);
@@ -91,4 +91,4 @@ const getGMeets = async (req, res) => {
   }
 };
 
-export { createLiveClass, deleteLiveClass, UpdateGMeets, getGMeets };
+export { createLiveClass, deleteLiveClass, UpdateLiveClass, getLiveClass };

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const LiveClassSchema = new mongoose.Schema({
+const LiveMeetingSchema = new mongoose.Schema({
   school: {
     type: String,
     required: [true, "school id required!"],
@@ -15,33 +15,21 @@ const LiveClassSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
-  classTitle: {
+  meetingTitle: {
     type: String,
-    required: [true, "class title required!"],
+    required: [true, "meeting title required!"],
   },
-  classDate: {
+  meetingDateTime: {
     type: Date,
-    required: [true, "class date required!"],
+    required: [true, "meeting date required!"],
   },
-  classDuration: {
+  meetingDuration: {
     type: Date,
     required: [true, "class duration required!"],
   },
-  staff: {
+  staffList: {
     type: String,
-    required: [true, "staff required!"],
-  },
-  role: {
-    type: String,
-    required: [true, "role required!"],
-  },
-  class: {
-    type: String,
-    required: [true, "class required!"],
-  },
-  section: {
-    type: String,
-    required: [true, "section required!"],
+    required: [true, "staff List required!"],
   },
   url: {
     type: String,
@@ -53,6 +41,6 @@ const LiveClassSchema = new mongoose.Schema({
   },
 });
 
-const LiveClassModel = mongoose.model("liveClass", LiveClassSchema);
+const LiveMeetingModel = mongoose.model("LiveMeeting", LiveMeetingSchema);
 
-export default LiveClassModel;
+export default LiveMeetingModel;

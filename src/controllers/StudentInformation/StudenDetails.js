@@ -2,7 +2,13 @@ import StudentAdmissionModel from "../../models/StudentInformation/StudentAdmiss
 
 const studentDetails = async (req, res) => {
   try {
-    const { name, rollNumber, admissionId, value } = req.query;
+    const {
+      name,
+      rollNumber,
+      admissionId,
+      class: className,
+      section,
+    } = req.query;
 
     const filters = {};
 
@@ -21,13 +27,12 @@ const studentDetails = async (req, res) => {
       filters.admissionId = { $regex: admissionId, $options: "i" };
     }
 
-    if (value) {
-      filters.$or = [
-        { class: { $regex: value, $options: "i" } },
-        { section: { $regex: value, $options: "i" } },
-      ];
+    if (className) {
+      filters.class = { $regex: className, $options: "i" };
     }
-
+    if (section) {
+      filters.section = { $regex: section, $options: "i" };
+    }
     const result = await StudentAdmissionModel.find(filters);
     res.status(200).send(result);
   } catch (error) {

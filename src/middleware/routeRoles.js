@@ -286,25 +286,80 @@ const routeRoles = {
   "/api/v1/onlineCourse/online-course-setting/filter": ["SUPER_ADMIN", "ADMIN"],
   /* end */
   /* Gmeet Live Classes */
-  /* g-meet */
-  "/api/v1/g-meet/g-meet": [
+  /* live-class */
+  "/api/v1/g-meet/live-class": [
     "SUPER_ADMIN",
     "ADMIN",
     "TEACHER",
     "RECEPTIONIST",
     "LIBRARIAN",
   ],
-  "/api/v1/g-meet/g-meet/:id": [
+  "/api/v1/g-meet/live-class/:id": [
     "SUPER_ADMIN",
     "ADMIN",
     "TEACHER",
     "RECEPTIONIST",
     "LIBRARIAN",
   ],
-  "/api/v1/g-meet/g-meet/filter": [
+  "/api/v1/g-meet/live-class/filter": [
     "SUPER_ADMIN",
     "ADMIN",
     "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  /* end */
+  /* live-meeting */
+  "/api/v1/g-meet/live-meeting": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/g-meet/live-meeting/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+    "ACCOUNTANT",
+  ],
+  "/api/v1/g-meet/live-meeting/filter": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* live-class-report */
+  "/api/v1/g-meet/live-class-report": ["SUPER_ADMIN", "ADMIN", "TEACHER"],
+  /* end */
+  /* live-meeting-report */
+  "/api/v1/g-meet/live-meeting-report": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "ACCOUNTANT",
+  ],
+  /* end */
+  /* g-meet-setting */
+  "/api/v1/g-meet/g-meet-setting": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "ACCOUNTANT",
+    "RECEPTIONIST",
+    "LIBRARIAN",
+  ],
+  "/api/v1/g-meet/g-meet-setting/:id": [
+    "SUPER_ADMIN",
+    "ADMIN",
+    "TEACHER",
+    "ACCOUNTANT",
     "RECEPTIONIST",
     "LIBRARIAN",
   ],
