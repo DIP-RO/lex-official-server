@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createService, deleteService, getAllService, getServiceById, updateService } from "../controllers/ServiceControllers.js";
+import { createService, deleteService, getAllService, getServiceById, updateService, searchServices } from "../controllers/ServiceControllers.js";
 
 const router = Router();
 
@@ -17,5 +17,6 @@ router.get("/service/:id", getServiceById);
 
 // Update a service by ID
 router.patch("/service/:id", updateService);
-
+//search
+router.get("/services/search", searchServices);
 export default router;
