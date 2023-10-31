@@ -7,6 +7,11 @@ import path, { join } from "path";
 import connectDB from "./configs/databaseConfigs.js";
 import serviceRoutes from "../src/routes/serviceRoutes.js"
 import userRoutes from "../src/routes/userRoutes.js"
+import blogRoutes from "../src/routes/blogRoutes.js"
+import testimonialRoutes from "../src/routes/testimonialRoutes"
+import reviewRoutes from "../src/routes/reviewRoutes.js"
+import priceRoutes from "../src/routes/priceRoutes.js/"
+import  lawyerRoutes from "../src/routes/lawyerRoutes.js"
 // Application
 const app = express();
 dotenv.config();
@@ -26,6 +31,12 @@ app.get("/", (req, res) => {
 // users routes
 app.use("/api/v1/services/", serviceRoutes);
 app.use('/api/v1', userRoutes);
+app.use("/api/v1/blogs", blogRoutes);
+app.use("/api/v1/testimonials", testimonialRoutes);
+app.use("/api/v1/reviews", reviewRoutes);
+app.use("/api/v1/lawyers", lawyerRoutes);
+
+app.use("/api/v1/packages", priceRoutes);
 // Handle Not valid routes
 app.use("*", (req, res) => {
   return res.status(404).send("Invalid Route!!");
