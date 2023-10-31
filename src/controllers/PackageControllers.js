@@ -1,5 +1,5 @@
 // packageController.js
-import Package from "../models/Package/Package";
+import Package from "../models/Package/Package.js";
 
 export const createPackage = async (req, res) => {
   try {

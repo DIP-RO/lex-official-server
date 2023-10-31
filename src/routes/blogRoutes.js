@@ -6,7 +6,7 @@ import {
     getBlogById,
     updateBlog,
     deleteBlog,
-  } from "../controllers/BlogControllers"; 
+  } from "../controllers/BlogControllers.js"; 
   
   
 

@@ -6,7 +6,7 @@ import {
   getLawyerById,
   updateLawyer,
   deleteLawyer,
-} from "../controllers/LawyerControllers";
+} from "../controllers/LawyerControllers.js";
 
 const router = Router();
 

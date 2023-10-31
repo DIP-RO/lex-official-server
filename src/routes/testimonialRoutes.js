@@ -1,6 +1,6 @@
 // testimonialRoutes.js
 import { Router } from "express";
-import { createTestimonial, getTestimonials } from "../controllers/TestimonialControllers";
+import { createTestimonial, getTestimonials } from "../controllers/TestimonialControllers.js";
 
 const router = Router();
 

@@ -8,7 +8,7 @@ import connectDB from "./configs/databaseConfigs.js";
 import serviceRoutes from "../src/routes/serviceRoutes.js"
 import userRoutes from "../src/routes/userRoutes.js"
 import blogRoutes from "../src/routes/blogRoutes.js"
-import testimonialRoutes from "../src/routes/testimonialRoutes"
+import testimonialRoutes from "../src/routes/testimonialRoutes.js"
 import reviewRoutes from "../src/routes/reviewRoutes.js"
 import priceRoutes from "../src/routes/priceRoutes.js/"
 import  lawyerRoutes from "../src/routes/lawyerRoutes.js"

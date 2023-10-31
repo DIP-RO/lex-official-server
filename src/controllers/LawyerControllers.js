@@ -1,5 +1,5 @@
 // lawyerController.js
-import Lawyer from "../models/Lawyer/Lawyer";
+import Lawyer from "../models/Lawyer/Lawyer.js";
 
 export const createLawyer = async (req, res) => {
   try {

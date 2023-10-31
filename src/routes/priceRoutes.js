@@ -6,7 +6,8 @@ import {
   getPackageById,
   updatePackage,
   deletePackage,
-} from "../controllers/PackageControllers";
+} from "../../controllers/PackageControllers.js";
+
 
 const router = Router();
 

@@ -6,7 +6,7 @@ import {
   getReviewById,
   updateReview,
   deleteReview,
-} from "../controllers/ReviewControllers";
+} from "../controllers/ReviewControllers.js";
 
 const router = Router();
 
