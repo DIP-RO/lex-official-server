@@ -1,137 +1,65 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import UserModel from "../models/userModels.js";
+import UserModel from "../models/User/User.js"; 
 
-const hashPassword = async (password) => {
-  console.log(password);
-  const salt = await bcrypt.genSalt(10);
-  return await bcrypt.hash(password, salt);
-};
-
-const register = async (req, res) => {
-  const { firstName, lastName, email, password, confirmPassword, role } =
-    req.body;
+// Create a new user
+export const createUser = async (req, res) => {
   try {
-    if (!email || !firstName || !lastName || !password || !confirmPassword) {
-      return res.status(400).json({
-        message: "Please fill all the required fields",
-      });
-    }
-
-    if (password === !confirmPassword) {
-      return res.status(400).json({
-        message: "Passwords do not match",
-      });
-    }
-    const users = await UserModel.findOne({ email });
-    if (users) {
-      return res.status(400).json({
-        message: "User already exists",
-      });
-    }
-
-    const hashedPassword = await hashPassword(password);
-    const user = new UserModel({
-      firstName,
-      lastName,
-      email,
-      password: hashedPassword,
-      role: role || "STUDENT",
+    const newUser = new UserModel({
+      username: req.body.username,
+      email: req.body.email,
+      // Add other user properties as needed
     });
-    const accessToken = jwt.sign(
-      { userID: user._id },
-      process.env.ACCESS_TOKEN_SECRET,
-      {
-        expiresIn: "1h",
-      }
-    );
-
-    const refreshToken = jwt.sign(
-      { userID: user._id },
-      process.env.ACCESS_TOKEN_SECRET,
-      {
-        expiresIn: "30d",
-      }
-    );
-
-    await user.validate();
-    await user.save();
-
-    const userDetails = {
-      _id: user._id,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      role: user.role,
-    };
-
-    return res.status(200).json({
-      userDetails,
-      accessToken,
-      refreshToken,
-    });
+    await newUser.save();
+    return res.status(201).send(newUser);
   } catch (error) {
-    console.log(error);
     return res.status(400).send(error);
   }
 };
 
-const validatePassword = async (password, hashPassword) => {
-  return await bcrypt.compare(password, hashPassword);
+// Get all users
+export const getAllUsers = async (req, res) => {
+  try {
+    const users = await UserModel.find();
+    return res.status(200).send(users);
+  } catch (error) {
+    return res.status(500).send(error);
+  }
 };
 
-const login = async (req, res) => {
+// Get a user by ID
+export const getUserById = async (req, res) => {
   try {
-    const { email, password } = req.body;
-    if (!email || !password) {
-      return res.status(400).json({
-        message: "Invalid Response!",
-      });
-    }
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findById(req.params.id);
     if (!user) {
-      return res.status(400).json({
-        message: "Invalid User!",
-      });
+      return res.status(404).send({ error: "User not found" });
     }
-    const validPassword = await validatePassword(password, user.password);
-    if (!validPassword) {
-      return res.status(400).json({
-        message: "Invalid Password!",
-      });
+    return res.status(200).send(user);
+  } catch (error) {
+    return res.status(500).send(error);
+  }
+};
+
+// Update a user by ID
+export const updateUser = async (req, res) => {
+  try {
+    const updatedUser = await UserModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!updatedUser) {
+      return res.status(404).send({ error: "User not found" });
     }
-    const accessToken = jwt.sign(
-      { userID: user._id },
-      process.env.ACCESS_TOKEN_SECRET,
-      {
-        expiresIn: "1h",
-      }
-    );
-    const refreshToken = jwt.sign(
-      { userID: user._id },
-      process.env.ACCESS_TOKEN_SECRET,
-      {
-        expiresIn: "30d",
-      }
-    );
-
-    await UserModel.findByIdAndUpdate(user._id);
-    const userDetails = {
-      _id: user._id,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      role: user.role,
-    };
-
-    return res.status(200).json({
-      userDetails,
-      accessToken,
-      refreshToken,
-    });
+    return res.status(200).send(updatedUser);
   } catch (error) {
     return res.status(400).send(error);
   }
 };
 
-export { login, register };
+// Delete a user by ID
+export const deleteUser = async (req, res) => {
+  try {
+    if (!(await UserModel.findById(req.params.id))) {
+      return res.status(404).send({ message: "User not found" });
+    }
+    await UserModel.findByIdAndDelete(req.params.id);
+    return res.status(200).send({ message: "User deleted" });
+  } catch (error) {
+    return res.status(400).send(error);
+  }
+};

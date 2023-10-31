@@ -1,9 +1,9 @@
 {
-  "name": "hellwet_school_server",
+  "name": "lex_official_server",
   "version": "1.0.0",
-  "description": "server side for hellwet school management system",
+  "description": "server side for lex management system",
   "main": "index.js",
-  "author": "HellWet",
+  "author": "Lex",
   "type": "module",
   "license": "MIT",
   "private": true,
@@ -22,6 +22,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.1",
+    "nodemon": "^3.0.1",
     "supervisor": "^0.12.0"
   }
 }
