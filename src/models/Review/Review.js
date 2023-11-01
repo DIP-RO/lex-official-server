@@ -6,6 +6,14 @@ const reviewSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userEmail: {
+    type: String,
+    required: true,
+  },
+  LawyerId: {
+    type: String,
+    required: true,
+  },
   rating: {
     type: Number,
     required: true,

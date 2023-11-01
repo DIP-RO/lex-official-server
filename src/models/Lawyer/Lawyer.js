@@ -17,7 +17,7 @@ const lawyerSchema = new mongoose.Schema({
   },
   image: {
     type: String, // Store the image as a URL
-    default: "default_image_url.jpg", // You can set a default image URL
+    //default: "default_image_url.jpg", // You can set a default image URL
   },
 });
 
