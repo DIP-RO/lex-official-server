@@ -13,6 +13,7 @@ import reviewRoutes from "../src/routes/reviewRoutes.js"
 import priceRoutes from "../src/routes/priceRoutes.js/"
 import lawyerRoutes from "../src/routes/lawyerRoutes.js"
 import bookmarkRoutes from "../src/routes/bookmarkRoutes.js"
+import priceRoutes from "../src/routes/priceRoutes"
 // Application
 const app = express();
 dotenv.config();
@@ -38,6 +39,8 @@ app.use("/api/v1/reviews", reviewRoutes);
 app.use("/api/v1/lawyers", lawyerRoutes);
 app.use("/api/v1/bookmarks", bookmarkRoutes);
 app.use("/api/v1/packages", priceRoutes);
+const reviewRoutes = require('./routes/reviewModeRoutes');
+app.use('/reviews', reviewRoutes);
 // Handle Not valid routes
 app.use("*", (req, res) => {
   return res.status(404).send("Invalid Route!!");

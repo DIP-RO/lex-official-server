@@ -1,4 +1,3 @@
-// blogController.js
 import Blog from "../models/Blog/Blog.js";
 
 export const createBlog = async (req, res) => {
