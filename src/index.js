@@ -11,7 +11,8 @@ import blogRoutes from "../src/routes/blogRoutes.js"
 import testimonialRoutes from "../src/routes/testimonialRoutes.js"
 import reviewRoutes from "../src/routes/reviewRoutes.js"
 import priceRoutes from "../src/routes/priceRoutes.js/"
-import lawyerRoutes from "../src/routes/lawyerRoutes.js"
+import  lawyerRoutes from "../src/routes/lawyerRoutes.js"
+import  lawDataRoutes from "../src/routes/lawDataRoutes.js"
 import bookmarkRoutes from "../src/routes/bookmarkRoutes.js"
 import priceRoutes from "../src/routes/priceRoutes"
 // Application
@@ -37,7 +38,11 @@ app.use("/api/v1/blogs", blogRoutes);
 app.use("/api/v1/testimonials", testimonialRoutes);
 app.use("/api/v1/reviews", reviewRoutes);
 app.use("/api/v1/lawyers", lawyerRoutes);
+
+app.use("/api/v1/lawData", lawDataRoutes);
+
 app.use("/api/v1/bookmarks", bookmarkRoutes);
+
 app.use("/api/v1/packages", priceRoutes);
 const reviewRoutes = require('./routes/reviewModeRoutes');
 app.use('/reviews', reviewRoutes);

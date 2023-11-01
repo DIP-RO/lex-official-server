@@ -73,33 +73,10 @@ export const updateService = async (req, res) => {
   }
 };
 
-// // Add a new route for searching and filtering services
-// export const searchServices = async (req, res) => {
-//   try {
-//     // Get search and filter parameters from the request query
-//     const { serviceName, type } = req.query;
 
-//     // Create a query object to filter services based on parameters
-//     const query = {};
-
-//     if (serviceName) {
-//       query.serviceName = { $regex: serviceName, $options: 'i' };
-//     }
-
-//     if (type) {
-//       query.type = type;
-//     }
-
-//     const services = await ServiceModel.find(query);
-
-//     return res.status(200).send(services);
-//   } catch (error) {
-//     return res.status(500).send(error);
-//   }
-// };
 export const searchServices = async (req, res) => {
   try {
-    const { q, type } = req.query;
+    const { q } = req.query;
 
     // Define a query object to filter services based on parameters
     const query = {};
@@ -111,13 +88,9 @@ export const searchServices = async (req, res) => {
       ];
     }
 
-    if (type) {
-      query.type = type;
-    }
-
     const services = await ServiceModel.find(query);
 
-    return res.status(200).send(services);
+    return res.status(200).send(services.slice(0, 10));
   } catch (error) {
     return res.status(500).send(error);
   }
