@@ -11,9 +11,14 @@ import blogRoutes from "../src/routes/blogRoutes.js"
 import testimonialRoutes from "../src/routes/testimonialRoutes.js"
 import reviewRoutes from "../src/routes/reviewRoutes.js"
 import priceRoutes from "../src/routes/priceRoutes.js/"
+<<<<<<< HEAD
 import  lawyerRoutes from "../src/routes/lawyerRoutes.js"
 import  lawDataRoutes from "../src/routes/lawDataRoutes.js"
 
+=======
+import lawyerRoutes from "../src/routes/lawyerRoutes.js"
+import bookmarkRoutes from "../src/routes/bookmarkRoutes.js"
+>>>>>>> e313c3652b5d35e80dbf4ebba70882db06501666
 // Application
 const app = express();
 dotenv.config();
@@ -37,7 +42,11 @@ app.use("/api/v1/blogs", blogRoutes);
 app.use("/api/v1/testimonials", testimonialRoutes);
 app.use("/api/v1/reviews", reviewRoutes);
 app.use("/api/v1/lawyers", lawyerRoutes);
+<<<<<<< HEAD
 app.use("/api/v1/lawData", lawDataRoutes);
+=======
+app.use("/api/v1/bookmarks", bookmarkRoutes);
+>>>>>>> e313c3652b5d35e80dbf4ebba70882db06501666
 app.use("/api/v1/packages", priceRoutes);
 // Handle Not valid routes
 app.use("*", (req, res) => {
